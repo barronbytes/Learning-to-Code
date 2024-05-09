@@ -1,2 +1,3 @@
 # Coding-Challenges
-Question solutions with accompanying unit tests
+
+Welcome to my coding challenge repository, where I embark on the exciting adventure of learning programming languages through a series of curated coding challenges. Here, I not only share solutions to questions, but also provide accompanying unit tests. Join me as I share my progress, one challenge at a time, in this collaborative learning space.
