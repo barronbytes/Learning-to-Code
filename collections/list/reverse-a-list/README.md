@@ -11,5 +11,5 @@ As a teacher you want to automate how you analyze student performance on exam sc
 This project has a small scope. Additional features and complexities may be added by considering the information below:
 
 - Front-end: implement web application
-- Back-end: login authentication/authorization
+- Back-end: login authentication/authorization, data validation
 - Data: store data into a database, use visualization tools, provide further details (e.g. student names, class block)
