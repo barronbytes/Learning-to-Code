@@ -1,6 +1,6 @@
 # Problem Statement:
 
-You are given a list of integers representing the scores of students in a class. Each score is between 0 and 100. You need to implement a function **top_n_scores(scores, n)** that takes the list of scores and an integer **n** as input and returns the top **n** scores in descending order.
+As a teacher you want to automate how you analyze student performance on exam scores. Each score is between 0 and 100. You decide to implement a function **top_scores(scores, n)** that accepts a list of assignment *scores* and an integer *n* as inputs and returns the top *n* scores in descending order.
 
 ## Challenge Constraints:
 
@@ -8,5 +8,8 @@ You are given a list of integers representing the scores of students in a class.
 
 ## Future Improvements:
 
-- Front-end implementation
-- Input validation (e.g. scores must be integers)
+This project has a small scope. Additional features and complexities may be added by considering the information below:
+
+- Front-end: implement web application
+- Back-end: login authentication/authorization
+- Data: store data into a database, use visualization tools, provide further details (e.g. student names, class block)
