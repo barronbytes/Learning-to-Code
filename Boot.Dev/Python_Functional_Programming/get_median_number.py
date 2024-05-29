@@ -1,5 +1,8 @@
 '''
-This program calculates the median number from an unsorted list of numbers. If the list is empty, then the program returns None.
+This program calculates the median number from an unsorted list of numbers.
+If the list is empty, then the program returns None.
+
+FYI: This program uses sorted() on an iterable list
 
 Example:
     Input 1: [10, 2, 8, 4, 6, 12]
