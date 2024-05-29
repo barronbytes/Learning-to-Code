@@ -1,3 +1,3 @@
-# Coding-Challenges
+# Learning-to-Code
 
-Welcome to my coding challenge repository, where I embark on the journey of learning programming languages through a series of coding challenges. Here, I not only share solutions to questions, but also provide accompanying unit tests. Join me as I share my progress, one challenge at a time, in this collaborative learning space.
+I use this repository to document what I am learning to code. Sometimes, this involves sharing lessons learned from books, online courses, YouTube tutorials, or hackathon events. When appropriate, I edit the original code I share to avoid copyright issues. Join me as I share my progress, one challenge at a time, in this collaborative learning space.
