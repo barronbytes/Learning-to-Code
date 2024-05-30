@@ -2,9 +2,9 @@ from functools import reduce
 
 def sum_chars_by_doc_word_length(document):
     """
-    Calculates the total number of characters in words with at least five characters in a words document.
+    Calculates the total number of characters in words with at least five characters in a string.
 
-    This program  used map(), filter(), and reduce(). An initial value of 0 was provided to reduce().
+    This program used map(), filter(), and reduce(). An initial value of 0 was provided to reduce().
 
     Parameters:
         document (str): A document string.
