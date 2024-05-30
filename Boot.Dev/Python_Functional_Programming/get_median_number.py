@@ -2,13 +2,13 @@ def get_median_number(unsorted_numbers):
     '''
     This program calculates the median number from an unsorted list of numbers.
 
-    The function uses the sorted() method to sort the input list.
+    This program used modulus, floor division, string slicing, and sorted(). The sorted() method acts on iterables.
 
     Parameters:
-    unsorted_numbers (list): A list of numbers.
+        unsorted_numbers (list): A list of numbers.
 
     Returns:
-    float or int: The median of the list. If the list is empty, returns None.
+        float or int: The median of the list. If the list is empty, returns None.
 
     Examples:
     >>> get_median_number([10, 2, 8, 4, 6, 12])
