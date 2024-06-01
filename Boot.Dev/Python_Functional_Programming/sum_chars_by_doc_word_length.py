@@ -1,3 +1,5 @@
+# Created on: 05-30-2024
+
 from functools import reduce
 
 def sum_chars_by_doc_word_length(document):

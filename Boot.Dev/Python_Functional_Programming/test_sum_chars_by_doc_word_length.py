@@ -1,3 +1,5 @@
+# Created on: 05-30-2024
+
 from sum_chars_by_doc_word_length import *
 
 submit_cases = [

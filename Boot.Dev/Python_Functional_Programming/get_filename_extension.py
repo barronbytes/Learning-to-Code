@@ -1,3 +1,5 @@
+# Created on: 05-29-2024
+
 def get_filename_extension(filename):
     """
     Finds the file extension for a given filename string.
