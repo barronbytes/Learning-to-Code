@@ -4,7 +4,7 @@ def get_file_paths_from_dict(directory, current_path=""):
     """
     Recursively collects all file paths from a nested directory structure.
 
-    This program used recursion and the rstrip() method.
+    This program used recursion and the str.rstrip() method.
 
     Parameters:
         directory (dict): Nested dictionary containing a directory structure.
