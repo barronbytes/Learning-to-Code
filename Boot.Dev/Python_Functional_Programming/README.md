@@ -2,7 +2,7 @@
 
 This learning module from [Boot.Dev](https://www.boot.dev/), along with my personal studies, covers the following topics:
 
-* __Core concepts:__ pure functions, immutability, first-class functions, higher-order functions, memoization, recursion
+* __Core concepts:__ immutability, sum types, pure functions, first-class functions, higher-order functions, recursion, function transformations, decorators, currying, closures, memoization
 * __Techniques:__ map(), filter(), reduce()
 
 ## Personal Additions
