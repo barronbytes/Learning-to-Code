@@ -24,5 +24,6 @@ class Metrics():
         return round(numerator/len(data), 2)
 
     @staticmethod
-    def standard_deviation():
-        pass
+    def standard_deviation(data: list) -> float:
+        sigma = Metrics.variance(data)
+        return round(sigma**0.5, 2)

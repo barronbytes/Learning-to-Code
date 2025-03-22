@@ -18,9 +18,14 @@ class TestMetrics(unittest.TestCase):
         self.assertEqual(Metrics().maximum(self.data), max_num)
 
     def test_variance(self):
-        variance = stats.pvariance(self.data)
-        sigma = round(variance, 2)
+        pvariance = stats.pvariance(self.data)
+        sigma = round(pvariance, 2)
         self.assertEqual(Metrics().variance(self.data), sigma)
+
+    def test_standard_deviation(self):
+        pstdev_num = stats.pstdev(self.data)
+        pstdev = round(pstdev_num, 2)
+        self.assertEqual(Metrics().standard_deviation(self.data), pstdev)
 
 
 if __name__ == "__main__":
