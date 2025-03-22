@@ -60,3 +60,21 @@ class Metrics():
         '''
         sigma = Metrics.variance(data)
         return round(sigma**0.5, 2)
+    
+    @staticmethod
+    def brain(data: list) -> list[float]:
+        '''
+        Returns summary statistics from heart rate values.
+
+        Args:
+            data (list[int]): Heart rate population numbers.
+        Returns:
+            list[float]: Population heart rate max, average, and standard deviation.
+
+        '''
+        stats = []
+        stats.append(Metrics.maximum(data))
+        stats.append(Metrics.average(data))
+        stats.append(Metrics.standard_deviation(data))
+        return stats
+
