@@ -38,10 +38,10 @@ class GetFileData():
         root_dir = GetFileData.root_dir()
         is_data_dir_exists = os.path.isdir(os.path.join(root_dir, GetFileData.data_dir_name))
         data_files = GetFileData.get_data_files(root_dir) if is_data_dir_exists else []
-        data = []
+        raw_data = []
         if data_files:
             file_index = GetFileData.select_data_file(data_files)
             file_path = os.path.join(root_dir, GetFileData.data_dir_name, data_files[file_index])
-            raw_data = GetFileData.read_data(file_path)
-            data = raw_data
-        return data
+            file_lines = GetFileData.read_data(file_path)
+            raw_data = file_lines
+        return raw_data
