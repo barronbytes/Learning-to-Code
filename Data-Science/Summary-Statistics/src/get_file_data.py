@@ -16,7 +16,8 @@ class GetFileData():
         data_dir = os.path.join(root_dir, GetFileData.data_dir_name)
         dir_contents = os.listdir(data_dir)
         return [content for content in dir_contents if os.path.isfile(os.path.join(data_dir, content))]
-    
+
+    @staticmethod   
     def select_data_file(data_files: list[str]) -> int:
         print("These files contain heart rate data:")
         options = "\n".join(f"[{i+1}] file=\"{file}\"" for i, file in enumerate(data_files))
@@ -27,9 +28,20 @@ class GetFileData():
         return index
 
     @staticmethod
-    def brain() -> None:
+    def read_data(file_path: str) -> list[str]:
+        with open(file=file_path, mode="r", encoding="utf-8") as file:
+            raw_data = file.readlines()
+        return raw_data
+
+    @staticmethod
+    def brain() -> list[str]:
         root_dir = GetFileData.root_dir()
         is_data_dir_exists = os.path.isdir(os.path.join(root_dir, GetFileData.data_dir_name))
         data_files = GetFileData.get_data_files(root_dir) if is_data_dir_exists else []
+        data = []
         if data_files:
-            GetFileData.select_data_file(data_files)
+            file_index = GetFileData.select_data_file(data_files)
+            file_path = os.path.join(root_dir, GetFileData.data_dir_name, data_files[file_index])
+            raw_data = GetFileData.read_data(file_path)
+            data = raw_data
+        return data
