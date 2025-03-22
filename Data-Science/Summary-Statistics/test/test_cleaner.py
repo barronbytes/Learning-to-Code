@@ -1,6 +1,7 @@
 import unittest
 from cleaner import Cleaner
 
+
 class TestCleaner(unittest.TestCase):
 
     def test_is_list(self):
@@ -25,6 +26,7 @@ class TestCleaner(unittest.TestCase):
         data_expected = [1, 3, 4, 5, 7]
         self.assertListEqual(Cleaner(data_1).brain(), data_expected)
         self.assertListEqual(Cleaner(data_2).brain(), data_expected)
+
 
 if __name__ == "__main__":
     unittest.main()
