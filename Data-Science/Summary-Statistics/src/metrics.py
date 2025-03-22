@@ -16,8 +16,12 @@ class Metrics():
         return max
 
     @staticmethod
-    def variance():
-        pass
+    def variance(data: list) -> float:
+        mean = Metrics.average(data)
+        numerator = 0
+        for num in data:
+            numerator += (num - mean)**2
+        return round(numerator/len(data), 2)
 
     @staticmethod
     def standard_deviation():
