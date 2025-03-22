@@ -10,10 +10,13 @@ class TestMetrics(unittest.TestCase):
 
     def test_average(self):
         avg = stats.mean(self.data)
-        self.assertEqual(Metrics().average(self.data), round(avg, 2))
+        avg_num = round(avg, 2)
+        self.assertEqual(Metrics().average(self.data), avg_num)
 
     def test_maximum(self):
-        pass
+        max_num = max(self.data)
+        self.assertEqual(Metrics().maximum(self.data), max_num)
+
 
 if __name__ == "__main__":
     unittest.main()
