@@ -8,8 +8,8 @@ Feel free to check out the [project here](www.google.com)!
 
 ## Features
 
-* **Backend:** Used **JSON** for workspace configuration and **Python** for source code. Project used type hinting and the **`unittest`**, **`os`**, and **`shutil`** modules.
-* **Data Science Tools:** Used **`matplotlib`** and **`numpy`**.
+* **Backend:** Used **JSON** for workspace configuration and **Python** for source code. Project used type hinting and the `unittest`, `os`, and `shutil` modules.
+* **Data Science Tools:** Used `matplotlib` and `numpy`.
 
 ## Prerequisites
 
@@ -57,7 +57,7 @@ You can run the program in either of two ways:
 
 ### Running Test Files
 
-The project had a total of 12 unit tests pass with the **`unittest`** module across three source files. These tests can be run in either of two ways:
+The project had a total of 12 unit tests pass with the `unittest` module across three source files. These tests can be run in either of two ways:
 * Individually in test folder: Run test file from terminal with `bash <test_file_name>.py` command.
 * Collectively in root folder: Run test.sh file from terminal with `bash test.sh` command.
 
@@ -79,6 +79,26 @@ This was my first time using Python to create visualizations. [Matplotlib docume
 The current project setup requires users to manually download and run it locally  in an IDE, wich limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
 
 The next step to advance this project would be to develop a frontend component. A web app with features allowing users to upload files and make selections would be ideal. Additionally, the app could temporarily cache data to streamline the process.
+
+## Analysis
+
+### Question 1
+
+> Take a look at the file labeled `data/phase0.txt`. Why might we have missing values or values that state "NO DATA" in this dataset? While we are currently ignoring these values, what might be the risk of filtering these values out?
+
+Erroneous data might be due to either problems with the portable monitoring device (e.g. lack of power) or noncompliance from the test subject (e.g. taking monitor off). The current project doesn't track how many values are filtered out from each data file analyzed. This makes it difficult to know the significance of the untracked erroneous data.
+
+### Question 2
+
+> During sleep, we expect maximum heart rate of a phase to be **lower** than the maximum heart rate of all other phases. Observe the visualizations and descriptive statistics that you've calculated. Using these findings, in which phase does sleep occur? Mention numerical details that back your findings.
+
+### Question 3
+
+> During exercise, we expect the maximum heart rate of a phase to be **higher** the maximum heart rate of all other phases. Observe the visualizations and descriptive statistics that you've calculated. Using these findings, in which phase(s) does exercise occur? Mention numerical details that back your findings.
+
+### Question 4
+
+> During regular periods of awake activity, we expect the average heart rate of a phase to be relatively **lower** than the average heart rate of other phases, but we also expect standard deviation to be **higher**. In which phase do we notice this trend?
 
 ## Credits and Contributing
 
