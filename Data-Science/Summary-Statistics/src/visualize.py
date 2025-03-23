@@ -8,7 +8,7 @@ class Visualize():
     image_dir_name = "images"
     
     @staticmethod
-    def line_plot(data: list[int], time_increment: int) -> None:
+    def line_plot(file: str, data: list[int], time_increment: int) -> None:
         time = time_increment*len(data)
 
         # set data values
@@ -20,7 +20,7 @@ class Visualize():
         axes.plot(x, y)
 
         # label data
-        axes.set(xlabel='Time (minutes)', ylabel='Heart Rate (bpm)', title='Heart Rate Data')
+        axes.set(xlabel="Time (minutes)", ylabel="Heart Rate (bpm)", title=f"Heart Rate Data for {file}")
         axes.grid()
 
         # ensure directory exists to save figure
@@ -28,5 +28,5 @@ class Visualize():
         os.makedirs(images_dir, exist_ok=True)
 
         # save and display plot
-        figure.savefig(os.path.join(images_dir, "lineplot.png"))
-        plt.show()
+        figure.savefig(os.path.join(images_dir, "line_plot.png"))
+        # plt.show() no need to show in this project
