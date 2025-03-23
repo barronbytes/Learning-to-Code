@@ -8,7 +8,7 @@ Feel free to check out the [project here](www.google.com)!
 
 ## Features
 
-* **Backend:** Used <u>JSON</u> for workspace configuration and <u>Python</u> for source code. Project used type hinting and the `unittest`, `os`, and `shutil` modules.
+* **Backend:** Used **JSON** for workspace configuration and **Python** for source code. Project used type hinting and the `unittest`, `os`, and `shutil` modules.
 * **Data Science Tools:** Used `matplotlib` and `numpy`.
 
 ## Prerequisites
@@ -28,9 +28,9 @@ Follow the steps below to correctly setup the project on your local device.
 ### Backend Setup
 
 1. **Clone** the repository
-2. **Delete** the <u>demo folder</u>
-3. **Delete** the <u>.vscode folder</u> *(will be re-created in step 3)*
-4. **Edit JSON settings:** Program files and test files are in different folders. This step helps VS Code autocomplete and resolve imports correctly, reducing any underlining erros caused by missign paths in workspace.
+2. **Delete** the demo folder
+3. **Delete** the .vscode folder *(will be re-created in step 3)*
+4. **Edit JSON settings:** program files and test files are in different folders; this step helps VS Code autocomplete and resolve imports correctly, reducing any underlining erros caused by missign paths in workspace
 
 > Windows/Linux Users:
 > Open the **Command Pallete** (Ctrl+Shift+P) > search for **Preferences: Open Settings (JSON)** > paste and save code shown below
@@ -54,7 +54,7 @@ You can run the program in either of two ways:
 * main.py file inside src folder: Run program from GUI or terminal with `python3 main.py` command.
 * main.sh file at root folder: Run program from terminal with `bash main.sh` command.
 
-**Important:** You will notice that each time the program runs, the <u>images folder</u> is cleared and then repopulated with new files based upon the selected data file for analysis.
+**Important:** You will notice that each time the program runs, the images folder is cleared and then repopulated with new files based upon the selected data file for analysis.
 
 ### Running Test Files
 
@@ -116,7 +116,7 @@ Summary statistics for data files:
 
 > Take a look at the file labeled `data/phase0.txt`. Why might we have missing values or values that state "NO DATA" in this dataset? While we are currently ignoring these values, what might be the risk of filtering these values out?
 
-Erroneous data might be due to either <u>problems with the portable monitoring device</u> (e.g. lack of power) or <u>noncompliance from the test subject</u> (e.g. taking monitor off). The current project doesn't track how many values are filtered out from each data file analyzed. This makes it difficult to know the significance of the untracked erroneous data.
+Erroneous data might be due to either problems with the portable monitoring device (e.g. lack of power) or noncompliance from the test subject (e.g. taking monitor off). The current project doesn't track how many values are filtered out from each data file analyzed. This makes it difficult to know the significance of the untracked erroneous data.
 
 ### Question 2
 
