@@ -1,1 +1,85 @@
-# Summary Statistics
+# Heart Rate Monitoring Data Processing
+
+This project analyzes heart rate data collected in 5-minute intervals from a single study participant wearing a portable monitor. The user can select one of the provided study data files for analysis. The raw data is cleaned to remove erroneous values before calculating summary statistics. Visualizations are generated, including a line plot, box plot, and histogram.
+
+## Live Demo
+
+Feel free to check out the [project here](www.google.com)!
+
+## Features
+
+* **Backend:** Used **JSON** for workspace configuration and **Python** for source code. Project used type hinting and the **`unittest`**, **`os`**, and **`shutil`** modules.
+* **Data Science Tools:** Used **`matplotlib`** and **`numpy`**.
+
+## Prerequisites
+
+Before running this project locally, ensure you have the following installed:
+
+* IDE (VS Code, PyCharm, etc.)
+* Install Python 3.10+ version *> for type hinting compatability*
+* Install Matplotlib: `pip install matplotlib`
+* Install NumPy: `pip install numpy`
+* Bourne Shell compatible OS like Linus or macOS *> to run test runner script that executes all unit tests in project > Windows users should [download WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+## Quick Start
+
+Follow the steps below to correctly setup the project on your local device.
+
+### Backend Setup
+
+1. **Clone** the repository
+2. **Delete** the .vscode folder *(will be re-created in step 3)*
+2. **Edit JSON settings:** Program files and test files are in different folders. This step helps VS Code autocomplete and resolve imports correctly, reducing any underlining erros caused by missign paths in workspace.
+
+> Windows/Linux Users:
+> Open the **Command Pallete** (Ctrl+Shift+P) > search for **Preferences: Open Settings (JSON) > paste and save code shown below
+
+> macOS Users:
+> Open the **Command Pallete** (Cmd+Shift+P) > search for **Preferences: Open Settings (JSON) > paste and save code shown below
+
+```json
+{
+    "python.autoComplete.extraPaths": [
+        "./src"
+    ]
+}
+```
+
+## Usage
+
+### Running Program
+
+You can run the program in either of two ways:
+* main.py file inside src folder: Run program from GUI or terminal with `python3 main.py` command.
+* main.sh file at root folder: Run program from terminal with `bash main.sh` command.
+
+**Important:** You will notice that each time the program runs, the **images folder** is cleared and then repopulated with new files based upon the selected data file for analysis.
+
+### Running Test Files
+
+The project had a total of 12 unit tests pass with the **`unittest`** module across three source files. These tests can be run in either of two ways:
+* Individually in test folder: Run test file from terminal with `bash <test_file_name>.py` command.
+* Collectively in root folder: Run test.sh file from terminal with `bash test.sh` command.
+
+## Development Roadmap
+
+This project was completed in three days.
+
+## Setbacks
+
+This was my first time using Python to create visualizations. [Matplotlib documentation provided online examples](https://matplotlib.org/stable/index.html) that helped me know how to create line plots, box plots, and histograms.
+
+## Successes
+
+* **File Management:** Used `get_file_data.py` and `visualize.py` files to properly locate, create, read, update, and delete directories and files for project needs.
+* **Unit Testing:** 12 tests written and passed for edge cases in 3 Python files.
+
+## Improvements
+
+The current project setup requires users to manually download and run it locally  in an IDE, wich limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
+
+The next step to advance this project would be to develop a frontend component. A web app with features allowing users to upload files and make selections would be ideal. Additionally, the app could temporarily cache data to streamline the process.
+
+## Credits and Contributing
+
+[The Knowledge House](https://www.theknowledgehouse.org/) provided the project requirements and raw data for this project. Contributions are welcome! Feel free to submit a pull request to improve the project or opena  issue to report any problems.
