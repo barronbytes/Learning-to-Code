@@ -12,7 +12,8 @@ def print_results(stats: list[float]) -> None:
         data (list[str]): List of summary statistics.
     '''
     max_num, avg, stdev = stats
-    print(f"\nMaximum HR: {max_num} \nAverage HR: {avg} \nStandard Deviation HR: {stdev}")
+    print(f"\nMaximum HR: {max_num} \nAverage HR: {avg:.2f} \nStandard Deviation HR: {stdev:.2f}")
+
 
 def main():
     '''

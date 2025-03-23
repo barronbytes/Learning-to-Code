@@ -6,7 +6,7 @@ class TestFileHandler(unittest.TestCase):
 
     def setUp(self):
         self.root_dir = GetFileData.root_dir()
-        self.files = ['phase0.txt', 'phase2.txt', 'phase1.txt', 'phase3.txt']
+        self.files = ['phase0.txt', 'phase1.txt', 'phase2.txt', 'phase3.txt']
     
     def test_root_dir(self):
         self.assertEqual(self.root_dir, ".")

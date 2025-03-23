@@ -30,7 +30,8 @@ class GetFileData():
         '''
         data_dir = os.path.join(root_dir, GetFileData.data_dir_name)
         dir_contents = os.listdir(data_dir)
-        return [content for content in dir_contents if os.path.isfile(os.path.join(data_dir, content))]
+        contents = [content for content in dir_contents if os.path.isfile(os.path.join(data_dir, content))]
+        return sorted(contents)
 
 
     @staticmethod   
@@ -47,7 +48,7 @@ class GetFileData():
         options = "\n".join(f"[{i+1}] file=\"{file}\"" for i, file in enumerate(data_files))
         print(options)
         selection = input("\nEnter the file number you want to analyze.\nWill default to '1' for invalid input: ")
-        indices = [str(n) for n in range(0, len(data_files))]
+        indices = [str(n) for n in range(1, len(data_files)+1)]
         index = int(selection)-1 if selection in indices else 0
         return index
 

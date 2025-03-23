@@ -68,16 +68,16 @@ This project was completed in three days with the following project folder struc
 
 <img src="demo/project_structure.PNG" alt="Project folder sturcture has subfolders and files at root" width="60%">
 
-## Setbacks
+### Setbacks
 
 This was my first time using Python to create visualizations. [Matplotlib documentation provided online examples](https://matplotlib.org/stable/index.html) that helped me know how to create line plots, box plots, and histograms.
 
-## Successes
+### Successes
 
 * **File Management:** Used `get_file_data.py` and `visualize.py` files to properly locate, create, read, update, and delete directories and files for project needs.
 * **Unit Testing:** 12 tests written and passed for edge cases in 3 Python files.
 
-## Improvements
+### Improvements
 
 The current project setup requires users to manually download and run it locally  in an IDE, wich limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
 
@@ -90,7 +90,7 @@ Summary statistics for data files:
 | File Name | Maximum HR | Average HR | Standard Deviation HR |
 |-----------|------------|------------|-----------------------|
 | phase0.txt| 93         | 64.59      | 8.53                  |
-| phase1.txt| 110        | 87.30      | 9.9                   |
+| phase1.txt| 110        | 87.30      | 9.90                  |
 | phase2.txt| 117        | 85.18      | 13.38                 |
 | phase3.txt| 99         | 60.65      | 11.00                 |
 
