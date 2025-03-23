@@ -116,19 +116,25 @@ Summary statistics for data files:
 
 > Take a look at the file labeled `data/phase0.txt`. Why might we have missing values or values that state "NO DATA" in this dataset? While we are currently ignoring these values, what might be the risk of filtering these values out?
 
-Erroneous data might be due to either problems with the portable monitoring device (e.g. lack of power) or noncompliance from the test subject (e.g. taking monitor off). The current project doesn't track how many values are filtered out from each data file analyzed. This makes it difficult to know the significance of the untracked erroneous data.
+Erroneous data might be due to either <u>problems with the portable monitoring device</u> (e.g. lack of power) or <u>noncompliance from the test subject</u> (e.g. taking monitor off). The current project doesn't track how many values are filtered out from each data file analyzed. This makes it difficult to know the significance of the untracked erroneous data.
 
 ### Question 2
 
 > During sleep, we expect maximum heart rate of a phase to be **lower** than the maximum heart rate of all other phases. Observe the visualizations and descriptive statistics that you've calculated. Using these findings, in which phase does sleep occur? Mention numerical details that back your findings.
 
+**Phase 0** likely represents **sleep** activity. The 98 bpm maximum heart rate here was lower than all other periods.
+
 ### Question 3
 
 > During exercise, we expect the maximum heart rate of a phase to be **higher** the maximum heart rate of all other phases. Observe the visualizations and descriptive statistics that you've calculated. Using these findings, in which phase(s) does exercise occur? Mention numerical details that back your findings.
 
+**Phases 1 and 2** likely represent **exercise** activity. Data was recorded from an adult male. Only phases 1 and 2 had maximum heart rates of 110 bpm and 117 bpm, respectively, above this normal resting range of 60 to 100 bpm.
+
 ### Question 4
 
 > During regular periods of awake activity, we expect the average heart rate of a phase to be relatively **lower** than the average heart rate of other phases, but we also expect standard deviation to be **higher**. In which phase do we notice this trend?
+
+**Phase 3** likely represents **awake** activity. The 60.65 bpm average heart rate here was lower than all other periods. The standard deviation of 11 bpm was also the second highest.
 
 ## Credits and Contributing
 
