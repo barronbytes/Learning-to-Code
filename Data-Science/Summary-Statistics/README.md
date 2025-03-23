@@ -83,9 +83,15 @@ The current project setup requires users to manually download and run it locally
 
 The next step to advance this project would be to develop a frontend component. A web app with features allowing users to upload files and make selections would be ideal. Additionally, the app could temporarily cache data to streamline the process.
 
-# Results
+## Results
 
-## Visualizations for `phase0.txt` file:
+### Visualizations for `phase0.txt` file:
+
+<img src="demo/phase0_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase0.txt file" width="100%">
+
+### Visualizations for `phase2.txt` file:
+
+<img src="demo/phase2_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase2.txt file" width="100%">
 
 ## Analysis
 
