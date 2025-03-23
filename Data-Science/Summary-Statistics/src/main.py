@@ -13,7 +13,8 @@ def main():
     clean_data = Cleaner(raw_data).brain()
     stats = Metrics().brain(clean_data) if isinstance(clean_data, list) and len(clean_data) >= 1 else [0, 0, 0]
     display_results(stats)
-    Visualize.line_plot(file=file_name, data=clean_data, time_increment=5)
+    Visualize.line_plot(file=file_name, data=clean_data)
+    Visualize.box_plot(file=file_name, data=clean_data)
 
 
 # run main() only when executed directly by main.py, not when imported by other files
