@@ -5,7 +5,7 @@ from metrics import Metrics
 @staticmethod
 def display_results(stats: list[float]) -> str:
     max_num, avg, stdev = stats
-    print(f"Maximum HR: {max_num} \nAverage HR: {avg} \nStandard Deviation HR: {stdev}")
+    print(f"\nMaximum HR: {max_num} \nAverage HR: {avg} \nStandard Deviation HR: {stdev}")
 
 def main():
     raw_data = GetFileData.brain()

@@ -22,7 +22,7 @@ class GetFileData():
         print("These files contain heart rate data:")
         options = "\n".join(f"[{i+1}] file=\"{file}\"" for i, file in enumerate(data_files))
         print(options)
-        selection = input("Enter the file number you want to analyze.\n Will default to '0' for invalid input: ")
+        selection = input("\nEnter the file number you want to analyze.\nWill default to '0' for invalid input: ")
         indices = [str(n) for n in range(0, len(data_files))]
         index = int(selection)-1 if selection in indices else 0
         return index
