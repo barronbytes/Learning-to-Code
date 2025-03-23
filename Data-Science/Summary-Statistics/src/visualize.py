@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import shutil
 
 
 class Visualize():
 
-    image_dir_name = "images"
+    dst_dir_name = "images"
 
     @staticmethod
     def line_plot(file: str, data: list[int], images_dir: str) -> None:
@@ -62,11 +63,19 @@ class Visualize():
 
 
     @staticmethod
-    def brain(file: str, data: list[int]) -> None:
-        # directory for saving data
-        images_dir = os.path.join(os.path.dirname(__file__), "..", Visualize.image_dir_name)
-        os.makedirs(images_dir, exist_ok=True)
+    def create_and_wipe_directory() -> str:
+        dst_path = os.path.join(os.path.dirname(__file__), "..", Visualize.dst_dir_name)
+        os.makedirs(dst_path, exist_ok=True)
+        if os.path.exists(dst_path):
+            shutil.rmtree(dst_path)
+        os.mkdir(dst_path)
+        return dst_path
 
-        Visualize.box_plot(file, data, images_dir)
-        Visualize.line_plot(file, data, images_dir)
-        Visualize.histogram(file, data, images_dir)
+
+    @staticmethod
+    def brain(file: str, data: list[int]) -> None:
+        dst_path = Visualize.create_and_wipe_directory()
+
+        Visualize.box_plot(file, data, dst_path)
+        Visualize.line_plot(file, data, dst_path)
+        Visualize.histogram(file, data, dst_path)
