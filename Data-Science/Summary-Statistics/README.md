@@ -62,6 +62,10 @@ The project had a total of 12 unit tests pass with the `unittest` module across 
 * Individually in test folder: Run test file from terminal with `bash <test_file_name>.py` command.
 * Collectively in root folder: Run test.sh file from terminal with `bash test.sh` command.
 
+### Uploading New Data
+
+The program can handle new raw data uploads! Just make sure to you upload `.txt` files that save individual heart rate measurements on separate lines.
+
 ## Development Roadmap
 
 This project was completed in three days with the following project folder structure:

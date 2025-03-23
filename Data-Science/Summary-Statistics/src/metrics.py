@@ -64,6 +64,18 @@ class Metrics():
         sigma = Metrics.variance(data)
         return round(sigma**0.5, 2)
 
+
+    @staticmethod
+    def print_results(stats: list[float]) -> None:
+        '''
+        Unpacks list of input summary statistics to print.
+
+        Parameters:
+            data (list[str]): List of summary statistics.
+        '''
+        max_num, avg, stdev = stats
+        print(f"\nMaximum HR: {max_num} \nAverage HR: {avg:.2f} \nStandard Deviation HR: {stdev:.2f}")
+
    
     @staticmethod
     def brain(data: list) -> list[float]:
