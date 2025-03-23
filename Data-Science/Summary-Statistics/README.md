@@ -85,13 +85,30 @@ The next step to advance this project would be to develop a frontend component. 
 
 ## Results
 
+Summary statistics for data files:
+
+| File Name | Maximum HR | Average HR | Standard Deviation HR |
+|-----------|------------|------------|-----------------------|
+| phase0.txt| 93         | 64.59      | 8.53                  |
+| phase1.txt| 110        | 87.30      | 9.9                   |
+| phase2.txt| 117        | 85.18      | 13.38                 |
+| phase3.txt| 99         | 60.65      | 11.00                 |
+
 ### Visualizations for `phase0.txt` file:
 
 <img src="demo/phase0_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase0.txt file" width="100%">
 
+### Visualizations for `phase1.txt` file:
+
+<img src="demo/phase1_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase1.txt file" width="100%">
+
 ### Visualizations for `phase2.txt` file:
 
 <img src="demo/phase2_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase2.txt file" width="100%">
+
+### Visualizations for `phase3.txt` file:
+
+<img src="demo/phase3_visualizations.PNG" alt="Created line plot, box plot, and histogram for phase3.txt file" width="100%">
 
 ## Analysis
 
