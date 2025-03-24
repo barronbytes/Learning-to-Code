@@ -4,7 +4,7 @@ This project analyzes heart rate data collected in 5-minute intervals from a sin
 
 ## Live Demo
 
-The media file demonstrates the program in action. After the user selects a file for analysis, the images folder is cleared and replaced with the analysis results.
+Feel free to check out a better view of the [project here](https://barronbytes.github.io/Summary-Statistics/)!
 
 <img src="demo/full_demo.gif" />
 
