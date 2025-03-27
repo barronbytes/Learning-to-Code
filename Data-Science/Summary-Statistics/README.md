@@ -134,7 +134,7 @@ Erroneous data might be due to either problems with the portable monitoring devi
 
 > During exercise, we expect the maximum heart rate of a phase to be **higher** the maximum heart rate of all other phases. Observe the visualizations and descriptive statistics that you've calculated. Using these findings, in which phase(s) does exercise occur? Mention numerical details that back your findings.
 
-**Phases 1 and 2** likely represent **exercise** activity. Data was recorded from an adult male. Only phases 1 and 2 had maximum heart rates of 110 bpm and 117 bpm, respectively, above this normal resting range of 60 to 100 bpm.
+**Phases 1 and 2** likely represent **exercise** activity. Data was recorded from a healthy male with an expected normal resting heart rate of 60-100 bpm. Only phases 1 and 2 had maximum heart rates above the normal range, reaching 110 bpm and 117 bpm, respectively.
 
 ### Question 4
 
