@@ -85,7 +85,7 @@ This was my first time using Python to create visualizations. [Matplotlib docume
 
 ### Improvements
 
-The current project setup requires users to manually download and run it locally  in an IDE, wich limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
+The current project setup requires users to manually download and run it locally  in an IDE, which limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
 
 The next step to advance this project would be to develop a frontend component. A web app with features allowing users to upload files and make selections would be ideal. Additionally, the app could temporarily cache data to streamline the process.
 
