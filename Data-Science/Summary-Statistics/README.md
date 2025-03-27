@@ -31,8 +31,8 @@ Follow the steps below to correctly setup the project on your local device.
 
 1. **Clone** the repository
 2. **Delete** the demo folder
-3. **Delete** the .vscode folder *(will be re-created in step 3)*
-4. **Edit JSON settings:** program files and test files are in different folders; this step helps VS Code autocomplete and resolve imports correctly, reducing any underlining erros caused by missign paths in workspace
+3. **Delete** the .vscode folder *(will be re-created in step 4)*
+4. **Edit JSON settings:** program files and test files are in different folders; this step helps VS Code autocomplete and resolve imports correctly, reducing any underlining errors caused by missing paths in workspace
 
 > Windows/Linux Users:
 > Open the **Command Pallete** (Ctrl+Shift+P) > search for **Preferences: Open Settings (JSON)** > paste and save code shown below
