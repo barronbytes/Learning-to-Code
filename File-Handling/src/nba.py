@@ -8,7 +8,7 @@ import copy
 src_dir = os.path.dirname(os.path.relpath(__file__))
 csv_input_path = os.path.join(src_dir, "../data_csv/nba.csv")
 csv_output_path = os.path.join(src_dir, "../data_csv/nba_new.csv")
-json_output_path = os.path.join(src_dir, "../data_json/nba.json")
+json_output_path = os.path.join(src_dir, "../data_json/nba_new.json")
 
 
 # deserialize data (read file)
