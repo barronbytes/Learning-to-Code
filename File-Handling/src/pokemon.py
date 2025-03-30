@@ -4,14 +4,14 @@ import json
 import copy
 
 
-# paths for reading original JSON file and creating new JSON and CSV files
+# JSON -> read, update -> create CSV
 root_dir = os.path.dirname(os.path.relpath(__file__))
 json_input_path = os.path.join(root_dir, "../data_json/pokemon.json")
 json_output_path = os.path.join(root_dir, "../data_json/pokemon_new.json")
 csv_output_path = os.path.join(root_dir, "../data_csv/pokemon_new.csv")
 
 
-# deserialize data (read JSON file)
+# deserialize data (read file)
 def read_data(file_path: str) -> dict:
     with open(file_path, mode="r") as file:
         data = json.load(file)
@@ -31,14 +31,14 @@ def update_data(data: str) -> dict:
     return data
 
 
-# serialize data (create JSON file)
+# serialize data (create file)
 def create_data(data: dict, file_path: str) -> None:
     with open(file_path, mode="w") as file:
         json.dump(data, file, indent=4)
 
 
-# create CSV file from JSON file
-def _to_csv(data: dict, file_path: str) -> None:
+# convert file type
+def map_to_csv(data: dict, file_path: str) -> None:
     with open(file_path, mode="w", newline="") as file:
         pokemon_types = list(data.keys())
         fieldnames = list(data[pokemon_types[0]].keys())
@@ -57,7 +57,7 @@ def _to_csv(data: dict, file_path: str) -> None:
 raw_data = read_data(json_input_path)
 updated_data = update_data(copy.deepcopy(raw_data))
 create_data(updated_data, json_output_path)
-_to_csv(raw_data["types"], csv_output_path)
+map_to_csv(updated_data["types"], csv_output_path)
 
 
 # print values
