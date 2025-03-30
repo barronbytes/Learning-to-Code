@@ -5,10 +5,10 @@ import copy
 
 
 # CSV -> read, update -> create JSON
-root_dir = os.path.dirname(os.path.relpath(__file__))
-csv_input_path = os.path.join(root_dir, "../data_csv/nba.csv")
-csv_output_path = os.path.join(root_dir, "../data_csv/nba_new.csv")
-json_output_path = os.path.join(root_dir, "../data_json/nba.json")
+src_dir = os.path.dirname(os.path.relpath(__file__))
+csv_input_path = os.path.join(src_dir, "../data_csv/nba.csv")
+csv_output_path = os.path.join(src_dir, "../data_csv/nba_new.csv")
+json_output_path = os.path.join(src_dir, "../data_json/nba.json")
 
 
 # deserialize data (read file)
@@ -33,7 +33,14 @@ def create_data(data: list[list[str]], file_path: str) -> None:
         writer.writerows(data)
 
 
+# convert file type
+def map_to_csv(data: dict, file_path: str) -> None:
+    with open(file_path, mode="w", newline="") as file:
+        pass
+
+
 # CRUd functions + convert file type
 raw_data = read_data(csv_input_path)
 updated_data = update_data(copy.deepcopy(raw_data))
 create_data(updated_data, csv_output_path)
+map_to_csv(updated_data, json_output_path)

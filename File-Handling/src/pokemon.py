@@ -5,10 +5,10 @@ import copy
 
 
 # JSON -> read, update -> create CSV
-root_dir = os.path.dirname(os.path.relpath(__file__))
-json_input_path = os.path.join(root_dir, "../data_json/pokemon.json")
-json_output_path = os.path.join(root_dir, "../data_json/pokemon_new.json")
-csv_output_path = os.path.join(root_dir, "../data_csv/pokemon_new.csv")
+src_dir = os.path.dirname(os.path.relpath(__file__))
+json_input_path = os.path.join(src_dir, "../data_json/pokemon.json")
+json_output_path = os.path.join(src_dir, "../data_json/pokemon_new.json")
+csv_output_path = os.path.join(src_dir, "../data_csv/pokemon_new.csv")
 
 
 # deserialize data (read file)
