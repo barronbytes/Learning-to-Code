@@ -38,15 +38,12 @@ def map_to_json(data: dict, file_path: str) -> None:
     headers = data[0]
     rows = data[1:]
     json_data = {"nba_teams": {}}
-
     for idx, row in enumerate(rows, start=1):  # start with index 1 for team ids
         team_id = str(idx)
-        json_data["nba_teams"][team_id] = {
-            "Team": row[0].strip(),
-            "Conference": row[1].strip(),
-            "Championships": row[2].strip()
-        }
-
+        team_data = {}
+        for team_key, team_value in zip(headers, row):
+            team_data[team_key.strip()] = team_value.strip()
+        json_data["nba_teams"][team_id] = team_data
     with open(file_path, mode="w", newline="") as file:
         json.dump(json_data, file, indent=4)
 

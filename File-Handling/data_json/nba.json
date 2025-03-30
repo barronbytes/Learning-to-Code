@@ -2,27 +2,27 @@
     "nba_teams": {
         "1": {
             "Team": "Los Angeles Lakers",
-            "Conference": "West",
+            "Conferenence": "West",
             "Championships": "17"
         },
         "2": {
             "Team": "Boston Celtics",
-            "Conference": "East",
+            "Conferenence": "East",
             "Championships": "17"
         },
         "3": {
             "Team": "Golden State Warriors",
-            "Conference": "West",
+            "Conferenence": "West",
             "Championships": "7"
         },
         "4": {
             "Team": "Chicago Bulls",
-            "Conference": "East",
+            "Conferenence": "East",
             "Championships": "6"
         },
         "5": {
             "Team": "San Antonio Spurs",
-            "Conference": "West",
+            "Conferenence": "West",
             "Championships": "5"
         }
     }
