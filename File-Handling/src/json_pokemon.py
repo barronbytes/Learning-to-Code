@@ -1,11 +1,14 @@
+import os
 import csv
 import json
 import copy
 
 
-json_file_path = "pokemon_types.json"
-json_file_path_2 = "pokemon_types_2.json"
-csv_file_path = "pokemon_types.csv"
+# paths for reading original JSON file and creating new JSON and CSV files
+root_dir = os.path.dirname(os.path.relpath(__file__))
+json_input_path = os.path.join(root_dir, "../data_json/pokemon.json")
+json_output_path = os.path.join(root_dir, "../data_json/pokemon_new.json")
+csv_output_path = os.path.join(root_dir, "../data_csv/pokemon_new.csv")
 
 
 # deserialize data (read JSON file)
@@ -51,10 +54,10 @@ def _to_csv(data: dict, file_path: str) -> None:
             
 
 # CRUd functions + convert file type
-raw_data = read_data(json_file_path)
+raw_data = read_data(json_input_path)
 updated_data = update_data(copy.deepcopy(raw_data))
-create_data(updated_data, json_file_path_2)
-_to_csv(raw_data["types"], csv_file_path)
+create_data(updated_data, json_output_path)
+_to_csv(raw_data["types"], csv_output_path)
 
 
 # print values
