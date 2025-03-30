@@ -34,13 +34,25 @@ def create_data(data: list[list[str]], file_path: str) -> None:
 
 
 # convert file type
-def map_to_csv(data: dict, file_path: str) -> None:
+def map_to_json(data: dict, file_path: str) -> None:
+    headers = data[0]
+    rows = data[1:]
+    json_data = {"nba_teams": {}}
+
+    for idx, row in enumerate(rows, start=1):  # start with index 1 for team ids
+        team_id = str(idx)
+        json_data["nba_teams"][team_id] = {
+            "Team": row[0].strip(),
+            "Conference": row[1].strip(),
+            "Championships": row[2].strip()
+        }
+
     with open(file_path, mode="w", newline="") as file:
-        pass
+        json.dump(json_data, file, indent=4)
 
 
 # CRUd functions + convert file type
 raw_data = read_data(csv_input_path)
 updated_data = update_data(copy.deepcopy(raw_data))
 create_data(updated_data, csv_output_path)
-map_to_csv(updated_data, json_output_path)
+map_to_json(updated_data, json_output_path)
