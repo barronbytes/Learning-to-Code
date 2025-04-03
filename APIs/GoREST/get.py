@@ -20,4 +20,4 @@ for i in range(1, MAX_ATTEMPTS+1):
         print(f"Attempt {i} failed: {e}")
 
 
-print(f"{data}")
+print(f"Get method: {data}")
