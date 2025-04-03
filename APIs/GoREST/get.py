@@ -10,7 +10,7 @@ request_url = config.get_request_url()
 
 for i in range(1, MAX_ATTEMPTS+1):
     try:
-        response = requests.get(request_url, timeout=TIMEOUT)
+        response = requests.get(url=request_url, timeout=TIMEOUT)
         data = response.json()
         break
     except (requests.exceptions.HTTPError, 

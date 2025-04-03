@@ -4,7 +4,7 @@ import config
 
 request_url = config.get_request_url()
 headers = {
-    "Authorization": f"Bearar {config.get_access_token()}"
+    "Authorization": f"Bearer {config.get_access_token()}"
 }
 
 
