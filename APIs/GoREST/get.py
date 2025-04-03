@@ -1,6 +1,5 @@
 import requests
 import config
-import time
 
 
 MAX_ATTEMPTS = 3

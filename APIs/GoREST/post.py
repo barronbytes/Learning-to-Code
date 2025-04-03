@@ -9,17 +9,17 @@ headers = {
 
 
 def ask_data() -> dict[str, str]:
-    url = input("Enter name: ")
+    name = input("Enter name: ")
     email = input("Enter email: ")
     gender = input("Enter gender as 'male' or 'female' without spaces: ")
     status = input("Enter status as 'active' or 'inactive' without spaces: ")
     gender = "male" if gender.lower() == "male" else "female"
     status = "active" if gender.lower() == "active" else "inactive"
     return {
-        "url": url,
+        "name": name,
         "email": email,
         "gender": gender,
-        "status": status,
+        "status": status
     }
 
 
@@ -29,3 +29,5 @@ def brain() -> None:
 
 
 brain()
+# Post method: {'id': 7812403, 'name': "No'El Tercero", 'email': 'noel@gmail.com', 'gender': 'male', 'status': 'inactive'}
+# Post method: {'id': 7812488, 'name': "No'Elle Tercero", 'email': 'noelle@gmail.com', 'gender': 'female', 'status': 'inactive'}
