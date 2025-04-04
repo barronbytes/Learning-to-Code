@@ -7,9 +7,10 @@ VERSION = "v2/"
 ENDPOINT = "users/"
 
 
-def get_access_token():
-    return os.getenv("API_GOREST")
-
-
 def get_request_url():
     return BASE_URL + BASE_PATH + VERSION + ENDPOINT
+
+
+def get_headers():
+    token = os.getenv("API_GOREST")
+    return { "Authorization": f"Bearer {token}" }

@@ -3,9 +3,7 @@ import config
 
 
 request_url = config.get_request_url()
-headers = {
-    "Authorization": f"Bearer {config.get_access_token()}"
-}
+headers = config.get_headers()
 
 
 def ask_data() -> dict[str, str]:
@@ -31,3 +29,4 @@ def brain() -> None:
 brain()
 # Post method: {'id': 7812403, 'name': "No'El Tercero", 'email': 'noel@gmail.com', 'gender': 'male', 'status': 'inactive'}
 # Post method: {'id': 7812488, 'name': "No'Elle Tercero", 'email': 'noelle@gmail.com', 'gender': 'female', 'status': 'inactive'}
+# Post method: {'id': 7812543, 'name': 'Ella Bella', 'email': 'ella@bella.com', 'gender': 'female', 'status': 'inactive'}
