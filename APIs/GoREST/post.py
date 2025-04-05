@@ -21,12 +21,12 @@ def ask_data() -> dict[str, str]:
     }
 
 
-def brain() -> None:
-    response = requests.post(url= request_url, data= ask_data(), headers= headers)
+def post_by_entity(data: dict[str, str]) -> None:
+    response = requests.post(url=request_url, data=data, headers=headers)
     print(f"Post method: {response.json()}")
 
 
-brain()
+post_by_entity(ask_data())
 # Post method: {'id': 7812403, 'name': "No'El Tercero", 'email': 'noel@gmail.com', 'gender': 'male', 'status': 'inactive'}
 # Post method: {'id': 7812488, 'name': "No'Elle Tercero", 'email': 'noelle@gmail.com', 'gender': 'female', 'status': 'inactive'}
 # Post method: {'id': 7812543, 'name': 'Ella Bella', 'email': 'ella@bella.com', 'gender': 'female', 'status': 'inactive'}
