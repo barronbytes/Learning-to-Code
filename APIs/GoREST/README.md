@@ -24,8 +24,8 @@ The following modules from the `requests` module perform CRUD operations:
 
 The following best practices were used:
 
-* **config.py**: Prevented API key exposure via environmental variable use.
-* **get.py**: Used try-catch block to `get()` errors.
+* **config.py**: Prevented API key exposure via **environmental variable** use.
+* **get.py**: Used try-catch block to handle `get()` method errors.
 
 ## Credits
 
