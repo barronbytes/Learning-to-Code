@@ -15,30 +15,10 @@ Before running this project locally, ensure you have the following installed:
 
 ## Requests Module: CRUD Operations
 
-**Create** data with the `post` method:
-
-```python
-    r = requests.post(url, headers, data)
-```
-
-**Read** data with the `get` method:
-
-```python
-    r = requests.get(url)
-    data = r.json()
-```
-
-**Update** data with the `put` method:
-
-```python
-    r = requests.put(url, headers, data)
-```
-
-**Delete** data with the `delete` method:
-
-```python
-    r = requests.delete(url, headers)
-```
+* **Create**: `r = requests.post(url, headers, data)`
+* **Read**: `r = requests.get(url)`, `data = r.json()`
+* **Update**: `r = requests.put(url, headers, data)`
+* **Delete**: `r = requests.delete(url, headers)`
 
 ## Credits
 
