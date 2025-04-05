@@ -1,19 +1,19 @@
 # File Handling
 
-Data can be stored in different formats, and this repository demonstrates how to read, write, and convert between them. The project files use the modules `os`, `csv`, `json`, and `copy` to handle the data operations.
+Data can be stored in different formats, and this mini-project demonstrates how to read, write, and convert between them. The project files use the modules `os`, `csv`, `json`, and `copy` to handle CRUD operations.
 
-## CSV Data
+## Lessons Learned
 
-The **nba.py** file was used to do the following:
+The **src** folder contains files that modify data saved inside subfolders.
+
+**nba.py:** This file reads CSV data, updates CSV data, and converts to JSON data. Relevant methods:
+* **create_data():** Write file with `csv.writer()` and `writer.writerows()` methods.
 * **read_data():** Read file with `csv.reader()` method.
 * **update_data():** Create `deep copy` of orignal data to update.
-* **create_data():** Write file with `csv.writer()` and `writer.writerows()` methods.
 * **map_to_json():** Uses `json.dump()` method for JSON data conversion.
 
-## JSON Data
-
-The **pokemon.py** file was used to do the following:
+**pokemon.py:** This file reads JSON data, updates JSON data, and converts to CSV data. Relevant methods:
+* **create_data():** Write file with `json.dump()` method.
 * **read_data():** Read file with `json.load()` method.
 * **update_data():** Create `deep copy` of orignal data to update.
-* **create_data():** Write file with `json.dump()` method.
 * **map_to_csv():** Uses `csv.DictWriter()`, `writer.writeheader()`, and `writer.writerows()` methods for CSV data conversion.
