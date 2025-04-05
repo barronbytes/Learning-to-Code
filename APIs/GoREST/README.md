@@ -13,12 +13,19 @@ Before running this project locally, ensure you have the following installed:
 * Install Python 3.10+ version > for type hinting compatability
 * Install requests module: `python3 -m pip install requests`
 
-## Requests Module: CRUD Operations
+## Lessons Learned
+
+The following modules from the `requests` module perform CRUD operations:
 
 * **Create**: `r = requests.post(url, headers, data)`
 * **Read**: `r = requests.get(url)`, `data = r.json()`
 * **Update**: `r = requests.put(url, headers, data)`
 * **Delete**: `r = requests.delete(url, headers)`
+
+The following best practices were used:
+
+* **config.py**: Prevented API key exposure via environmental variable use.
+* **get.py**: Used try-catch block to `get()` errors.
 
 ## Credits
 
