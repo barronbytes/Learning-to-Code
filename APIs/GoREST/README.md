@@ -13,9 +13,15 @@ Before running this project locally, ensure you have the following installed:
 * Install Python 3.10+ version > for type hinting compatability
 * Install requests module: `python3 -m pip install requests`
 
-# Requests Module: CRUD Operations
+## Requests Module: CRUD Operations
 
-**Create** data with the `get` method:
+**Create** data with the `post` method:
+
+```python
+    r = requests.post(url, headers, data)
+```
+
+**Read** data with the `get` method:
 
 ```python
     r = requests.get(url)
@@ -25,7 +31,13 @@ Before running this project locally, ensure you have the following installed:
 **Update** data with the `put` method:
 
 ```python
-    r = requests.put(url=request_url, headers=headers, data=payload)
+    r = requests.put(url, headers, data)
+```
+
+**Delete** data with the `delete` method:
+
+```python
+    r = requests.delete(url, headers)
 ```
 
 ## Credits

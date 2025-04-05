@@ -21,8 +21,8 @@ def ask_data() -> dict[str, str]:
     }
 
 
-def post_by_entity(data: dict[str, str]) -> None:
-    response = requests.post(url=request_url, data=data, headers=headers)
+def post_by_entity(payload: dict[str, str]) -> None:
+    response = requests.post(url=request_url, headers=headers, data=payload)
     print(f"Post method: {response.json()}")
 
 
