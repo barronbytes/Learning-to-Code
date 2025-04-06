@@ -1,6 +1,6 @@
-# Polling App
+# Polling System Project
 
-This mini-project allowed me to use Django for the first time to create a polling app.
+This mini-project allowed me to use Django for the first time to create a polling system.
 
 ## Prerequisites
 
@@ -17,11 +17,13 @@ Follow the steps below to correctly setup the project on your local device.
 ### Project Setup
 
 1. Go to root directory
-2. Create folder for project
-3. Start project: `django-admin startproject <app_name> <app_folder>`
+2. Create subfolder: `mkdir <directory_name>`
+3. Create project: `django-admin startproject <project_name> <directory_name>`
+4. Development server: `python3 manage.py runserver`
+5. Create app: `python3 manage.py startapp polls`
 
 ## Credits
 
 The following resources helped me complete this project:
 
-* [Django (Getting Started)](https://docs.djangoproject.com/en/5.2/intro/): Tutorial walkthroughs for app. 
+* [Django (Getting Started)](https://docs.djangoproject.com/en/5.2/intro/): Tutorial walkthroughs for app.
