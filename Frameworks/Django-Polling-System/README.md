@@ -26,7 +26,7 @@ A basic view was then created by updating the `polls/view.py`, `polls/urls.py`, 
 
 It's important to know that Django exposes a secret key inside `mysite/settings.py` by default. If this wasn't simply a project saved locally, then it would be important to hide this value, preferabbly as an environmental variable. 
 
-### Part 2: Models & Database Setup
+### Part 2: Connecting Models & Databases
 
 1. Database setup: `python3 manage.py migrate`
 2. Creating models: update `polls/models.py`
@@ -37,11 +37,17 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 7. Register model on admin interface: update `polls/admin.py`
 8. User admin database interface: `python3 manage.py runserver`
 
-### Part 3: Write Views
+### Part 3: Connecting URLs, Views, and Templates
 
 1. Intended urls: update `polls/urls.py` -> added namespace `app_name` to URLconf
-2. Create views: update `polls/views.py` -> the `django.shortcuts.render()` method used to load pages -> the `django.shortcuts.get_object_or_404()` method used to handle Http404 exceptions
-3. HTML pages: create `polls/templates/polls` directory -> created HTML pages for views -> avoid hardcoding URLs
+2. Update views: update `polls/views.py` -> the `django.shortcuts.render()` method used to load pages -> the `django.shortcuts.get_object_or_404()` method used to handle Http404 exceptions
+3. HTML pages: create `polls/templates/polls` directory -> created HTML pages for views with Django Template Language (DTL) -> avoid hardcoding URLs
+
+### Part 4: Forms & Generic Views
+
+1. Created form: updated `detail.html` -> protected against Cross Site Request Forgeries (csrf)
+2. Handle redirects: updated vote() view -> used `HttpResponseRedirect()` method
+3. Used generic views -> `generic.DetailView` needs model, template name -> `generic.ListView` needs model, template name, and context
 
 ## Credits
 
