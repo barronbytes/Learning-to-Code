@@ -14,7 +14,7 @@ Before running this project locally, ensure you have the following installed:
 
 Follow the steps below to correctly setup the project on your local device.
 
-### Project Setup
+### Project Setup (If From Scratch)
 
 1. Go to root directory
 2. Create subfolder: `mkdir <directory_name>`
