@@ -51,7 +51,7 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 
 ### Part 5: Testing
 
-1. ...
+Edge cases were considered in the `polls/tests.py` file using Dgango's built-in test module. Testing was limited. Diving deeper into testing might include using `LiveServerTestCase` to integrate Django with tools like **Selenium** to test in-browser HTML rendering.
 
 ## Credits
 
