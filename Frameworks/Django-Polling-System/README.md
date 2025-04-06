@@ -53,6 +53,10 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 
 Edge cases were considered in the `polls/tests.py` file using Dgango's built-in test module. Testing was limited. Diving deeper into testing might include using `LiveServerTestCase` to integrate Django with tools like **Selenium** to test in-browser HTML rendering.
 
+### Part 6: Static Files
+
+Created `polls/static` directory and filed it with CSS and image assets.
+
 ## Credits
 
 The following resources helped me complete this project:
