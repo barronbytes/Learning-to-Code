@@ -49,6 +49,10 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 2. Handle redirects: updated vote() view -> used `HttpResponseRedirect()` method
 3. Used generic views -> `generic.DetailView` needs model, template name -> `generic.ListView` needs model, template name, and context
 
+### Part 5: Testing
+
+1. ...
+
 ## Credits
 
 The following resources helped me complete this project:
