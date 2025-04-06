@@ -26,15 +26,21 @@ A basic view was then created by updating the `polls/view.py`, `polls/urls.py`, 
 
 It's important to know that Django exposes a secret key inside `mysite/settings.py` by default. If this wasn't simply a project saved locally, then it would be important to hide this value, preferabbly as an environmental variable. 
 
-### Part 2: Model & Database Setup
+### Part 2: Models & Database Setup
 
 1. Database setup: `python3 manage.py migrate`
 2. Creating models: update `polls/models.py`
 3. Activating models: edit INSTALLED_APPS in `mysite/settings.py`, run `python3 manage.py makemigrations polls`
 4. Apply models to database: `python3 manage.py migrate`
-5. Create admin user: `python3 manage.py createsuperuser`
-6. Register model on admin interface: update `polls/admin.py`
-7. User admin database interface: `python3 manage.py runserver`
+5. Console API model interaction: `python3 manage.py shell`
+6. Create admin user: `python3 manage.py createsuperuser`
+7. Register model on admin interface: update `polls/admin.py`
+8. User admin database interface: `python3 manage.py runserver`
+
+### Part 3:
+
+1. Views: update `polls/views.py`
+2. Templates: create in `polls/templates/polls` directory
 
 ## Credits
 
