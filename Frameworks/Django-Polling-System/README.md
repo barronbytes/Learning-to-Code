@@ -39,23 +39,24 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 
 ### Part 3: Connecting URLs, Views, and Templates
 
-1. Intended urls: update `polls/urls.py` -> added namespace `app_name` to URLconf
-2. Update views: update `polls/views.py` -> the `django.shortcuts.render()` method used to load pages -> the `django.shortcuts.get_object_or_404()` method used to handle Http404 exceptions
-3. HTML pages: create `polls/templates/polls` directory -> created HTML pages for views with Django Template Language (DTL) -> avoid hardcoding URLs
+1. Intended urls: update `polls/urls.py` > added namespace `app_name` to URLconf
+2. Update views: update `polls/views.py` > the `django.shortcuts.render()` method used to load pages > the `django.shortcuts.get_object_or_404()` method used to handle Http404 exceptions
+3. HTML pages: create `polls/templates/polls` directory > created HTML pages for views with Django Template Language (DTL) > avoid hardcoding URLs
 
 ### Part 4: Forms & Generic Views
 
-1. Created form: updated `detail.html` -> protected against Cross Site Request Forgeries (csrf)
-2. Handle redirects: updated vote() view -> used `HttpResponseRedirect()` method
-3. Used generic views -> `generic.DetailView` needs model, template name -> `generic.ListView` needs model, template name, and context
+1. Created form: updated `detail.html` > protected against Cross Site Request Forgeries (csrf)
+2. Handle redirects: updated vote() view > used `HttpResponseRedirect()` method
+3. Generic views: `generic.DetailView` needs model, template name > `generic.ListView` needs model, template name, and context
 
 ### Part 5: Testing
 
 Edge cases were considered in the `polls/tests.py` file using Dgango's built-in test module. Testing was limited. Diving deeper into testing might include using `LiveServerTestCase` to integrate Django with tools like **Selenium** to test in-browser HTML rendering.
 
-### Part 6: Static Files
+### Part 6: Static Files & Admin Panel
 
-Created `polls/static` directory and filed it with CSS and image assets.
+1. Static files: created `polls/static` directory > saved CSS and image assets
+2. Admin panel: updated `polls/admin.py` and `polls/models.py` > updated `mysite/settings.py` value for DIRS key inside TEMPLATES list > created `templates/admin/base_site.html` directory and file to overwrite admin temmplate
 
 ## Credits
 
