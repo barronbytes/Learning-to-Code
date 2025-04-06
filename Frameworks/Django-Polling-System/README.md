@@ -37,10 +37,11 @@ It's important to know that Django exposes a secret key inside `mysite/settings.
 7. Register model on admin interface: update `polls/admin.py`
 8. User admin database interface: `python3 manage.py runserver`
 
-### Part 3:
+### Part 3: Write Views
 
-1. Views: update `polls/views.py`
-2. Templates: create in `polls/templates/polls` directory
+1. Intended urls: update `polls/urls.py` -> added namespace `app_name` to URLconf
+2. Create views: update `polls/views.py` -> the `django.shortcuts.render()` method used to load pages -> the `django.shortcuts.get_object_or_404()` method used to handle Http404 exceptions
+3. HTML pages: create `polls/templates/polls` directory -> created HTML pages for views -> avoid hardcoding URLs
 
 ## Credits
 
