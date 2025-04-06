@@ -10,17 +10,21 @@ Before running this project locally, ensure you have the following installed:
 * Install Python 3.10+ version > for type hinting compatability
 * Install Django ([click here for instructions](https://www.djangoproject.com/))
 
-## Quick Start
+## Lessons Learned
 
-Follow the steps below to correctly setup the project on your local device.
+This project was completed in several phases:
 
-### Project Setup (If From Scratch)
+### Part 1: Project setup
 
 1. Go to root directory
 2. Create subfolder: `mkdir <directory_name>`
 3. Create project: `django-admin startproject <project_name> <directory_name>`
 4. Development server: `python3 manage.py runserver`
 5. Create app: `python3 manage.py startapp polls`
+
+A basic view was then created by updating the `polls/view.py`, `polls/urls.py`, and `mysite/urls.py` files.
+
+It's important to know that Django exposes a secret key inside `mysite/settings.py` by default. If this wasn't simply a project saved locally, then it would be important to hide this value, preferabbly as an environmental variable. 
 
 ## Credits
 
