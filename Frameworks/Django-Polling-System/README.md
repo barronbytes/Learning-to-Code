@@ -14,7 +14,7 @@ Before running this project locally, ensure you have the following installed:
 
 This project was completed in several phases:
 
-### Part 1: Project setup
+### Part 1: Project Setup
 
 1. Go to root directory
 2. Create subfolder: `mkdir <directory_name>`
@@ -25,6 +25,16 @@ This project was completed in several phases:
 A basic view was then created by updating the `polls/view.py`, `polls/urls.py`, and `mysite/urls.py` files.
 
 It's important to know that Django exposes a secret key inside `mysite/settings.py` by default. If this wasn't simply a project saved locally, then it would be important to hide this value, preferabbly as an environmental variable. 
+
+### Part 2: Model & Database Setup
+
+1. Database setup: `python3 manage.py migrate`
+2. Creating models: update `polls/models.py`
+3. Activating models: edit INSTALLED_APPS in `mysite/settings.py`, run `python3 manage.py makemigrations polls`
+4. Apply models to database: `python3 manage.py migrate`
+5. Create admin user: `python3 manage.py createsuperuser`
+6. Register model on admin interface: update `polls/admin.py`
+7. User admin database interface: `python3 manage.py runserver`
 
 ## Credits
 
