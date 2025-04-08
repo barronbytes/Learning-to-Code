@@ -17,6 +17,8 @@ This project used "lxml" as a parser for educational purposes. However, this is 
 
 The site [toscrape.com](https://toscrape.com/) offers static content for web scraping practice. [I scraped a quotes page](https://quotes.toscrape.com/) using two alternative approaches with BeautifulSoup that yielded identical results: (1) the `find` method based on attribute-value pairs, and (2) the `select_one` method based on CSS selectors.
 
+![Website before scraping can be scraped with Python for desired results.](demo/demo.PNG)
+
 ## Credits & Continuation
 
 The following resources helped me get started:
