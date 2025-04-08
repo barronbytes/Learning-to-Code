@@ -14,7 +14,7 @@ Before running this project locally, ensure you have the following installed:
 
 This tutorial taught me the steps to take during different phases of Django development. The highlights below outline the actions taken across six parts of this mini-project. The final project structure resembled the image below:
 
-![Project folder structure](demo/project_structure.PNG)
+<img src="demo/project_structure.PNG" alt="Project folder structure" width="80%">
 
 ### Part 1: Project Setup
 
