@@ -13,6 +13,10 @@ Before running this project locally, ensure you have the following installed:
 
 This project used "lxml" as a parser for educational purposes. However, this is an optional step. You can instead use the built-in BeautifulSoup parser of "html.parser" if you prefer.
 
+## Lesssons Learned
+
+The site [toscrape.com](https://toscrape.com/) offers static content for web scraping practice. [I scraped a quotes page](https://quotes.toscrape.com/) using two alternative approaches with BeautifulSoup that yielded identical results: (1) the `find` method based on attribute-value pairs, and (2) the `select_one` method based on CSS selectors.
+
 ## Credits & Continuation
 
 The following resources helped me get started:
