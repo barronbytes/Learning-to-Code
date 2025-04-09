@@ -20,7 +20,8 @@ class Pagination():
 
 
     @staticmethod
-    def scrape_prices(soup: bs) -> list[str]:
+    def scrape_prices(url: str) -> list[str]:
+        soup = Pagination.create_soup(url)
         parent_tags = soup.select("div.caption")
         price_tags = [pt.select_one("span[itemprop='price']") for pt in parent_tags] # cannot use span.price !!!
         return [pt.text.strip() for pt in price_tags]
@@ -38,4 +39,5 @@ class Pagination():
         page_count = Pagination().calc_page_count(soup)
         page_urls = [f"{url}?page={str(n)}" for n in range(1, page_count+1)]
         products = { index:Pagination.scrape_products(url) for index, url in enumerate(page_urls, start=1) }
-        print(products)
+        prices = { index:Pagination.scrape_prices(url) for index, url in enumerate(page_urls, start=1) }
+        print(prices)
