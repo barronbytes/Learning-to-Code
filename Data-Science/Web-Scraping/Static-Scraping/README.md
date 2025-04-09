@@ -17,7 +17,11 @@ This project used **"lxml"** as a parser for educational purposes. However, this
 
 **quotes.py:** Scraped data from [toscrape.com](https://toscrape.com/), a static site with [quotes for web scraping](https://quotes.toscrape.com/). Implemented two alternative approaches: one used attribute-value pair methods (e.g., `find_all`, `find`), and the other used CSS selectors (e.g., `select`, `select_one`) to extract the same content. Running the file produces the following output:
 
-![Website before scraping can be scraped with Python for desired results.](demo/demo-1.PNG)
+![Program converts website quotes metadata into readable author-quote pairs.](demo/demo-1.PNG)
+
+**e_commerce.py**, **pagination.py:** Scraped data from [webscraper.io](https://webscraper.io/test-sites/), a static site with [paginated electronic e-commerce data](https://webscraper.io/test-sites/e-commerce/static/computers/laptops). The e_commerce.py file imports the `Pagination()` class from pagination.py and passes it a single URL argument. The class uses a variety of helper methods to extract and transform paginated shopping data. Running the file produces the following output:
+
+![Program converts paginated computer shopping data into readable product-price pairs.](demo/demo-2.PNG)
 
 ## Credits & Continuation
 
