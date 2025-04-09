@@ -23,4 +23,18 @@ def scrape_by_selector(results: list[Tag]) -> None:
 
 
 #scrape_by_find(results)
-scrape_by_selector(results)
+#scrape_by_selector(results)
+
+
+""" OBJECTS
+1. Soup objects: <class 'bs4.BeautifulSoup'>
+
+print(soup.name) # document
+
+2. Tag objects: <class 'bs4.element.Tag'>
+
+print(soup.span) # <span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>
+print(soup.span.name) # span
+print(soup.span["class"]) # ["text"]
+print(soup.span.text) # text
+"""
