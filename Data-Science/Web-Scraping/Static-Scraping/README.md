@@ -23,7 +23,7 @@ This project used **"lxml"** as a parser for educational purposes. However, this
 
 ![Program converts paginated computer shopping data into readable product-price pairs.](demo/demo-2.PNG)
 
-The main takeaways from this project were to use these steps for static site webscraping:
+The **main takeaways** from this project were to use these **steps for static site web scraping**:
 
 1. Create a soup object: `soup = BeautifulSoup(<your_URL>, <your_parser>)`
 2. Create tag object: `tag = soup.find_all()`, `tag = soup.select()`, etc...
@@ -31,7 +31,7 @@ The main takeaways from this project were to use these steps for static site web
 4. Modifying output
 5. Storing output and generating report
 
-This process is similar to an ETL pipeline. Extraction, transformation, and loading take place in steps 1-3, 4, and 5, respectively.
+This process is **similar to an ETL pipeline**. Extraction, transformation, and loading take place in steps 1-3, 4, and 5, respectively.
 
 ## Credits & Continuation
 
