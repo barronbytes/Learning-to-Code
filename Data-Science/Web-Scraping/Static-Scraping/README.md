@@ -1,6 +1,6 @@
 # Static Web Scraping
 
-Web scraping refers to the process of getting select data from websites for a client. This mini-project allowed me to practice this on a static website, where content does not change. This allows for predictable outcomes that persist over time.
+Web scraping refers to the process of getting select data from websites for a client. This mini-project allowed me to practice this on two static websites, where content does not change. This allows for predictable outcomes that should persist over time.
 
 ## Prerequisites
 
@@ -11,13 +11,13 @@ Before running this project locally, ensure you have the following installed:
 * Install BeautifulSoup (parsing interface): pip install beautifulsoup4
 * Install lxml (parser): pip install lxml
 
-This project used "lxml" as a parser for educational purposes. However, this is an optional step. You can instead use the built-in BeautifulSoup parser of "html.parser" if you prefer.
+This project used **"lxml"** as a parser for educational purposes. However, this is an optional step you can skip. You can instesad use the built-in BeautifulSoup parser of **"html.parser"** if you prefer.
 
 ## Lesssons Learned
 
-The site [toscrape.com](https://toscrape.com/) offers static content for web scraping practice. [I scraped a quotes page](https://quotes.toscrape.com/) using two alternative approaches with BeautifulSoup that yielded identical results: (1) the `find` method based on attribute-value pairs, and (2) the `select_one` method based on CSS selectors.
+**quotes.py:** Scraped data from [toscrape.com](https://toscrape.com/), a static site with [quotes for web scraping](https://quotes.toscrape.com/). Implemented two alternative approaches: one used attribute-value pair methods (e.g., `find_all`, `find`), and the other used CSS selectors (e.g., `select`, `select_one`) to extract the same content. Running the file produces the following output:
 
-![Website before scraping can be scraped with Python for desired results.](demo/demo.PNG)
+![Website before scraping can be scraped with Python for desired results.](demo/demo-1.PNG)
 
 ## Credits & Continuation
 
