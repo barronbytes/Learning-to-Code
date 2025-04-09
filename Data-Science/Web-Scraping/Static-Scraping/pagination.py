@@ -34,10 +34,17 @@ class Pagination():
 
 
     @staticmethod
+    def generate_report(products: dict[int, list[str]], prices: dict[int, list[str]]) -> None:
+        for key in products:
+            for product, price in zip(products[key], prices[key]):
+                print(f"Computer: {product}, Price: {price}")
+
+
+    @staticmethod
     def brain(url: str) -> None:
         soup = Pagination.create_soup(url)
         page_count = Pagination().calc_page_count(soup)
         page_urls = [f"{url}?page={str(n)}" for n in range(1, page_count+1)]
         products = { index:Pagination.scrape_products(url) for index, url in enumerate(page_urls, start=1) }
         prices = { index:Pagination.scrape_prices(url) for index, url in enumerate(page_urls, start=1) }
-        print(prices)
+        Pagination.generate_report(products=products, prices=prices)
