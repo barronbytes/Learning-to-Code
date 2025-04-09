@@ -1,5 +1,5 @@
+import requests
 from bs4 import BeautifulSoup as bs
-from bs4.element import Tag
 
 
 class Pagination():
@@ -13,9 +13,10 @@ class Pagination():
 
 
     @staticmethod
-    def scrape_products(soup: bs) -> list[str]:
+    def scrape_products(url: str) -> list[str]:
+        soup = Pagination.create_soup(url)
         products = soup.select("a.title")
-        return [p.text.strip() for p in products]
+        return [p.get("title") for p in products]
 
 
     @staticmethod
@@ -23,3 +24,18 @@ class Pagination():
         parent_tags = soup.select("div.caption")
         price_tags = [pt.select_one("span[itemprop='price']") for pt in parent_tags] # cannot use span.price !!!
         return [pt.text.strip() for pt in price_tags]
+
+
+    @staticmethod
+    def create_soup(url: str) -> bs:
+        r = requests.get(url)
+        return bs(r.content, "lxml")     
+
+
+    @staticmethod
+    def brain(url: str) -> None:
+        soup = Pagination.create_soup(url)
+        page_count = Pagination().calc_page_count(soup)
+        page_urls = [f"{url}?page={str(n)}" for n in range(1, page_count+1)]
+        products = { index:Pagination.scrape_products(url) for index, url in enumerate(page_urls, start=1) }
+        print(products)
