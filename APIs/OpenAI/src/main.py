@@ -2,9 +2,9 @@ from control import Control
 
 
 def main():
-    running = True
-    while running:
-        pass
+    run_all = True
+    while run_all:
+        run_all = Control.clear_screen()
 
 
 if __name__ == "__main__":
