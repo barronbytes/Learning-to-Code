@@ -8,8 +8,8 @@ Before running this project locally, ensure you have the following installed:
 
 * IDE (VS Code, PyCharm, etc.)
 * Install Python 3.10+ version > for type hinting compatability
-* Install BeautifulSoup (parsing interface): pip install beautifulsoup4
-* Install lxml (parser): pip install lxml
+* Install BeautifulSoup (parsing interface): `pip install beautifulsoup4`
+* Install lxml (parser): `pip install lxml`
 
 This project used **"lxml"** as a parser for educational purposes. However, this is an optional step you can skip. You can instesad use the built-in BeautifulSoup parser of **"html.parser"** if you prefer.
 
