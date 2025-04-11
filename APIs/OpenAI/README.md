@@ -16,9 +16,11 @@
 Before running this project locally, ensure you have the following installed:
 
 * IDE (VS Code, PyCharm, etc.)
-* Install Python 3.10+ version > for type hinting compatability
+* Install Python 3.10+ version > for type hinting compatability > visit [python download page](https://www.python.org/downloads/)
 * Install OpenAI: `pip install openai` > see [API Key Setup](#api-key-setup)
-* 
+* Install Matplotlib: `pip install matplotlib`
+* Install NumPy: `pip install numpy`
+* Bourne Shell compatible OS like Linux or macOS > to run test runner script that executes all unit tests in project > Windows users should [download WSL2](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 ## Quick Start
 
