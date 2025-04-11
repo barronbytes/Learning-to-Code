@@ -1,6 +1,5 @@
 import os
 import json
-from typing import Optional
 
 
 class Extract():
@@ -46,7 +45,7 @@ class Extract():
     @staticmethod
     def select_data_file(data_files: list[str]) -> int:
         '''
-        Allow users to select JSON file for analysis.
+        Allow users to select JSON file for analysis, and determines its index value from options.
 
         Parameters:
             data_files (list(str)): All JSON files from `data` folder.
@@ -68,9 +67,9 @@ class Extract():
         Reads raw JSON data for file user choose for analysis.
 
         Parameters:
-            file_path (str): Path for file user choose for analysis.
+            file_path (str): Path file.
         Returns:
-            list (str): Raw data from file user choose for analysis.
+            list (str): Raw data of sentiment comments.
         '''
         with open(file=file_path, mode="r", encoding="utf-8") as file:
             raw_data = json.load(file)
@@ -80,10 +79,18 @@ class Extract():
     @staticmethod
     def brain() -> list[str]:
         '''
-        Coordinates class methods to find relative paths for files in `data` folder.
+        Coordinates class methods to complete extraction step of ETL pipeline. Edge cases considered:
+        (1) is_data_dir_exists: `data` directory doesn't exist
+        (2) data_files: `data` directory has no JSON file
+        (3) file_index: user chooses invalid index range number
+
+        Edge cases not considered:
+        (1) JSON file is empty
+        (2) JSON file is not in dictionary format
+        (3) JSON file is missing "results" key
 
         Returns:
-            str: Raw data of sentiment comments.
+            str: Raw data of sentiment comments or empty list.
         '''
         root_dir = Extract.root_dir()
         is_data_dir_exists = os.path.isdir(os.path.join(root_dir, Extract.data_dir_name))
@@ -94,7 +101,4 @@ class Extract():
             file_name = data_files[file_index]
             file_path = os.path.join(root_dir, Extract.data_dir_name, file_name)
         raw_data = Extract.read_data(file_path) if file_path else []
-        print(raw_data)
-
-
-Extract.brain()
+        return raw_data
