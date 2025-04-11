@@ -32,7 +32,16 @@ class Transform():
         '''
         '''
         client = OpenAI(api_key=os.getenv("API_OPENAI"))
-
+        system_context, user_context = Transform.prompt_context(raw_data)
+        completion = client.chat.completions.create(
+            model = "gpt-4o-mini",
+            messages = [
+	            { "role":"system", "content":system_context },
+                { "role":"user",  "content":user_context }
+            ]
+        )
+        return completion.choices[0].message.content
+        
 
     @staticmethod
     def prompt_context(raw_data: list[str]) -> tuple[str, str]:
@@ -47,7 +56,7 @@ class Transform():
         print("\nWe are about to use the OpenAI API to convert customer product reviews into one-word summaries!")
         reviews = raw_data
         product = input("Before we start, what product was reviewd?: ")
-        SYSTEM_CONTEXT = f"""
+        system_context = f"""
         Use the BIOS acronym to standardize system prompt:
         [1] Background:
             You are a growth analyst. Your manager wants you to complete a project with these criteria:
@@ -57,10 +66,10 @@ class Transform():
         [2] Input: list(str)
             User review sentences. Data has already been previously validated for erroneous data.
         [3] Output: list(str)
-            One-word summary for each reviews. Only four possible values exist for each review:
+            One-word summary for each review. Only four possible summary values exist for each review:
             - {Transform.SENTIMENTS}
         [4] Sample:
-            USER_CONTEXT: Review a ring purchased for an individual to wear.
+            User context: Review a ring purchased for an individual to wear.
             Parameters: [
                 "this ring smells weird, don't recomend",
                 "I love this ring, I use it all the time when working out.",
@@ -69,22 +78,23 @@ class Transform():
             ]
             Returns: ["negative", "positive", "neutral", "irrelevant"]
         """
-        USER_CONTEXT = f"""
+        user_context = f"""
         Client collected reviews about this product: {product}
         Categorize each survey response inside {reviews} with one value inside {Transform.SENTIMENTS}.
         """
-        return (SYSTEM_CONTEXT, USER_CONTEXT)
+        return (system_context, user_context)
 
 
     @staticmethod
-    def brain(raw_data: list[str], file_name: str) -> list[str]:
+    def brain(raw_data: list[str]) -> list[str]:
         '''
         Coordinates class methods to complete transformation step of ETL pipeline.
 
+        Parameters:
+            raw_data list(str): Raw data of sentiment comments.
         Returns:
             list (str): Collection of One-word summaries for reviews.
         '''
         is_valid = Transform.validate(raw_data)
-        sentiments = []
-        if is_valid:
-            Transform.prompt_mapper(raw_data)
+        sentiments = Transform.prompt_mapper(raw_data) if is_valid else []
+        return sentiments
