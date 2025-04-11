@@ -6,9 +6,9 @@ from control import Control
 def main():
     run_all = True
     while run_all:
-        is_extracted, raw_data = Extract.brain()
+        is_extracted, file_name, raw_data = Extract.brain()
         if is_extracted:
-            Transform.brain(raw_data)
+            Transform.brain(raw_data, file_name)
         run_all = Control.clear_screen() if is_extracted else False
 
 
