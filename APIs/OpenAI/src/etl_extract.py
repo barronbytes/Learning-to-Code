@@ -53,7 +53,7 @@ class Extract():
             int: Index value for choosen data file. Will default to 0 for invalid selection from user input.
         '''
         print("These files contain raw sentiment review data from surveys.")
-        options = "\n".join(f"[{i}] file=\"{file}\"" for i, file in enumerate(data_files, start=1))
+        options = "\n".join(f"[{i}] file = \"{file}\"" for i, file in enumerate(data_files, start=1))
         print(options)
         selection = input("\nEnter a file number to analyze.\nWill default to '1' for invalid input: ")
         indices = [str(n) for n in range(1, len(data_files)+1)]
