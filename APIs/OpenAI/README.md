@@ -45,6 +45,7 @@ Overall, this project resembled an ETL pipeline. The following resources were re
 * JSON: [Past file handling mini-project](https://github.com/barronbytes/Learning-to-Code/tree/main/File-Handling) on working with JSON data.
 * Data Validation: [Past heart rate monitoring data processing mini-project](https://github.com/barronbytes/Learning-to-Code/tree/main/Data-Science/Summary-Statistics) completed to handle **data extraction**. Specifically, the `get_file_data.py` file within the source code folder.
 * OpenAI API: [Official OpenAI API documentation on prompt generation](https://platform.openai.com/docs/guides/prompt-generation) helped me generate prompts for **data transformation**.
+* Matplotlib: [Official documentation on bar charts](https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html) helped me create and **load a visualization**.
 
 ## Results
 
