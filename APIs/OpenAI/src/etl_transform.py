@@ -53,6 +53,7 @@ class Transform():
     def prompt_context(raw_data: list[str]) -> tuple[str, str]:
         '''
         Uses parameter and user input to determine system and user context for OpenAI API to use for client.
+            - Does not consider edge cases where user provides erroneous input for `product` variable.
 
         Parameters:
             raw_data list(str): Raw data of sentiment comments.
