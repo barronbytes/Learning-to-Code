@@ -77,7 +77,7 @@ class Extract():
 
 
     @staticmethod
-    def brain() -> list[str]:
+    def brain() -> tuple[bool, list[str]]:
         '''
         Coordinates class methods to complete extraction step of ETL pipeline. Edge cases considered:
         (1) is_data_dir_exists: `data` directory doesn't exist
@@ -90,7 +90,9 @@ class Extract():
         (3) JSON file is missing "results" key
 
         Returns:
-            str: Raw data of sentiment comments or empty list.
+            tuple: Uses truthy/falsy value of data_files to determine output:
+                - If False -> (False, [])
+                - If True -> (True, []) or (True, list[sentiment strings])
         '''
         root_dir = Extract.root_dir()
         is_data_dir_exists = os.path.isdir(os.path.join(root_dir, Extract.data_dir_name))
@@ -100,5 +102,7 @@ class Extract():
             file_index = Extract.select_data_file(data_files)
             file_name = data_files[file_index]
             file_path = os.path.join(root_dir, Extract.data_dir_name, file_name)
+        else:
+            error_not_found = input("Error: Data file not found. Press 'enter' to exit program.")
         raw_data = Extract.read_data(file_path) if file_path else []
-        return raw_data
+        return (bool(data_files), raw_data)
