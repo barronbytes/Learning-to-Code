@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import os
 
 
 class Load():
     SENTIMENTS = ["negative", "neutral", "positive", "irrelevant"]
-    DST_DIR_NAME = "images"
+    DST_DIR_NAME = "../images"
 
 
     @staticmethod
@@ -52,7 +51,13 @@ class Load():
 
     @staticmethod
     def brain(file_name: str, sentiments: list[str]) -> None:
+        '''
+        Coordinates class methods to complete load step of ETL pipeline. Edge case not considered:
+        - Visualization for original JSON file has already been created. Program will overwrite existing bar graph.
+
+        Parameters:
+            file_name (str): File name.
+            sentiments (list(str)): Collection of one-word summaries for reviews.
+        '''
         tallies = Load.calc_tallies(sentiments)
-
-
-print(Load.calc_tallies(["negative", "negative", "positive", "irrelevant"]))
+        Load.create_bar_graph(file_name=file_name, tallies=tallies)

@@ -62,7 +62,7 @@ class Transform():
         '''
         print("\nWe are about to use the OpenAI API to convert customer product reviews into one-word summaries!")
         reviews = raw_data
-        product = input("Before we start, what product was reviewd?: ")
+        product = input("Before we start, what product was reviewed?: ")
         system_context = f"""
         Use the BIOS acronym to standardize system prompt:
         [1] Background:
