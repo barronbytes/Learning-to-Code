@@ -30,6 +30,12 @@ class Transform():
     @staticmethod
     def prompt_mapper(raw_data: list[str]) -> list[str]:
         '''
+        Handles mapping task of transforming list of product review comments into list of one-word sentiment summaries.
+
+        Parameters:
+            raw_data list(str): Raw data of sentiment comments.
+        Returns:
+            list (str): Collection of one-word summaries for reviews.
         '''
         client = OpenAI(api_key=os.getenv("API_OPENAI"))
         system_context, user_context = Transform.prompt_context(raw_data)
@@ -93,7 +99,7 @@ class Transform():
         Parameters:
             raw_data list(str): Raw data of sentiment comments.
         Returns:
-            list (str): Collection of One-word summaries for reviews.
+            list (str): Collection of one-word summaries for reviews.
         '''
         is_valid = Transform.validate(raw_data)
         sentiments = Transform.prompt_mapper(raw_data) if is_valid else []
