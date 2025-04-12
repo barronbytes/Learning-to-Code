@@ -1,4 +1,5 @@
 import os
+import re
 from openai import OpenAI
 
 
@@ -104,18 +105,35 @@ class Transform():
 
 
     @staticmethod
-    def brain(raw_data: list[str]) -> list[str]:
+    def aggregation(sentiments: str) -> dict[str, int]:
+        '''
+        Transforms string response from OpenAI into dictionary paired values of sentiment labels and counts.
+
+        Parameters:
+            sentiments (str): OpenAI response to apply sentiment labels to customer product reviews.
+        Returns:
+            dict (str, int): Paried values of sentiment lables and counts.
+        '''
+        tallies = {}
+        for category in Transform.SENTIMENTS:
+            regex = rf"[\'\"]{category}[\'\"]"
+            pattern = re.compile(regex)
+            matches = list(pattern.findall(sentiments))
+            tallies[category] = len(matches)
+        return tallies
+
+
+    @staticmethod
+    def brain(raw_data: list[str]) -> tuple[list[str], dict[str, int]]:
         '''
         Coordinates class methods to complete transformation step of ETL pipeline.
 
         Parameters:
             raw_data list(str): Raw data of sentiment comments.
         Returns:
-            list (str): Collection of one-word summaries for reviews.
+            tuple (list, dict): Sentiment labels and paired sentiment label-count appearances from analysis.
         '''
         is_errors = Transform.check_errors(raw_data)
-        sentiments = Transform.prompt_mapper(raw_data) if is_errors else []
-        print(f"Output type: {type(sentiments)}")
-        print(f"Commma counts: {sentiments.count(",")}")
-        print(sentiments)
-        return sentiments
+        sentiments = Transform.prompt_mapper(raw_data) if is_errors else ""
+        counts = Transform.aggregation(sentiments)
+        return (Transform.SENTIMENTS, counts)
