@@ -62,9 +62,9 @@ This was my first time using the OpenAI API on a project. I faced two major issu
 
 I fixed the first problem by **writing better prompts and realizing the AI gives back a string by default**. I improved my prompts with clearer descriptions of inputs, steps to follow, and expected output. The image below shows how the model responded before I updated the system context. The first four lines were manually added by me for your reading, and were not part of the AI response results. As you can see, the model accepted 50 input reviews but returned 46 output sentiment labels. It skipped 10 real reviews and created 6 hallucination reviews. Also remember, the final result is a Python string and not a list. Learning this helped me complete the extraction step of my ETL pipeline.
 
-[Program clearly created hallucinations.](/demo/setbacks_sample_response.PNG)
+![Program clearly created hallucinations.](/demo/setbacks_sample_response.PNG)
 
-Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. You can read more about this problem here: [Analysis section > Question 2]. (#analysis)
+Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. You can read more about this problem here: [Analysis section > Question 2](#analysis).
 
 ### Successes
 
@@ -76,7 +76,7 @@ The program analyzed the `zico_coconut_water_reviews.json` file and returned the
 * 50 input reviews > bar graph showing 50 labeled sentiments
 * Sentimental analysis results > 37 negative, 2 neutral, 11 positive, and 0 irrelevant
 
-[Program created a bar graph on sentimental analysis of coconut beverage reviews.](demo/results.PNG)
+![Program created a bar graph on sentimental analysis of coconut beverage reviews.](demo/results.PNG)
 
 ## Analysis
 
