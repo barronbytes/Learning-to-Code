@@ -66,59 +66,55 @@ class Transform():
         reviews = raw_data
         product = input("Before we start, what product was reviewed?: ")
         system_context = f"""
-        Use the BIOS acronym to standardize system prompt:
-        [1] Background:
-            You are a growth analyst. Your manager wants you to complete a project with these criteria:
-            - Convert customer product reviews into one-word summaries
-            - Use the OpenAI API for sentimental analysis of raw data
-            - The user will tell you what product is being reviewed
-        [2] Input: list(str)
-            Data has already been cleaned and filtered. This is the input data: {reviews}.
-            - The data list has a length of {raw_count}, and all items are strings.
-            - Each item string represents a user review of this product: {product}
-            - It is possible that some items inside the data consist of irrelevant reviews unrelated to the product.
-        [3] Output: list(str)
-            - We need to analyze {reviews} to create a new list of strings of the same length {raw_count}.
-            - All items from the new list can only be from this list of choices: {Transform.SENTIMENTS}.
-            - The new list will be created as follows:
-              - You will look at each item value inside {reviews}
-              - Based upon sentimetnal analysis, you will decide what word from {Transform.SENTIMENTS} represents the prodcut review.
-              - The word you choose will be appended to the new list
-              - This will ensure that each item in {reviews} gets assigned a sentiment to append to the new list created.
-              - The length of the new list must be {raw_count}.
-        [4] Sample:
-            User context: Review a ring purchased for an individual to wear.
-            Parameters: [
-                "this ring smells weird, don't recomend",
-                "I love this ring, I use it all the time when working out.",
-                "It's an ok ring. Some features could be better but for the price its fine.",
-                "its a ring",
-            ]
-            Returns: ["negative", "positive", "neutral", "irrelevant"]
+        You are a master AI model trained to perform sentimental analysis on business product reviews.
+
+        You are given this information to complete your task:
+        [1] Client product: {product}
+        [2] List of customer product reviews: {raw_data}
+            - Each item inside the list is a string for an individual review
+        [3] List length size: {raw_count}
+        [4] Sentiment labels the client wants you to use: {Transform.SENTIMENTS}
+        
+        You will complete your task as follows:
+        [1] Create an empty list: []
+        [2] Analyze each customer review individually
+        [3] Assign each customer review one label from the allowed sentiment values: {Transform.SENTIMENTS}
+        [4] Assign the "irrelevant" label for unrelated product reviews
+        [5] Return a **valid Python list** of strings of sentiment lables in the **same order** as the input
+            The list must have exactly {raw_count} elements, one for each review
+            Each element must be one of the labels in {Transform.SENTIMENTS}
+        Example Input:
+        > ["I like it", "I didn't like it", "I think it's ok", "...", "I'm a male", ...]
+        Example Output:
+        ["positive", "negative", "neutral", "irrelevant", "irrelevant", ...]
         """
         user_context = f"""
-        Client collected reviews about this product: {product}
-        Categorize each survey response inside {reviews} with one value inside {Transform.SENTIMENTS}.
-        Since the input had a size of {raw_count} I expect the output to have the same size.
+        I'm a growth analyst and my manager gave me this information to conduct sentimental analysis for a client:
+        [1] Client product: {product}
+        [2] A total of {raw_count} reviews
+        [3] Here are the reviews: {raw_data}
+
+        Help me complete my task as follows:
+        [1] For each review, to an empty list, append only one sentimental label from these options: {Transform.SENTIMENTS}
+        [2] Your output should be a Python list of {raw_count} labels, in the same order as the reviews.
         """
-        return (system_context, user_context)
+        return (system_context.strip(), user_context.strip())
     
 
     @staticmethod
     def validate(sentiments: list[str], count: int) -> list[str]:
         '''
-        Method ensures that final output has the proper size. Edge cases considered:
-        - Final output is either smaller or larger than intended size.
+        Ensures that output matches expected size. Pads with "irrelevant" if short; trims if too long.
 
         Parameters:
             list (str): Collection of unvalidated one-word summaries for reviews. (Potential size error)
         Returns:
             list (str): Collection of validated one-word summaries for reviews.  
         '''
-        data = sentiments[:count]
-        if len(data) < count:
-            data.extend(Transform.SENTIMENTS[-1] for _ in range(count - len(data)))
-        return data
+        valid_data = sentiments[:count]
+        if len(sentiments) < count:
+            valid_data.extend(Transform.SENTIMENTS[-1] for _ in range(count - len(valid_data)))
+        return valid_data
 
 
     @staticmethod
@@ -131,8 +127,6 @@ class Transform():
         Returns:
             list (str): Collection of one-word summaries for reviews.
         '''
-        print(f"JSON data length: {len(raw_data)}")
         is_errors = Transform.check_errors(raw_data)
         sentiments = Transform.prompt_mapper(raw_data) if is_errors else []
-        print(f"API response length: {len(sentiments)}")
         return Transform.validate(sentiments, len(raw_data))
