@@ -69,11 +69,11 @@ class Extract():
         Parameters:
             file_path (str): Path file.
         Returns:
-            list (str): Raw data of sentiment comments.
+            list (str): Customer product reviews.
         '''
         with open(file=file_path, mode="r", encoding="utf-8") as file:
-            raw_data = json.load(file)
-        return raw_data[Extract.data_file_dict_key]
+            reviews = json.load(file)
+        return reviews[Extract.data_file_dict_key]
 
 
     @staticmethod
@@ -92,7 +92,7 @@ class Extract():
         Returns:
             tuple: Uses truthy/falsy value of data_files to determine output:
                 - If False -> (False, "", [])
-                - If True -> (True, str of file_name, []) or (True, str of file_name, list[str of sentiments])
+                - If True -> (True, str of file_name, []) or (True, str of file_name, list[str of reviews])
         '''
         root_dir = Extract.root_dir()
         is_data_dir_exists = os.path.isdir(os.path.join(root_dir, Extract.data_dir_name))
@@ -105,5 +105,5 @@ class Extract():
             file_path = os.path.join(root_dir, Extract.data_dir_name, file_name)
         else:
             error_not_found = input("Error: Data file not found. Press 'enter' to exit program.")
-        raw_data = Extract.read_data(file_path) if file_path else []
-        return (bool(data_files), file_name, raw_data)
+        reviews = Extract.read_data(file_path) if file_path else []
+        return (bool(data_files), file_name, reviews)

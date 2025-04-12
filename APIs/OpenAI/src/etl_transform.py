@@ -8,19 +8,19 @@ class Transform():
 
 
     @staticmethod
-    def check_errors(raw_data: list[str]) -> bool:
+    def check_errors(reviews: list[str]) -> bool:
         '''
-        Determines if raw sentiment data contains any erroneous data. Egdge cases considered:
+        Determines if customer product reviews contains any erroneous data. Egdge cases considered:
         (1) Empty data -> [] -> print error message
         (2) Any non-string data -> ["hello", "world", 1] -> print error message
 
         Parameters:
-            raw_data list(str): Raw data of sentiment comments.
+            reviews list(str): Customer product reviews.
         Returns:
             bool: If erroneous data exists returns True, otherwise False.
         '''
-        is_empty = not bool(raw_data)
-        is_strings = all(isinstance(data, str) for data in raw_data) if raw_data else False
+        is_empty = not bool(reviews)
+        is_strings = all(isinstance(data, str) for data in reviews) if reviews else False
         is_valid = True
         if is_empty or not is_strings:
             is_valid = False
@@ -29,18 +29,17 @@ class Transform():
 
 
     @staticmethod
-    def prompt_mapper(raw_data: list[str]) -> str:
+    def prompt_mapper(reviews: list[str]) -> str:
         '''
-        Handles mapping task of transforming list of product review comments into one-word sentiment summaries.
-        - IMPORTANT: The return type is a STRING and not a LIST. OpenAI API respones are strings.
+        Makes OpenAI call to apply sentimental analysis labels to customer product reviews.
 
         Parameters:
-            raw_data list(str): Raw data of sentiment comments.
+            reviews list(str): Customer product reviews.
         Returns:
-            str: Collection of one-word summaries for reviews.
+            str: OpenAI response that applies one sentiment label to each customer product review.
         '''
         client = OpenAI(api_key=os.getenv("API_OPENAI"))
-        system_context, user_context = Transform.prompt_context(raw_data, len(raw_data))
+        system_context, user_context = Transform.prompt_context(reviews, len(reviews))
         completion = client.chat.completions.create(
             model = "gpt-4o-mini",
             messages = [
@@ -53,29 +52,28 @@ class Transform():
         
 
     @staticmethod
-    def prompt_context(raw_data: list[str], raw_count: int) -> tuple[str, str]:
+    def prompt_context(reviews: list[str], count: int) -> tuple[str, str]:
         '''
         Uses parameter and user input to determine system and user context for OpenAI API to use for client.
             - Handles edge case of ensuring that length of input and output match.
             - Does not consider edge cases where user provides erroneous input for `product` variable.
 
         Parameters:
-            raw_data list(str): Raw data of sentiment comments.
+            reviews list(str): Customer product reviews.
             raw_count (int): Number of sentiment comments provided.
         Returns:
             tuple (str, str): System context and user context, respectively.      
         '''
         print("\nWe are about to use the OpenAI API to convert customer product reviews into one-word summaries!")
-        reviews = raw_data
         product = input("Before we start, what product was reviewed?: ")
         system_context = f"""
         You are a master AI model trained to perform sentimental analysis on business product reviews.
 
         You are given this information to complete your task:
         [1] Client product: {product}
-        [2] List of customer product reviews: {raw_data}
+        [2] List of customer product reviews: {reviews}
             - Each item inside the list is a string for an individual review
-        [3] List length size: {raw_count}
+        [3] List length size: {count}
         [4] Sentiment labels the client wants you to use: {Transform.SENTIMENTS}
         
         You will complete your task as follows:
@@ -84,7 +82,7 @@ class Transform():
         [3] Assign each customer review one label from the allowed sentiment values: {Transform.SENTIMENTS}
         [4] Assign the "irrelevant" label for unrelated product reviews
         [5] Return a **valid Python list** of strings of sentiment lables in the **same order** as the input
-            The list must have exactly {raw_count} elements, one for each review
+            The list must have exactly {count} elements, one for each review
             Each element must be one of the labels in {Transform.SENTIMENTS}
         Example Input:
         > ["I like it", "I didn't like it", "I think it's ok", "...", "I'm a male", ...]
@@ -94,12 +92,12 @@ class Transform():
         user_context = f"""
         I'm a growth analyst and my manager gave me this information to conduct sentimental analysis for a client:
         [1] Client product: {product}
-        [2] A total of {raw_count} reviews
-        [3] Here are the reviews: {raw_data}
+        [2] A total of {count} reviews
+        [3] Here are the reviews: {reviews}
 
         Help me complete my task as follows:
         [1] For each review, to an empty list, append only one sentimental label from these options: {Transform.SENTIMENTS}
-        [2] Your output should be a Python list of {raw_count} labels, in the same order as the reviews.
+        [2] Your output should be a Python list of {count} labels, in the same order as the reviews.
         """
         return (system_context.strip(), user_context.strip())
 
@@ -124,16 +122,16 @@ class Transform():
 
 
     @staticmethod
-    def brain(raw_data: list[str]) -> tuple[list[str], dict[str, int]]:
+    def brain(reviews: list[str]) -> tuple[list[str], dict[str, int]]:
         '''
         Coordinates class methods to complete transformation step of ETL pipeline.
 
         Parameters:
-            raw_data list(str): Raw data of sentiment comments.
+            reviews list(str): Customer product reviews.
         Returns:
             tuple (list, dict): Sentiment labels and paired sentiment label-count appearances from analysis.
         '''
-        is_errors = Transform.check_errors(raw_data)
-        sentiments = Transform.prompt_mapper(raw_data) if is_errors else ""
+        is_errors = Transform.check_errors(reviews)
+        sentiments = Transform.prompt_mapper(reviews) if is_errors else ""
         counts = Transform.aggregation(sentiments)
         return (Transform.SENTIMENTS, counts)
