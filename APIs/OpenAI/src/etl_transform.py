@@ -103,22 +103,22 @@ class Transform():
 
 
     @staticmethod
-    def aggregation(sentiments: str) -> dict[str, int]:
+    def aggregation(open_ai_response: str) -> dict[str, int]:
         '''
         Transforms string response from OpenAI into dictionary paired values of sentiment labels and counts.
 
         Parameters:
-            sentiments (str): OpenAI response to apply sentiment labels to customer product reviews.
+            open_ai_response (str): OpenAI response to apply sentiment labels to customer product reviews.
         Returns:
             dict (str, int): Paried values of sentiment lables and counts.
         '''
-        tallies = {}
+        sentiments = {}
         for category in Transform.SENTIMENTS:
             regex = rf"[\'\"]{category}[\'\"]"
             pattern = re.compile(regex)
-            matches = list(pattern.findall(sentiments))
-            tallies[category] = len(matches)
-        return tallies
+            matches = list(pattern.findall(open_ai_response))
+            sentiments[category] = len(matches)
+        return sentiments
 
 
     @staticmethod
@@ -132,6 +132,6 @@ class Transform():
             tuple (list, dict): Sentiment labels and paired sentiment label-count appearances from analysis.
         '''
         is_errors = Transform.check_errors(reviews)
-        sentiments = Transform.prompt_mapper(reviews) if is_errors else ""
-        counts = Transform.aggregation(sentiments)
-        return (Transform.SENTIMENTS, counts)
+        open_ai_response = Transform.prompt_mapper(reviews) if is_errors else ""
+        sentiments = Transform.aggregation(open_ai_response)
+        return (Transform.SENTIMENTS, sentiments)

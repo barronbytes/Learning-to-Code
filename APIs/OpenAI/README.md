@@ -57,15 +57,19 @@ Overall, this project resembled an ETL pipeline. The following resources were re
 
 > What is the most common sentiment observed in your sample of 50 reviews according to your OpenAI labeled data?
 
+OpenAI sentimental analysis of 50 Zico Coconut Water reviwes showed the most common sentiment was **negative**. Here are the results: 37 negative, 2 neutral, 11 positive, and 0 irrelevant.
+
 ### Question 2
 
 > How reliable do you believe these labels are? Look at the respective labels OpenAI has generated for specific reviews, does it seem like the large language model accurately described the user's review? What risk do model hallucinations introduce into this analysis?
 
-
+The labels aren't reliable. The model repeatedly gives different visualization results even when I give it the same input. "Negative" shows up the most every time, and "irrelevant" never shows up at all. This happens even when I tell the model the reviews are for a different product, like a different drink or even cars. The model is too focused on the tone of reviews at the expense of being aware of what product the reviews are about. This makes me certain the program is hallucinating.
 
 ### Question 3
 
 > Using the most common sentiment, what would you recommend to this Coconut Water producer to improve customer satisfaction? Should they continue to pursue current market/product outcomes, or does there exist an opportunity for this business to improve its product?
+
+I do not have faith the sentimental analysis provides any actionable insights, due to my previous answer. The program is flawed as constructed and needs more time to be refined before it can be used for bussiness decisions.
 
 ## Credits and Contributing
 

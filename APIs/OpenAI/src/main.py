@@ -10,7 +10,7 @@ def main():
         is_extracted, file_name, reviews = Extract.brain()
         data_labels, sentiments = Transform.brain(reviews) if is_extracted else []
         data_counts = [sentiments[label] for label in data_labels]
-        #Load.brain(file_name, sentiments)
+        Load.create_bar_graph(file_name, data_labels, data_counts)
         run_all = Control.clear_screen() if is_extracted else False
 
 
