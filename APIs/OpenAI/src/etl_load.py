@@ -39,10 +39,12 @@ class Load():
 
         # plot data
         figure, axes = plt.subplots()
-        axes.bar(x=sentiment_names, height=sentiment_counts)
+        bars = axes.bar(x=sentiment_names, height=sentiment_counts)
 
         # label data
         axes.set(xlabel="Sentiment Category", ylabel="Sentiment Count", title=f"Sentimental Analysis: {file_name}")
+        axes.set_ylim(0, max(sentiment_counts) + 5) # y-axis padding
+        axes.bar_label(bars, padding=3) # bar chart labels
 
         # save data, no need for plt.show() in this project
         figure.savefig(os.path.join(Load.DST_DIR_NAME, file_name.replace(".json", ".png")))

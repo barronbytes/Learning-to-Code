@@ -7,7 +7,7 @@ class Transform():
 
 
     @staticmethod
-    def validate(raw_data: list[str]) -> bool:
+    def check_errors(raw_data: list[str]) -> bool:
         '''
         Determines if raw sentiment data contains any erroneous data. Egdge cases considered:
         (1) Empty data -> [] -> print error message
@@ -38,7 +38,7 @@ class Transform():
             list (str): Collection of one-word summaries for reviews.
         '''
         client = OpenAI(api_key=os.getenv("API_OPENAI"))
-        system_context, user_context = Transform.prompt_context(raw_data)
+        system_context, user_context = Transform.prompt_context(raw_data, len(raw_data))
         completion = client.chat.completions.create(
             model = "gpt-4o-mini",
             messages = [
@@ -50,13 +50,15 @@ class Transform():
         
 
     @staticmethod
-    def prompt_context(raw_data: list[str]) -> tuple[str, str]:
+    def prompt_context(raw_data: list[str], raw_count: int) -> tuple[str, str]:
         '''
         Uses parameter and user input to determine system and user context for OpenAI API to use for client.
+            - Handles edge case of ensuring that length of input and output match.
             - Does not consider edge cases where user provides erroneous input for `product` variable.
 
         Parameters:
             raw_data list(str): Raw data of sentiment comments.
+            raw_count (int): Number of sentiment comments provided.
         Returns:
             tuple (str, str): System context and user context, respectively.      
         '''
@@ -71,10 +73,19 @@ class Transform():
             - Use the OpenAI API for sentimental analysis of raw data
             - The user will tell you what product is being reviewed
         [2] Input: list(str)
-            User review sentences. Data has already been previously validated for erroneous data.
+            Data has already been cleaned and filtered. This is the input data: {reviews}.
+            - The data list has a length of {raw_count}, and all items are strings.
+            - Each item string represents a user review of this product: {product}
+            - It is possible that some items inside the data consist of irrelevant reviews unrelated to the product.
         [3] Output: list(str)
-            One-word summary for each review. Only four possible summary values exist for each review:
-            - {Transform.SENTIMENTS}
+            - We need to analyze {reviews} to create a new list of strings of the same length {raw_count}.
+            - All items from the new list can only be from this list of choices: {Transform.SENTIMENTS}.
+            - The new list will be created as follows:
+              - You will look at each item value inside {reviews}
+              - Based upon sentimetnal analysis, you will decide what word from {Transform.SENTIMENTS} represents the prodcut review.
+              - The word you choose will be appended to the new list
+              - This will ensure that each item in {reviews} gets assigned a sentiment to append to the new list created.
+              - The length of the new list must be {raw_count}.
         [4] Sample:
             User context: Review a ring purchased for an individual to wear.
             Parameters: [
@@ -88,8 +99,26 @@ class Transform():
         user_context = f"""
         Client collected reviews about this product: {product}
         Categorize each survey response inside {reviews} with one value inside {Transform.SENTIMENTS}.
+        Since the input had a size of {raw_count} I expect the output to have the same size.
         """
         return (system_context, user_context)
+    
+
+    @staticmethod
+    def validate(sentiments: list[str], count: int) -> list[str]:
+        '''
+        Method ensures that final output has the proper size. Edge cases considered:
+        - Final output is either smaller or larger than intended size.
+
+        Parameters:
+            list (str): Collection of unvalidated one-word summaries for reviews. (Potential size error)
+        Returns:
+            list (str): Collection of validated one-word summaries for reviews.  
+        '''
+        data = sentiments[:count]
+        if len(data) < count:
+            data.extend(Transform.SENTIMENTS[-1] for _ in range(count - len(data)))
+        return data
 
 
     @staticmethod
@@ -102,6 +131,8 @@ class Transform():
         Returns:
             list (str): Collection of one-word summaries for reviews.
         '''
-        is_valid = Transform.validate(raw_data)
-        sentiments = Transform.prompt_mapper(raw_data) if is_valid else []
-        return sentiments
+        print(f"JSON data length: {len(raw_data)}")
+        is_errors = Transform.check_errors(raw_data)
+        sentiments = Transform.prompt_mapper(raw_data) if is_errors else []
+        print(f"API response length: {len(sentiments)}")
+        return Transform.validate(sentiments, len(raw_data))
