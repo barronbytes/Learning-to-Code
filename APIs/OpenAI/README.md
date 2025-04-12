@@ -2,18 +2,22 @@
 
 This project allows business clients to **automate sentimental analysis of customer product reviews**. Overall, this project resembled an **ETL pipeline**. Static JSON data was extracted, then transformed with OpenAI for sentimental analysis, and loading involved creating a visualization with Matplotlib. At a high-level, the ETL pipeline did this:
 
+<img src="demo/project_architecture.PNG" alt="ETL Pipeline" width="60%">
+
 * Extraction: Standardized and validated customer reviews to use
 * Transformation: Used OpenAI to apply sentiment labels to reviews
 * Loading: Produed bar graph of sentiment label results
 
 ## Live Demo
 
+Feel free to check out a better view of the project here!
+
 ...
 
 ## Features
 
-* **Backend:** ...
-* **Data Science:** ...
+* **Backend Tools:** Python, JSON, Unittest
+* **Data Science Tools:** OpenAI, matplotlib
 
 ## Prerequisites
 
@@ -39,6 +43,27 @@ The purpose of these steps is to prevent publicly exposing your API on the inter
 3. Python file (imports): `import os`
 4. Python file (access API Key): `api_key = os.getenv("API_OPENAI")`
 
+### Backend Setup
+
+1. **Clone** the repository
+2. **Delete** the demo folder
+3. **Delete** the .vscode folder *(will be re-created in step 4)*
+4. **Edit JSON settings:** program files and test files are in different folders; this step helps VS Code autocomplete and resolve imports correctly, reducing any underlining errors caused by missing paths in workspace
+
+> Windows/Linux Users:
+> Open the **Command Pallete** (Ctrl+Shift+P) > search for **Preferences: Open Settings (JSON)** > paste and save code shown below
+
+> macOS Users:
+> Open the **Command Pallete** (Cmd+Shift+P) > search for **Preferences: Open Settings (JSON)** > paste and save code shown below
+
+```json
+{
+    "python.autoComplete.extraPaths": [
+        "./src"
+    ]
+}
+```
+
 ## Usage
 
 ...
@@ -62,7 +87,7 @@ This was my first time using the OpenAI API on a project. I faced two major issu
 
 I fixed the first problem by **writing better prompts and realizing the AI gives back a string by default**. I improved my prompts with clearer descriptions of inputs, steps to follow, and expected output. The image below shows how the model responded before I updated the system context. The first four lines were manually added by me for your reading, and were not part of the AI response results. As you can see, the model accepted 50 input reviews but returned 46 output sentiment labels. It skipped 10 real reviews and created 6 hallucination reviews. Also remember, the final result is a Python string and not a list. Learning this helped me complete the extraction step of my ETL pipeline.
 
-![Program clearly created hallucinations.](demo/setbacks_sample.PNG)
+<img src="demo/setbacks_sample.PNG" alt="Program clearly crated hallucinations" width="60%">
 
 Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. Read more about this here: [Analysis section > Question 2](#analysis).
 
