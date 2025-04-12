@@ -76,7 +76,7 @@ The program analyzed the `zico_coconut_water_reviews.json` file and returned the
 * 50 input reviews > bar graph showing 50 labeled sentiments
 * Sentimental analysis results > 37 negative, 2 neutral, 11 positive, and 0 irrelevant
 
-![Program created a bar graph on sentimental analysis of coconut beverage reviews.](demo/results.PNG)
+[Program created a bar graph on sentimental analysis of coconut beverage reviews.](demo/results.PNG)
 
 ## Analysis
 
