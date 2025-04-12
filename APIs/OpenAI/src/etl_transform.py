@@ -80,7 +80,14 @@ class Transform():
         [1] Create an empty list: []
         [2] Analyze each customer review individually
         [3] Assign each customer review one label from the allowed sentiment values: {Transform.SENTIMENTS}
-        [4] Assign the "irrelevant" label for unrelated product reviews
+            - Each review has a tone for you to analyze to decide what sentiment value to assign
+            - However, each reivew is about the same product: {product}
+            - You must **place more weight on the product than the tone for each review**
+        [4] Assign the "irrelevant" label for unrelated product reviews. Here's an example:
+            - Example product: product reviews are about a particular dentist office
+            - Example review: ["I have a bad plane ride tomorrow", "I like this dentist", "They are ok", "I don't recommend"]
+            - Example output:  ["irrelevant", "positive", "neutral", "negative"]
+            - IMPORTANT!: Notice how the "irrelevant" review has a negative tone but has nothing to do with the product
         [5] Return a **valid Python list** of strings of sentiment lables in the **same order** as the input
             The list must have exactly {count} elements, one for each review
             Each element must be one of the labels in {Transform.SENTIMENTS}
