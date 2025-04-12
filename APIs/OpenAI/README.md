@@ -1,6 +1,6 @@
 # Sentimental Analysis with OpenAI
 
-This project allows business clients to **automate sentimental analysis of customer product reviews**. Overall, this project resembled an **ETL pipeline**. Static JSON data was extracted, then transformed with OpenAI for sentimental analysis, and loading involved creating a visualization with Matplotlib. At a high-level, the ETL pipeline did this:
+This project allows business clients to **automate sentimental analysis of customer product reviews**. Overall, this project resembled an ETL pipeline. Static JSON data was extracted, then transformed with OpenAI for sentimental analysis, and loading involved creating a visualization with Matplotlib. At a high-level, the **ETL pipeline** did this:
 
 <img src="demo/project_architecture.PNG" alt="ETL Pipeline" width="60%">
 
