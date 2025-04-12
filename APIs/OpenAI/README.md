@@ -82,7 +82,7 @@ The project had a total of X unit tests pass with the `unittest` module across X
 
 ### Uploading New Data
 
-You can add new data for analysis inside the `data folder`. Just make sure to follow the same JSON format as the `template_reviews.json` file. You will modify the template in two ways. First, assign string value to the **product key**. Second, assign a list value to the **results key**.
+You can add new data for analysis inside the `data folder`. The folder has three JSON files by default. Two contain data for reviews. One for a fictitional Zico Coconut Water supplier and another for the NBA. Use the third file, `template_reviews.json`, as a template whenever you want to add new reviews for analysis. Just make sure you use the same JSON structure. You will need to **modify two keys with falsy placeholders**. The product key and results key each have default values of "" and [], respectively, and these values should be replaced with a product type string and a list of product review strings.
 
 ## Development Roadmap
 
