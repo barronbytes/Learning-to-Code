@@ -17,7 +17,7 @@ Feel free to check out a better view of the project here!
 ## Features
 
 * **Backend Tools:** Python, JSON, Unittest
-* **Data Science Tools:** OpenAI, matplotlib
+* **Data Science Tools:** OpenAI, Matplotlib
 
 ## Prerequisites
 
@@ -66,7 +66,23 @@ The purpose of these steps is to prevent publicly exposing your API on the inter
 
 ## Usage
 
-...
+### Running Program
+
+You can run the program in either of two ways:
+* Ensure terminal is at `src folder` > run program from GUI or terminal with `python3 main.py` command
+* Ensure terminal is at base folder > run program from terminal with `bash main.sh` command
+
+You will notice this control flow each time the program runs: enter file for analysis > enter product > repeat program option. The `assets folder` will be updated each time to either create or overwrite a visualization image. The program also prints out error messagse if file data is not found or reviews contain empty or invalid items.
+
+### Running Test Files
+
+The project had a total of X unit tests pass with the `unittest` module across X source files. These tests can be run in either of two ways:
+* Individually in test folder: Run test file from terminal with `bash <test_file_name>.py` command.
+* Collectively in base folder: Run test.sh file from terminal with `bash test.sh` command.
+
+### Uploading New Data
+
+You can add new data for analysis inside the `data folder`. Just make sure to follow the same JSON format as the `template_reviews.json` file. You will modify the template in two ways. First, assign string value to the **product key**. Second, assign a list value to the **results key**.
 
 ## Development Roadmap
 
