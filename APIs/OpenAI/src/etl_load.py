@@ -3,7 +3,7 @@ import os
 
 
 class Load():
-    DST_DIR_NAME = "../images"
+    DST_DIR_NAME = "../assets"
 
 
     @staticmethod

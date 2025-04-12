@@ -1,6 +1,10 @@
 # Sentimental Analysis with OpenAI
 
-...
+This project allows business clients to **automate sentimental analysis of customer product reviews**. Overall, this project resembled an **ETL pipeline**. Static JSON data was extracted, then transformed with OpenAI for sentimental analysis, and loading involved creating a visualization with Matplotlib. At a high-level, the ETL pipeline did this:
+
+* Extraction: Standardized and validated customer reviews to use
+* Transformation: Used OpenAI to apply sentiment labels to reviews
+* Loading: Produed bar graph of sentiment label results
 
 ## Live Demo
 
@@ -41,15 +45,30 @@ The purpose of these steps is to prevent publicly exposing your API on the inter
 
 ## Development Roadmap
 
-Overall, this project resembled an ETL pipeline. The following resources were relevant for project completion:
+This project was completed in three days with the following project folder structure:
+
+<img src="demo/roadmap_project_structure.PNG" alt="Project folder structure has separate subfolders for source code, test files, and more." width="60%">
+
+**I referred to these resources to guide my project completion:**
+
 * JSON: [Past file handling mini-project](https://github.com/barronbytes/Learning-to-Code/tree/main/File-Handling) on working with JSON data.
 * Data Validation: [Past heart rate monitoring data processing mini-project](https://github.com/barronbytes/Learning-to-Code/tree/main/Data-Science/Summary-Statistics) completed to handle **data extraction**. Specifically, the `get_file_data.py` file within the source code folder.
 * OpenAI API: [Official OpenAI API documentation for the Response API model](https://platform.openai.com/docs/guides/responses-vs-chat-completions) helped me [generate prompts](https://platform.openai.com/docs/guides/prompt-generation) for **data transformation**. Alternatively, the Reponse API model is a different way to interact with OpenAI that was not chosen.
 * Matplotlib: [Official documentation on bar charts](https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html) helped me create and **load a visualization**.
 
+### Setbacks
+
+### Successes
+
+### Improvements
+
 ## Results
 
-...
+The program analyzed the `zico_coconut_water_reviews.json` file and returned the following:
+* 50 input reviews > bar graph showing 50 labeled sentiments
+* Sentimental analysis results > 37 negative, 2 neutral, 11 positive, and 0 irrelevant
+
+![Program created a bar graph on sentimental analysis of coconut beverage reviews.](demo/results.PNG)
 
 ## Analysis
 
@@ -67,13 +86,13 @@ The sentiment labels produced by my program are unreliable due to hallucinations
 * **Reliability:** The model repeatedly gave different visualization results when provided the same input. Also, the program did not always produce output that matched the input length.
 * **Hallucinations:** My program let users enter a client product for customer reviews. The results stayed mostly the same, even when the model was told the reviews were for a different or unrelated product. In the image below, the program analyzed 50 Zico Coconut Water reviews, but the user said they were about "cars." Still, the program marked 45 reviews as "negative" and only 1 as "irrelevant," even though the system context was set up to avoid this.
 
-![Program created a bar graph counting only 1 "irrelevent" review.](demo/results_q2.PNG)
+![Program created a bar graph counting only 1 "irrelevent" review.](demo/analysis_q2.PNG)
 
 ### Question 3
 
-> Using the most common sentiment, what would you recommend to this Coconut Water producer to improve customer satisfaction? Should they continue to pursue current market/product outcomes, or does there exist an opportunity for this business to improve its product?
+> Using the most common sentiment, **what should the Coconut Water producer do** to improve customer satisfaction? Should they continue to pursue current market/product outcomes, or does there exist an opportunity for this business to improve its product?
 
-As stated previously, the sentiment analysis program had problems. I wouldn’t trust it to make business decisions. But if its results were reliable,I would tell the company to discontinue its product due to extremely low favorability. They likely have very few core customers. I would recommend the company take one of two actions: (1) rebrand and launch a new drink, or (2) stop making its own beverages and use its infrastructure to support more successful competitors as a supply chain manufacturer.
+As stated previously, the sentiment analysis program had problems. I wouldn’t trust it to make business decisions. But if its results were reliable,I would tell the company to discontinue its product due to extremely low favorability. They likely have very few core customers. **I would recommend the company take one of two actions:** (1) rebrand and launch a new drink, or (2) stop making its own beverages and use its infrastructure to support more successful competitors as a supply chain manufacturer.
 
 ## Credits and Contributing
 
