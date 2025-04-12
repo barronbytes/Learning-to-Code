@@ -28,14 +28,15 @@ class Transform():
 
 
     @staticmethod
-    def prompt_mapper(raw_data: list[str]) -> list[str]:
+    def prompt_mapper(raw_data: list[str]) -> str:
         '''
-        Handles mapping task of transforming list of product review comments into list of one-word sentiment summaries.
+        Handles mapping task of transforming list of product review comments into one-word sentiment summaries.
+        - IMPORTANT: The return type is a STRING and not a LIST. OpenAI API respones are strings.
 
         Parameters:
             raw_data list(str): Raw data of sentiment comments.
         Returns:
-            list (str): Collection of one-word summaries for reviews.
+            str: Collection of one-word summaries for reviews.
         '''
         client = OpenAI(api_key=os.getenv("API_OPENAI"))
         system_context, user_context = Transform.prompt_context(raw_data, len(raw_data))
@@ -46,7 +47,8 @@ class Transform():
                 { "role":"user",  "content":user_context }
             ]
         )
-        return completion.choices[0].message.content
+        response = completion.choices[0].message.content
+        return response        
         
 
     @staticmethod
@@ -99,22 +101,6 @@ class Transform():
         [2] Your output should be a Python list of {raw_count} labels, in the same order as the reviews.
         """
         return (system_context.strip(), user_context.strip())
-    
-
-    @staticmethod
-    def validate(sentiments: list[str], count: int) -> list[str]:
-        '''
-        Ensures that output matches expected size. Pads with "irrelevant" if short; trims if too long.
-
-        Parameters:
-            list (str): Collection of unvalidated one-word summaries for reviews. (Potential size error)
-        Returns:
-            list (str): Collection of validated one-word summaries for reviews.  
-        '''
-        valid_data = sentiments[:count]
-        if len(sentiments) < count:
-            valid_data.extend(Transform.SENTIMENTS[-1] for _ in range(count - len(valid_data)))
-        return valid_data
 
 
     @staticmethod
@@ -129,4 +115,7 @@ class Transform():
         '''
         is_errors = Transform.check_errors(raw_data)
         sentiments = Transform.prompt_mapper(raw_data) if is_errors else []
-        return Transform.validate(sentiments, len(raw_data))
+        print(f"Output type: {type(sentiments)}")
+        print(f"Commma counts: {sentiments.count(",")}")
+        print(sentiments)
+        return sentiments

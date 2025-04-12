@@ -9,8 +9,8 @@ def main():
     while run_all:
         is_extracted, file_name, raw_data = Extract.brain()
         sentiments = Transform.brain(raw_data) if is_extracted else []
-        if sentiments:
-            Load.brain(file_name, sentiments)
+        #if sentiments:
+        #    Load.brain(file_name, sentiments)
         run_all = Control.clear_screen() if is_extracted else False
 
 
