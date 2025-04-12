@@ -64,11 +64,17 @@ I fixed the first problem by **writing better prompts and realizing the AI gives
 
 ![Program clearly created hallucinations.](demo/setbacks_sample.PNG)
 
-Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. You can read more about this problem here: [Analysis section > Question 2](#analysis).
+Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. Read more about this here: [Analysis section > Question 2](#analysis).
 
 ### Successes
 
+Getting past the OpenAI blocker was a big win. My full system and user context prompts are in the `etl_transform.py` file. The image in the [results section shows part of the system context](#results). Once I realized the AI response was just a string, I used regular expressions to extract and analyze the data—something I had experience with from building a [static site generator](https://github.com/barronbytes/Guided-Projects/tree/main/Static-Site-Generator). This project showed I could: build a basic ETL pipeline; use JSON, APIs, regular expressions, and unit tests; and create visualizations.
+
 ### Improvements
+
+The current project setup requires users to manually download and run it locally in an IDE, which limits the potential user base. Many users are not familiar with this process, making it difficult for a broader audience to use this project.
+
+The next step to advance this project would be to develop a frontend component. A web app with features allowing users to upload files and perform CRUD operations would be ideal.
 
 ## Results
 
