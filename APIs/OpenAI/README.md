@@ -47,7 +47,7 @@ The purpose of these steps is to prevent publicly exposing your API on the inter
 
 This project was completed in four days with the following project folder structure:
 
-<img src="demo/roadmap_project_structure.PNG" alt="Project folder structure has separate subfolders for source code, test files, and more." width="60%">
+<img src="demo/roadmap_filetree.PNG" alt="Project folder structure has separate subfolders for source code, test files, and more." width="60%">
 
 **I referred to these resources to guide my project completion:**
 
@@ -62,7 +62,7 @@ This was my first time using the OpenAI API on a project. I faced two major issu
 
 I fixed the first problem by **writing better prompts and realizing the AI gives back a string by default**. I improved my prompts with clearer descriptions of inputs, steps to follow, and expected output. The image below shows how the model responded before I updated the system context. The first four lines were manually added by me for your reading, and were not part of the AI response results. As you can see, the model accepted 50 input reviews but returned 46 output sentiment labels. It skipped 10 real reviews and created 6 hallucination reviews. Also remember, the final result is a Python string and not a list. Learning this helped me complete the extraction step of my ETL pipeline.
 
-![Program clearly created hallucinations.](/demo/setbacks_sample_response.PNG)
+![Program clearly created hallucinations.](demo/setbacks_sample.PNG)
 
 Unfortunately, I was unable to resolve the second problem. My program allows users to input the product for the customer reviews. This provides the opportunity to create a mismatch between product and reviews. However, for these cases the model did not correctly apply the "irrelevant" label to reviews in the final bar chart created as expected. You can read more about this problem here: [Analysis section > Question 2](#analysis).
 
