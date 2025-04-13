@@ -21,11 +21,11 @@ class Transform():
         '''
         is_empty = not bool(reviews)
         is_strings = all(isinstance(data, str) for data in reviews) if reviews else False
-        is_valid = True
+        is_errors = False
         if is_empty or not is_strings:
-            is_valid = False
+            is_errors = True
             print("\nError: JSON file contained no reviews." if is_empty else "\nError: JSON file contained erroneous reviews.")
-        return is_valid
+        return is_errors
 
 
     @staticmethod
@@ -139,6 +139,6 @@ class Transform():
             tuple (list, dict): Sentiment labels and paired sentiment label-count appearances from analysis.
         '''
         is_errors = Transform.check_errors(reviews)
-        open_ai_response = Transform.prompt_mapper(reviews) if is_errors else ""
+        open_ai_response = Transform.prompt_mapper(reviews) if not is_errors else ""
         sentiments = Transform.aggregation(open_ai_response)
         return (Transform.SENTIMENTS, sentiments)

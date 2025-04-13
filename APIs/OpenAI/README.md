@@ -76,7 +76,7 @@ You will notice this control flow each time the program runs: enter file for ana
 
 ### Running Test Files
 
-The project had a total of X unit tests pass with the `unittest` module across X source files. These test files are each individually located inside the `test folder`. However, you can only run them from the base folder as follows:
+The project had a total of 5 unit tests pass with the `unittest` module across 2 source files. These test files are each individually located inside the `test folder`. However, you can only run them from the base folder as follows:
 * Ensure terminal is at base folder > run `test.sh` file from GUI or terminal with `bash test.sh` command
 
 ### Uploading New Data
