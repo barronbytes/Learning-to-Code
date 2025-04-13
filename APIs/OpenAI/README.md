@@ -76,9 +76,8 @@ You will notice this control flow each time the program runs: enter file for ana
 
 ### Running Test Files
 
-The project had a total of X unit tests pass with the `unittest` module across X source files. These tests can be run in either of two ways:
-* Individually in test folder: Run test file from terminal with `bash <test_file_name>.py` command.
-* Collectively in base folder: Run test.sh file from terminal with `bash test.sh` command.
+The project had a total of X unit tests pass with the `unittest` module across X source files. These test files are each individually located inside the `test folder`. However, you can only run them from the base folder as follows:
+* Ensure terminal is at base folder > run `test.sh` file from GUI or terminal with `bash test.sh` command
 
 ### Uploading New Data
 

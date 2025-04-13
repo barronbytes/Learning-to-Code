@@ -4,7 +4,7 @@ import os
 
 class Load():
     DST_DIR = "assets"
-    CODE_DIR = "src"
+    SUBFOLDER_DIR = ["src", "test"]
 
 
     @staticmethod
@@ -16,7 +16,7 @@ class Load():
             str: Relative path for destination directory.
         '''
         cwd = os.path.basename(os.getcwd())
-        return Load.DST_DIR if cwd != Load.CODE_DIR else f"../{Load.DST_DIR}"
+        return Load.DST_DIR if cwd not in Load.SUBFOLDER_DIR else f"../{Load.DST_DIR}"
 
 
     @staticmethod
