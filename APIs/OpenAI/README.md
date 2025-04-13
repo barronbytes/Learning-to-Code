@@ -12,7 +12,7 @@ This project allows business clients to **automate sentimental analysis of custo
 
 Feel free to check out a better view of the [project here](https://barronbytes.github.io/OpenAI/)!
 
-<img src="demo/demo_full.gif" />
+<img src="demo/full_demo.gif" />
 
 ## Features
 
