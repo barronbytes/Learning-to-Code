@@ -3,7 +3,20 @@ import os
 
 
 class Load():
-    DST_DIR_NAME = "../assets"
+    DST_DIR = "assets"
+    CODE_DIR = "src"
+
+
+    @staticmethod
+    def out_path() -> str:
+        '''
+        Determines relative path for saving visualization file.
+
+        Returns:
+            str: Relative path for destination directory.
+        '''
+        cwd = os.path.basename(os.getcwd())
+        return Load.DST_DIR if cwd != Load.CODE_DIR else f"../{Load.DST_DIR}"
 
 
     @staticmethod
@@ -16,6 +29,7 @@ class Load():
             data_labels (list(str)): Sentiment labels as quantitative data for bar graph.
             data_counts (list(int)): Sentiment counts as quantitative data for bar graph.
         '''
+
         # set data:
         x = data_labels
         y = data_counts
@@ -30,5 +44,5 @@ class Load():
         axes.bar_label(bars, padding=3) # bar chart labels
 
         # save data, no need for plt.show() in this project
-        figure.savefig(os.path.join(Load.DST_DIR_NAME, file_name.replace(".json", ".png")))
+        figure.savefig(os.path.join(Load.out_path(), file_name.replace(".json", ".png")))
         plt.close()
