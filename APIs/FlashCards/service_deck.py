@@ -1,9 +1,6 @@
 from model_deck import Deck
 from fastapi import HTTPException
-
-
-decks: list[Deck] = []
-id_counter: int = 0
+from database import decks, id_counter
 
 
 def create_deck(name: str) -> Deck:

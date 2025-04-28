@@ -1,9 +1,9 @@
 from typing import Union
-from fastapi import APIRouter, HTTPException
-from service_deck import create_deck, get_deck, update_deck, delete_deck
-from service_card import create_card
+from fastapi import APIRouter
 from model_deck import Deck
 from model_card import Card
+from service_deck import create_deck, get_deck, update_deck, delete_deck
+from service_card import create_card
 
 
 router = APIRouter(prefix="/teacher", tags=["Teacher"])

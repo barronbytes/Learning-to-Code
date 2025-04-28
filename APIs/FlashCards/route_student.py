@@ -1,6 +1,6 @@
-from fastapi import APIRouter, HTTPException
-from service_deck import get_deck  # Import the get_deck function from service_deck.py
+from fastapi import APIRouter
 from model_deck import Deck
+from service_deck import get_deck
 
 
 router = APIRouter(prefix="/student", tags=["Student"])

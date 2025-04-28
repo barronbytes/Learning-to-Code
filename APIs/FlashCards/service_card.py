@@ -1,10 +1,7 @@
 from typing import Union
 from fastapi import HTTPException
 from model_card import Card
-from model_deck import Deck
-
-
-decks: list[Deck] = []
+from database import decks
 
 
 def create_card(name: str, question: Union[str, int], answer: Union[str, int], tags: list[str]) -> Card:
