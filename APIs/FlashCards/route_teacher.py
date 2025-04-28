@@ -41,3 +41,22 @@ def get_deck(id: int) -> Deck:
     if not deck:
         raise HTTPException(status_code=404, detail="Deck not found.")
     return deck
+
+
+
+@router.put("/deck/{id}", response_model=Deck)
+def update_deck(id: int, new_name: str) -> Deck:
+    deck = next((deck for deck in decks if deck.id == id), None)
+    if not deck:
+        raise HTTPException(status_code=404, detail="Deck not found.")
+    deck.name = new_name
+    return deck
+
+
+@router.delete("/deck/{name}", response_model=Deck)
+def delete_deck(name: str) -> Deck:
+    deck = next((deck for deck in decks if deck.name == name), None)
+    if not deck:
+        raise HTTPException(status_code=404, detail="Deck not found.")
+    decks.remove(deck)    
+    return deck
