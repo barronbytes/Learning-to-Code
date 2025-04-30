@@ -1,17 +1,17 @@
 from fastapi import APIRouter
-from schema_lesson import Lesson
-from service_lesson import create_lesson, read_lesson
+from schema_deck import Deck
+from service_lesson import create_lesson, read_lessons
 
 
 router = APIRouter(prefix="/teacher", tags=["Teacher"])
 
 
 # use plural nouns for resources
-@router.post(path="/lessons", response_model=Lesson)
-def create_lesson_route() -> Lesson:
-    return create_lesson()
+@router.post(path="/lessons")
+def create_lesson_route(name: str) -> dict[str, list]:
+    return create_lesson(name)
 
 
-@router.get(path="/lessons/{id}", response_model=Lesson)
-def read_lesson_route(id: int) -> Lesson:
-    return read_lesson(id)
+@router.get(path="/lessons")
+def read_lessons_route() -> dict[str, list]:
+    return read_lessons()

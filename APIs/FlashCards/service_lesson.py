@@ -1,14 +1,11 @@
-from schema_lesson import Lesson
-from model_flashcards import lesson_id, flashcards
+from schema_deck import Deck
+from model_lesson import lessons
 
 
-def create_lesson() -> Lesson:
-    global lesson_id # reassigning value > MUST use global keyword
-    new_lesson = Lesson(id=lesson_id)
-    flashcards[lesson_id] = new_lesson # modifying contents > NO NEED to use global keyword
-    lesson_id += 1
-    return new_lesson
+def create_lesson(name: str) -> dict[str, list]:
+    lessons[name] = [] # modifying contents > NO NEED to use global keyword
+    return {name: []}
 
 
-def read_lesson(id: int) -> Lesson:
-    return flashcards[id]
+def read_lessons() -> dict[str, Deck]:
+    return lessons
