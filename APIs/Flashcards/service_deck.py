@@ -16,3 +16,9 @@ def read_all_decks() -> Flashcards:
 def read_deck(name: str) -> Deck:
     deck = model_database.db.get(name)
     return deck
+
+
+def delete_deck(name: str) -> Deck:
+    deck = model_database.db.get(name)
+    del model_database.db[name]
+    return deck

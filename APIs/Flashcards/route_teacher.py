@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from schema_deck import Deck
 from schema_flashcards import Flashcards
-from service_deck import create_deck, read_all_decks, read_deck
+from service_deck import create_deck, read_all_decks, read_deck, delete_deck
 
 
 router = APIRouter(prefix="/teacher", tags=["Teacher"])
@@ -33,3 +33,12 @@ def read_deck_route(name: str) -> Deck:
      -H "accept: application/json"
     """
     return read_deck(name)
+
+
+@router.delete(path="/decks/{name}", response_model=Deck)
+def delete_deck_route(name: str) -> Deck:
+    """
+    curl -X DELETE "http://127.0.0.1:8000/teacher/decks/Geometry" \
+     -H "accept: application/json"
+    """
+    return delete_deck(name)
