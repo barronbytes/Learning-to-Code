@@ -2,11 +2,11 @@ from schema_deck import Deck
 from model_database import db
 
 
-def create_lesson(name: str) -> Deck:
-    deck = Deck(name, {})
-    db[name] = {}
+def create_deck(name: str) -> Deck:
+    deck = Deck(deck_id=name, cards=[])
+    db[name] = deck
     return deck
 
 
-def read_lesson(name: str) -> Deck:
+def read_deck(name: str) -> Deck:
     pass
