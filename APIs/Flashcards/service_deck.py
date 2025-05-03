@@ -1,9 +1,12 @@
 from schema_deck import Deck
+from model_database import db
 
 
-def create_lesson(name: str) -> dict[str, list]:
-    pass
+def create_lesson(name: str) -> Deck:
+    deck = Deck(name, {})
+    db[name] = {}
+    return deck
 
 
-def read_lessons() -> dict[str, Deck]:
+def read_lesson(name: str) -> Deck:
     pass

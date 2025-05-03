@@ -3,5 +3,9 @@ from schema_card import Card
 
 
 class Deck(BaseModel):
-    name_id: str
+    deck_id: str
     cards: list[Card] = Field(default_factory=list)
+
+
+    class Config:
+        allow_mutation = True
