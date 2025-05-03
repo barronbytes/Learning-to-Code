@@ -1,4 +1,5 @@
 from schema_deck import Deck
+from schema_flashcards import Flashcards
 import model_database # ensure shared db is modified
 
 
@@ -6,6 +7,10 @@ def create_deck(name: str) -> Deck:
     deck = Deck(deck_id=name, cards=[])
     model_database.db[name] = deck
     return deck
+
+
+def read_all_decks() -> Flashcards:
+    return Flashcards(flashcards=model_database.db)
 
 
 def read_deck(name: str) -> Deck:
