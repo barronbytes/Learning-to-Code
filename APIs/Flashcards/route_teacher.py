@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from schema_deck import Deck
-from service_lesson import create_lesson, read_lessons
+from service_deck import create_lesson, read_lessons
 
 
 router = APIRouter(prefix="/teacher", tags=["Teacher"])
