@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from schema_deck import Deck
 from schema_flashcards import Flashcards
-from service_deck import create_deck, read_all_decks, read_deck, delete_deck
+from service_deck import create_deck, read_all_decks, read_deck, update_deck, delete_deck
 
 
 router = APIRouter(prefix="/teacher", tags=["Teacher"])
@@ -33,6 +33,15 @@ def read_deck_route(name: str) -> Deck:
      -H "accept: application/json"
     """
     return read_deck(name)
+
+
+@router.put(path="/decks/{old_name}", response_model=Deck)
+def update_deck_route(old_name: str, new_name: str) -> Deck:
+    """
+    curl -X PUT "http://127.0.0.1:8000/teacher/decks/Geometry?new_name=Algebra" \
+     -H "accept: application/json"
+    """
+    return update_deck(old_name, new_name)
 
 
 @router.delete(path="/decks/{name}", response_model=Deck)

@@ -18,6 +18,13 @@ def read_deck(name: str) -> Deck:
     return deck
 
 
+def update_deck(old_name: str, new_name: str) -> Deck:
+    deck = model_database.db[old_name]
+    model_database.db[new_name] = deck
+    deck.deck_id = new_name
+    return deck
+
+
 def delete_deck(name: str) -> Deck:
     deck = model_database.db.get(name)
     del model_database.db[name]
