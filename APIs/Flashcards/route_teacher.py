@@ -7,6 +7,6 @@ router = APIRouter(prefix="/teacher", tags=["Teacher"])
 
 
 # use plural nouns for resources
-@router.post(path="/lessons", response_model=Deck)
+@router.post(path="/deck", response_model=Deck)
 def create_deck_route(name: str) -> Deck:
     return create_deck(name)
