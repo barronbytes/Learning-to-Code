@@ -22,7 +22,7 @@ The idea of completing this project seemed daunting from its conception. I had p
 2. What folder structure and files do I need to create an API?
 3. What options exist for making an API with Python?
 
-Ultimately, I decided to use **FastAPI** to leverage its built-in documentation support. Google Images provided an article link with API design guidance:
+Ultimately, I decided to use **FastAPI** to leverage its built-in documentation support. Google Images provided me API design guidance:
 
 <figure>
 <img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%">
