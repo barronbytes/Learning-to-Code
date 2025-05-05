@@ -12,7 +12,7 @@ Before running this project locally, ensure you ahve the following installed:
 * Install **FastAPI** from terminal: `pip install fastapi`
 * Install **ASGI server** (e.g., **uvicorn**): `pip install uvicorn`
 
-* Lessons Learned
+# Lessons Learned
 
 ...
 
