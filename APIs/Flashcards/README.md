@@ -25,7 +25,7 @@ The idea of completing this project seemed daunting from its conception. I had p
 Ultimately, I decided to use **FastAPI** to leverage its built-in documentation support. Google Images provided me API design guidance:
 
 <figure>
-<img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%"><figcaption>Source: <a href="https://camillovisini.com/coding/abstracting-fastapi-service" title="article link">Implementing FastAPI Services - Abstraction and Separation of Concerns</a>, by Camillo Visini</figcaption>
+<img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%"><figcaption>Source: <a href="https://camillovisini.com/coding/abstracting-fastapi-service" title="article link">Implementing FastAPI Services - Abstraction and Separation of Concerns</a>, by Camillo Visini<br \></figcaption>
 </figure>
 
 **Step 2 > Build:** I used the file structure above to start coding:
