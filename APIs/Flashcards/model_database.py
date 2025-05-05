@@ -2,7 +2,6 @@ from schema_card import Card
 from schema_deck import Deck
 
 
-
 db = {
     "Geography": Deck(
         deck_id="Geography",

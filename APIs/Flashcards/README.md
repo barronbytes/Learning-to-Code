@@ -25,17 +25,16 @@ The idea of completing this project seemed daunting from its conception. I had p
 Ultimately, I decided to use **FastAPI** to leverage its built-in documentation support. Google Images provided me API design guidance:
 
 <figure>
-<img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%">
-<figcaption>Source: <a href="https://camillovisini.com/coding/abstracting-fastapi-service" title="article link">Implementing FastAPI Services - Abstraction and Separation of Concerns</a>, by Camillo Visini</figcaption>
+<img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%"><figcaption>Source: <a href="https://camillovisini.com/coding/abstracting-fastapi-service" title="article link">Implementing FastAPI Services - Abstraction and Separation of Concerns</a>, by Camillo Visini</figcaption>
 </figure>
 
 **Step 2 > Build:** I used the file structure above to start coding:
 
-1. **Schemas:** ...
-2. **Models:** ...
-2. **Services:** ...
-3. **Routes:** ...
-4. **Main:** ...
+1. **Schemas:** These files define classes. In the context of an API, they are referred to as **resources** used for requests and respones. The classes were built by using the **pydantic** for data validation.
+2. **Models:** No true database was used. Instead, a dictionary was used for fast indexing.
+2. **Services:** These files contain **CRUD** functions. For the FastAPI built-in documentation to work, each function must return a schema file object. Only keyword arguments can be used to create object instances.
+3. **Routes:** These files establish different types of **users** as routes. This API has a `teacher` and `student` user. The service file functions are reused in the route files to define both **HTTP METHODS** and **API endpoint paths**. The files show how to use **curl commands** to call each HTTP METHOD and endpoint.
+4. **Main:** This is the API brain. First, the FastAPI instance is created here. Then, the routes for user types are added to the instance. 
 
 # Credits & Additional Learning
 
