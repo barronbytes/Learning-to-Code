@@ -30,3 +30,7 @@ These resources helped me complete this project:
 These resources provide deeper knowledge:
 
 * Medium.com > [Mastering REST APIs: The Backbone of Modern Web Development](https://medium.com/@nomannayeem/mastering-rest-apis-the-backbone-of-modern-web-development-51625c10dbc7)
+* Medium.com > [How to Structure Your FastAPI Projects: Part I: Blueprint](https://medium.com/@amirm.lavasani/how-to-structure-your-fastapi-projects-0219a6600a8f)
+* Medium.com > [How to Setup a FastAPI Project using Conda and Poetry: Part II: Environment & Dependencies](https://medium.com/@amirm.lavasani/how-to-setup-a-fastapi-project-using-conda-and-poetry-aa98e007c7af)
+* Medium.com > [How to Setup Automatic Versioning for your FastAPI App: Part III: Versioning](https://medium.com/@amirm.lavasani/how-to-add-automatic-versioning-to-your-fastapi-service-b008ed5f3edc)
+* Medium.com > [How to Add i18n to Your FastAPI App: Part IV: Internalization](https://medium.com/@amirm.lavasani/how-to-add-i18n-to-your-fastapi-app-b546f7d183bb)
