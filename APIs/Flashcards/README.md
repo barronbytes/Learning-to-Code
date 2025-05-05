@@ -16,13 +16,26 @@ Before running this project locally, ensure you ahve the following installed:
 
 The idea of completing this project seemed daunting from its conception. I had previously used openly availble APIs; however, I had never created one myself. This project allowed me to learn a lot by following these steps:
 
-**Step 1: Questions**: These were the initial development quetsions I faced.
+**Step 1 > Questions:** These were the initial development quetsions I faced.
 
 1. What are popular frameworks used to create APIs?
 2. What folder structure and files do I need to create an API?
 3. What options exist for making an API with Python?
 
-I ultimately decided to use **FastAPI**, which required me to use `pydantic` and an ASGI server like `uvicorn`.
+Ultimately, I decided to use **FastAPI** to leverage its built-in documentation support. Google Images provided an article link with API design guidance:
+
+<figure>
+<img src="demo/api_diagram.PNG" alt="API design and file structure" style="width:100%">
+<figcaption>Source: <a href="https://camillovisini.com/coding/abstracting-fastapi-service" title="article link">Implementing FastAPI Services - Abstraction and Separation of Concerns</a>, by Camillo Visini</figcaption>
+</figure>
+
+**Step 2 > Build:** I used the file structure above to start coding:
+
+1. **Schemas:** ...
+2. **Models:** ...
+2. **Services:** ...
+3. **Routes:** ...
+4. **Main:** ...
 
 # Credits & Additional Learning
 
