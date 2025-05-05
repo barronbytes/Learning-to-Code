@@ -16,10 +16,14 @@ Before running this project locally, ensure you ahve the following installed:
 
 ...
 
+# Credits & Additional Learning
 
-# Credits
+These resources helped me complete this project:
 
-The following resources helped me complete this project:
-
+* Medium.com > [Building REST APIs with Python and FastAPI](https://medium.com/@kapildevkhatik2/building-rest-apis-with-python-and-fastapi-f6a0c65c9af1)
 * [Pydantic > Concepts User Guide](https://docs.pydantic.dev/latest/api/base_model/)
 * [FastAPI > Learn > Tutorial - User Guide](https://fastapi.tiangolo.com/tutorial/)
+
+These resources provide deeper knowledge:
+
+* Medium.com > [Mastering REST APIs: The Backbone of Modern Web Development](https://medium.com/@nomannayeem/mastering-rest-apis-the-backbone-of-modern-web-development-51625c10dbc7)
