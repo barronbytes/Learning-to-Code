@@ -51,7 +51,7 @@ There are three Jupyter notebooks with EDA findings:
 
 There are three CSV files:
 
-* **data/weather/** > `weather_data1.csv`, `weather_data 2.csv`: This datset contains weather data from **January through May**.
+* **data/weather/** > `weather_data1.csv`, `weather_data 2.csv`: This datset contains weather data from **January to May**.
 * **data/crop/** > `coffee_output.csv`: This dataset contains coffee harvest data from **June to September**.
 
 | Column | Weather Dataset |
