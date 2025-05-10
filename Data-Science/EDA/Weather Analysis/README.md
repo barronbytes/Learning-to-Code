@@ -55,7 +55,7 @@ There are three CSV files:
 * **data/crop/** > `coffee_output.csv`: This dataset contains coffee harvest data from **June to September**.
 
 | Column | Weather Dataset |
-|:--------:|:--------------|
+|:---------|:--------------|
 | year | Year of Harvest |
 | rain_max | Average maximum (mm of rain)  |
 | temp_avg | Average temperature (℃) |
@@ -69,7 +69,7 @@ There are three CSV files:
 
 
 | Column | Coffee Dataset |
-|:--------:|:--------------|
+|:---------|:--------------|
 | country | Country of Harvest (Brazil) |
 | subdivision | Name of Brazilian sub-division |
 | type | Type of coffee bean |
