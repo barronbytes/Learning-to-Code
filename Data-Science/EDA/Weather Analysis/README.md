@@ -1,4 +1,4 @@
-# Weather Data Analysis
+# EDA of Brazil Exporter Coffee Output vs Weather Trends
 
 This mini-project allowed me to use pandas for **exploratory data analysis (EDA)** with the following scenario:
 
@@ -27,9 +27,7 @@ I learned to do the following with CSV data:
 * Use pandas for visualiztaions > line plots, histograms
 * Calculate and interpret Pearson correlation coefficients
 
-The following cutoffs were used to interpret Pearson numbers:
-
-| Value(s) | Interpretation |
+| Pearson Value(s) | Pearson Interpretation |
 |:--------:|:--------------|
 | 1 | Perfectly Positive |
 | 0.7 | Strongly Positive |
@@ -41,40 +39,6 @@ The following cutoffs were used to interpret Pearson numbers:
 | -0.7 | Strongly Negative |
 | -1 | Perfectly Negative | 
 
-## Data Dictionary
-
-Column descriptions for datasets:
-
-**data/weather/weather_data**
-
-This dataset describes yearly weather outcomes for the coffee-growing months of Minas Gerais. Only weather data from January through May is considered.
-
-* year: Year on which metrics were calculated. 
-* rain_max: Average maximum millimeters of rain.
-* temp_avg: Average temperature in celsius.
-* temp_max: Average maximum temperature in celsius.
-* temp_min: Average minimum temperature in celsius.
-* hum_max: Average maximum humidity in percentage.
-* hum_min: Average minimum humidity in percentage.
-* wind_max: Average maximum wind speed in meters per second.
-* wind_avg: Average wind speed in meters per second.
-* subdivision: Name of Brazilian sub-division (all should be Minais Gerais)
-
-**data/crop/coffee_output**
-
-This dataset describes yearly features related to the coffee harvest that begins in June and ends in September in Minas Gerais.
-
-* country: Country where harvest occurs (all should be Brazil).
-* subdivision: Name of sub-division (all should be Minais Gerais)
-* type: Type of coffee bean
-* 60kgs_bag: 60 kg bags of coffee beans harvested (million bags)
-* year: Year of harvest
-* nonbearing_trees: Amount of nonbearing coffee trees (million trees)
-* bearing_trees: Amount of bearing coffee trees (million trees)
-* nonbear_hectares: Hectares of nonbearing coffee trees (thousand hectares)
-* bearing_hectares_per_hectare: Average number of bearing trees per hectare
-* nonbearing_trees_per_hectare: Average number of non-bearing trees per hectare
-
 ## Jupyter Notebooks
 
 There are three Jupyter notebooks with EDA findings:
@@ -82,6 +46,40 @@ There are three Jupyter notebooks with EDA findings:
 * notebooks/explore_weather.ipynb
 * notebooks/explore_coffee.ipynb
 * notebooks/analysis.ipynb
+
+## Datasets
+
+There are three CSV files:
+
+* **data/weather/** > `weather_data1.csv`, `weather_data 2.csv`: This datset contains weather data from **January through May**.
+* **data/crop/** > `coffee_output.csv`: This dataset contains coffee harvest data from **June to September**.
+
+| Column | Weather Dataset |
+|:--------:|:--------------|
+| year | Year of Harvest |
+| rain_max | Average maximum (mm of rain)  |
+| temp_avg | Average temperature (℃) |
+| temp_max | Average maximum temperature (℃) |
+| temp_min | Average minimum temperature (℃) |
+| hum_max | Average maximum humidity (%) |
+| hum_min | Average minimum humidity (%) |
+| wind_max | Average maximum wind speed (m/s) |
+| wind_avg | Average wind speed (m/s) |
+| subdivision | Name of Brazilian sub-division |
+
+
+| Column | Coffee Dataset |
+|:--------:|:--------------|
+| country | Country of Harvest (Brazil) |
+| subdivision | Name of Brazilian sub-division |
+| type | Type of coffee bean |
+| 60kgs_bag | 60 kg bags of coffee beans harvested (million bags) |
+| year | Year of Harvest |
+| nonbearing_trees | Amount of nonbearing coffee trees (million trees) |
+| bearing_trees | Amount of bearing coffee trees (million trees) |
+| nonbear_hectares | Hectares of nonbearing coffee trees (thousand hectares) |
+| bearing_hectares_per_hectare | Average number of bearing trees per hectare |
+| nonbearing_hectares_per_hectare | Average number of non-bearing trees per hectare |
 
 ## Credits & Additional Learning
 
