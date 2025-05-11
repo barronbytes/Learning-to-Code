@@ -39,6 +39,12 @@ I learned to do the following with CSV data:
 | -0.7 | Strongly Negative |
 | -1 | Perfectly Negative | 
 
+The following resources helped to use pandas in this project:
+
+* [Pandas: Official API Reference](https://pandas.pydata.org/docs/reference/index.html)
+* [Programiz: Introduction to Pandas](https://www.programiz.com/python-programming/pandas/introduction)
+* [Medium: Part 6: (Combining DataFrames): Mastering Data Manipulation with Pandas](https://medium.com/mastering-the-art-of-data-science-a-comprehensive/part-6-combining-dataframes-mastering-data-manipulation-with-pandas-95a698c96ef8)
+
 ## Jupyter Notebooks
 
 There are three Jupyter notebooks with EDA findings:
@@ -81,6 +87,6 @@ There are three CSV files:
 | bearing_hectares_per_hectare | Average number of bearing trees per hectare |
 | nonbearing_hectares_per_hectare | Average number of non-bearing trees per hectare |
 
-## Credits & Additional Learning
+## Credits & Contributions
 
 [The Knowledge House](https://www.theknowledgehouse.org/) provided the project requirements and raw data for this project. Contributions are welcome! Feel free to submit a pull request to improve the project or opena issue to report any problems.
