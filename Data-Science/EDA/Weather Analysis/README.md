@@ -84,8 +84,8 @@ There are three CSV files:
 | nonbearing_trees | Amount of nonbearing coffee trees (million trees) |
 | bearing_trees | Amount of bearing coffee trees (million trees) |
 | nonbear_hectares | Hectares of nonbearing coffee trees (thousand hectares) |
-| bearing_hectares_per_hectare | Average number of bearing trees per hectare |
-| nonbearing_hectares_per_hectare | Average number of non-bearing trees per hectare |
+| bearing_trees_per_hectare | Average number of bearing trees per hectare |
+| nonbearing_trees_per_hectare | Average number of non-bearing trees per hectare |
 
 ## Credits & Contributions
 
