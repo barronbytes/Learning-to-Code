@@ -33,6 +33,7 @@ Here’s the same information as a ranked list of Big O time complexities, from 
 
 Here are some general rules and considerations to help you determine time complexity:
 
+- **Constant time operations**: assignment operations, arithmetic operations, logical operations, if statements, return statements, print statements... always `O(n)`
 - **Ignore constants**: `5n² + 6n + 4` simplifies to `O(n² + n + 1)`
 - **Highest-order term dominates**: `O(n² + n + 1)` simplifies to `O(n²)`
 - **Same input sources CAN combine**: `O(5m + 6m)` becomes `O(m)`
