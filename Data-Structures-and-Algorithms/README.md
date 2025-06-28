@@ -18,6 +18,17 @@ Time complexity performance can be expressed using **Big O Notation**, which des
 
  *Big-O Complexity Chart from https://www.bigocheatsheet.com/*
 
+Here’s the same information as a ranked list of Big O time complexities, from best (most efficient) to worst (least efficient):
+
+1. O(1) — Constant time
+2. O(log n) — Logarithmic time
+3. O(n) — Linear time
+4. O(n * log n) — Linearithmic time
+5. O(n²) — Quadratic time
+6. O(n³) — Cubic time
+7. O(2ⁿ) — Exponential time
+8. O(n!) — Factorial time
+
 ## How to Analyze Time Complexities?
 
 Here are some general rules and considerations to help you determine time complexity:
