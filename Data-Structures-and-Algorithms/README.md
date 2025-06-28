@@ -53,3 +53,7 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 <img src="assets/complexity_array_algos.PNG" alt="Complexity of Algorithms" width="60%">
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
+
+ ## Credits & Contributing
+
+Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.
