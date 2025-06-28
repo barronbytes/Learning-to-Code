@@ -18,31 +18,33 @@ Time complexity performance can be expressed using **Big O Notation**, which des
 
  *Big-O Complexity Chart from https://www.bigocheatsheet.com/*
 
- ## How to Analyze Time Complexities?
-
-Here are some general rules and considerations to help determine time complexity:
-
-
 ## How to Analyze Time Complexities?
 
 Here are some general rules and considerations to help you determine time complexity:
 
-- **Ignore constants**: Constants don’t affect the growth rate. For example, `5n² + 6n + 4` simplifies to `O(n² + n + 1)`.
-- **Drop lower-order terms**: As input size grows, the highest-order term dominates. For example, `O(n² + n + 1)` simplifies to `O(n²)`.
-- **Combine variables only if they refer to the same input**: Don’t combine terms unless they represent the same input source. For example, `O(5m + 6n)` becomes `O(m + n)`, and `O(6m²n)` stays `O(m²n)`.
+- **Ignore constants**: `5n² + 6n + 4` simplifies to `O(n² + n + 1)`
+- **Highest-order term dominates**: `O(n² + n + 1)` simplifies to `O(n²)`
+- **Same input sources CAN combine**: `O(5m + 6m)` becomes `O(m)`
+- **Different input sources CANNOT combine**: `O(5m + 6n)` becomes `O(m + n)`
+- **Nested loops of SAME data source**: outer loop `n` to inner loop `n` becomes `O(n²)`
+- **Nested loops of DIFFERENT data source**: outer loop `n` to inner loop `m` becomes `O(n*m)`
+- **Logarithmic time comes from halving**: repeatedly dividing input in half (e.g., binary search) becomes `O(log n)`
+- **Factorial time comes from permutations**: generating all possible orderings (e.g., brute-force TSP or permutations) becomes `O(n!)`
 
+## Tips to Write Better Code
 
+Here are some tips to improve performance and reduce complexity:
 
-- **Loops**: A single loop over `n` elements results in `O(n)` time.
+- ❌ Avoid unnecessary nested loops — reduces complexity from `O(n²)` or worse to `O(n)`  
+- ✅ Use hash maps or sets for fast lookups — improves from `O(n)` search to `O(1)` average case  
+- ✅ Use the right data structure for the job (e.g., heap for priority tasks, queue for FIFO) — heaps allow `O(log n)` inserts and deletes; queues support `O(1)` operations  
+- ❌ Don’t recompute things in loops — caching or memoization can reduce from `O(n²)` to `O(n)`  
+- ✅ Use binary search or sorting tricks instead of brute-force scans — binary search reduces from `O(n)` to `O(log n)`  
+- ❌ Avoid deep recursion unless tail-recursion or memoization is used — can reduce from `O(2ⁿ)` to `O(n)` with dynamic programming
 
-- **Nested loops**: A loop inside a loop over `n` elements leads to `O(n²)` or worse depending on depth.
+## Common Big O Notation Algorithms
 
-- **Consecutive statements**: Add the complexities of each part. For example, `O(f(n)) + O(g(n))` becomes `O(f(n) + g(n))`.
-
-- **Conditional statements (if/else)**: Use the path with the highest complexity. For example, `O(max(f(n), g(n)))`.
-
-- **Recursive calls**: Use recurrence relations or recursion trees to analyze. For example, Merge Sort follows the recurrence `T(n) = 2T(n/2) + n` → `O(n log n)`.
-
+Big O Notation has been around long enough to solve many uses cases and algorithms shown below:
 
 <img src="assets/complexity_data_structures.PNG" alt="Complexity of Data Structures" width="60%">
 
