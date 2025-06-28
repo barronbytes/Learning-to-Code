@@ -1,21 +1,29 @@
 # O(n) — Linear Time
 
 
+def find_number(arr, target):
+    is_found = False
+    for element in arr:
+        if element == target:
+            is_found = True
+    return is_found
+
+
+arr = [1, 2, 3, 4, 5]
+target = 3
+print(find_number(arr, target))
+
+
+"""
+Here are other example(s):
+
+
 def find_maximum(nums):
     max = -float("inf")
     for num in nums:
         if num > max:
             max = num
     return max
-
-
-nums = [3, 17, 2, 99, 24, 1]
-maximum_value = find_maximum(nums)
-print("The maximum value is:", maximum_value)
-
-
-"""
-Here are other examples:
 
 
 def find_minimum(nums):
@@ -36,4 +44,5 @@ def average_followers(nums):
     has_data = bool(nums)
     total = sum(nums)
     return None if not has_data else total / len(nums)
+
 """
