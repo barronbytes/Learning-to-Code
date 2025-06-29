@@ -13,3 +13,5 @@ This algorithm sorts an unsorted list. The image shows the underlying process:
 Both a `while` and `for` loop contribute to the overall time complexity.
 
 <img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="60%">
+
+## Merge Sort: O(n * log n)
