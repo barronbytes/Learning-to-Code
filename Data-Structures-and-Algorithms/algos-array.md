@@ -10,9 +10,13 @@ This algorithm sorts a list in place by repeatedly comparing and swapping adjace
 
 *Visual from https://tinyurl.com/yyv7px2c*
 
-Both a `while` and `for` loop contribute to the overall time complexity.
+Here's a breakdown of the time complexity:
 
-<img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="60%">
+* The `while` loop controls number of loop events (think **"addition"**)
+* The `for` loop determines how much data processed (think **"terms"**)
+* Together this can be simplified to be **O(n²)**
+
+<img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="40%">
 
 ## Merge Sort: O(n * log n)
 
@@ -21,3 +25,9 @@ This algorithm uses a **divide-and-conquer** strategy to sort an unsorted list b
 1. Sort two sublists of length one when the base case is fully met
 2. Sort one sublist of one item and another sorted sublist of itmes as recursion unwinds
 3. Sort two sublists of potentially multiple items as a final step to complete conquer step
+
+Here's a breakdown of the time complexity:
+
+* O(log n) comes from the recursive splitting performed by the `merge_sort` function
+* O(n) comes from the merging of elements at each level, handled by the `merge` function
+* Therefore, the overall time complexity is **O(n log n)**, combining both recursive depth and merge cost
