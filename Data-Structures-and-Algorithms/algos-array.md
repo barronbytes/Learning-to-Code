@@ -4,7 +4,7 @@ Each algorithm listed below contains an accompanying file inside the `code` fold
 
 ## Bubble Sort: O(n²)
 
-This algorithm sorts a list in place by repeatedly comparing and swapping adjacent elements. Each full pass through the list pushes the largest remaining unsorted element to its correct position at the end--this is the “bubble up” effect. After each pass, the range of comparisons shrinks by one since the end portion becomes sorted. The process continues until a full pass completes with no swaps, meaning the list is fully sorted.
+This is an **in-place** algorithm that sorts a list in place by repeatedly comparing and swapping adjacent elements. Each full pass through the list pushes the largest remaining unsorted element to its correct position at the end--this is the “bubble up” effect. After each pass, the range of comparisons shrinks by one since the end portion becomes sorted. The process continues until a full pass completes with no swaps, meaning the list is fully sorted.
 
 <img src="assets/algos-arr-bubble-sort-how.PNG" alt="Bubble Sort Math" width="20%">
 
@@ -18,9 +18,18 @@ Here's a breakdown of the time complexity:
 
 <img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="40%">
 
+## Insertion Sort: O(n²)
+
+This is an **in-place** algorithm that sorts a list by treating it as two parts: a sorted portion and an unsorted portion. At each step, the next value from the unsorted part is inserted into its correct position within the sorted part by swapping it leftward until it's in place. This process builds a fully sorted list from left to right.
+
+Here's a breakdown of the time complexity:
+
+* Best case: **O(n)** with pre-sorted data (i.e. good for small or nearly sorted lists)
+* Worst case: **O(n²)** when reversing data (i.e. bad for large or descending lists)
+
 ## Merge Sort: O(n * log n)
 
-This algorithm uses a **divide-and-conquer** strategy to sort an unsorted list by breaking a large problem into smaller, more manageable parts. The divide step is performed by the main function, `merge_sort`, which recursively splits the input list into halves until a base case is reached--sublists with one or zero elements. Once the base case is met, the helper function `merge` is used to sort and combine sublists in three key ways:
+This is a **divide-and-conquer** algorithm that sorts an unsorted list by breaking a large problem into smaller, more manageable parts. The divide step is performed by the main function, `merge_sort`, which recursively splits the input list into halves until a base case is reached--sublists with one or zero elements. Once the base case is met, the helper function `merge` is used to sort and combine sublists in three key ways:
 
 1. Sort two sublists of length one when the base case is fully met
 2. Sort one sublist of one item and another sorted sublist of itmes as recursion unwinds
