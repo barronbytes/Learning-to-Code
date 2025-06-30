@@ -4,7 +4,7 @@ Each algorithm listed below contains an accompanying file inside the `code` fold
 
 ## Bubble Sort: O(n²)
 
-This algorithm sorts an unsorted list. The image shows the underlying process:
+This algorithm sorts a list in place by repeatedly comparing and swapping adjacent elements. Each full pass through the list pushes the largest remaining unsorted element to its correct position at the end--this is the “bubble up” effect. After each pass, the range of comparisons shrinks by one since the end portion becomes sorted. The process continues until a full pass completes with no swaps, meaning the list is fully sorted.
 
 <img src="assets/algos-arr-bubble-sort-how.PNG" alt="Bubble Sort Math" width="60%">
 
