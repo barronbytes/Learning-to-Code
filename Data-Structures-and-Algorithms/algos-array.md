@@ -6,7 +6,7 @@ Each algorithm listed below contains an accompanying file inside the `code` fold
 
 This algorithm sorts a list in place by repeatedly comparing and swapping adjacent elements. Each full pass through the list pushes the largest remaining unsorted element to its correct position at the end--this is the “bubble up” effect. After each pass, the range of comparisons shrinks by one since the end portion becomes sorted. The process continues until a full pass completes with no swaps, meaning the list is fully sorted.
 
-<img src="assets/algos-arr-bubble-sort-how.PNG" alt="Bubble Sort Math" width="60%">
+<img src="assets/algos-arr-bubble-sort-how.PNG" alt="Bubble Sort Math" width="20%">
 
 *Visual from https://tinyurl.com/yyv7px2c*
 
@@ -14,7 +14,7 @@ Here's a breakdown of the time complexity:
 
 * The `while` loop controls number of loop events (think **"addition"**)
 * The `for` loop determines how much data processed (think **"terms"**)
-* Together this can be simplified to be **O(n²)**
+* Together, this can be simplified to be **O(n²)**
 
 <img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="40%">
 
