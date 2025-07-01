@@ -31,5 +31,6 @@ def merge(first, second):
     final.extend(second[j:])
     return final
 
+
 nums = [38, 27, 43, 3, 9, 82, 10]
 print("Merge Sort Result:", merge_sort(nums))

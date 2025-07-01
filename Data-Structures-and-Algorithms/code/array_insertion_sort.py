@@ -7,3 +7,7 @@ def insertion_sort(nums):
             nums[j], nums[j - 1] = nums[j - 1], nums[j]  # Swap with previous if out of order
             j -= 1  # Move left in the sorted portion
     return nums  # Return the fully sorted list
+
+
+nums = [38, 27, 43, 3, 9, 82, 10]
+print("Insertion Sort Result:", insertion_sort(nums))
