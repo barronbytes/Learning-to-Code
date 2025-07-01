@@ -47,12 +47,9 @@ This is an **in-place divide-and-conquer** algorithm that sorts an unsorted list
 
 These are the algorithm steps:
 
-1. Select a pivot elment
-2. Use pointer(s) to partition list around pivot value
-3. Place pivot elment into its corretly sorted position
-4. Recursively apply same process to the left and right sublists
-5. Base case: recursion stops when no need to sort (i.e. sublist empty or has one value)
-6. Recursion undwinds: elements sorted in-place via repeated partitiong
+1. **Partitioning:** Select a pivot elment. Use pointer(s) to partition list around pivot value. Place pivot element into its corretly sorted position.
+2. **Recursion:** Apply the same process to sublists formed on the left and right sides of the pivot element index. This follows the **divide-and-conquer** approach.
+3. **Combining:** Happens **in-place** in algorithm.
 
 Pivot element implementations:
 
