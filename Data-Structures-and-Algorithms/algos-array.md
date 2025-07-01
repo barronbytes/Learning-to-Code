@@ -1,6 +1,14 @@
 # Array Algorithms
 
-Each algorithm listed below contains an accompanying file inside the `code` folder.
+This repository contains the following sorting algorithms:
+
+<img src="assets/algos-arr-sort-summary.PNG" alt="Sorting algorithms" width="60%">
+
+*Sorting Algorithms from https://tinyurl.com/4kf5v2fu*
+
+<img src="assets/algos-arr-sort-complexity.PNG" alt="Sorting algorithms complexity" width="100%">
+
+*Time and Space Complexity from https://tinyurl.com/4kf5v2fu*
 
 ## Bubble Sort: O(n²)
 
