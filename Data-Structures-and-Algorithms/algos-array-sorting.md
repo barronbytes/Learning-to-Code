@@ -1,4 +1,4 @@
-# Array Sorting Algorithms [🏠](#array-sorting-algorithms)
+# [Array Sorting Algorithms](#array-sorting-algorithms)
 
 Arrays can be used for sorting algorithms. Some of the most common ones are covered in this repository.
 
