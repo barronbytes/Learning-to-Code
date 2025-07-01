@@ -40,3 +40,31 @@ Here's a breakdown of the time complexity:
 * O(log n) comes from the recursive splitting performed by the `merge_sort` function
 * O(n) comes from the merging of elements at each level, handled by the `merge` function
 * Therefore, the overall time complexity is **O(n log n)**, combining both recursive depth and merge cost
+
+## Quick Sort: O(n * log n)
+
+This is an **in-place divide-and-conquer** algorithm that sorts an unsorted list by partitioning values based upon a pivot value. The main function `quick_sort` narrows the sorting range by recursively placing the pivot in its final sorted position. The helper function `partition` rearranges values so that elements less than the pivot appear before it, and elements greater appear after.
+
+These are the algorithm steps:
+
+1. Select a pivot elment
+2. Use pointer(s) to partition list around pivot value
+3. Place pivot elment into its corretly sorted position
+4. Recursively apply same process to the left and right sublists
+5. Base case: recursion stops when no need to sort (i.e. sublist empty or has one value)
+6. Recursion undwinds: elements sorted in-place via repeated partitiong
+
+Pivot element implementations:
+
+* **Three-way partitioning:** Uses the **first** index as the pivot. Best suited for inputs with many duplicate values, as it groups `<`, `=`, and `>` in a single pass.
+* **Hoare partition:** Uses the **first index** as the pivot. More efficient than Lomuto with duplicate values.
+* **Lomuto partition:** Uses the **last index** as the pivot. Performs poorly when duplicates exist.
+* **Randomized Quick Sort:** Uses a **random index** as the pivot. Reduces the chance of worst-case performance on sorted or patterned data.
+* **Median-of-three pivot:** Uses the **median** of the first, middle, and last indices as the pivot. Produces more balanced partitions and avoids bad cases on nearly sorted input.
+
+Here's a breakdown of the time complexity:
+
+* Best case: **O(n log n)** when partitions are balanced (i.e. pivot consistently splits the list evenly)
+* Worst case: **O(n²)** when partitions are unbalanced (i.e. pivot is always the smallest or largest element)
+
+To avoid the worst case, randomize the input or choose a better pivot (e.g. median-of-three strategy)
