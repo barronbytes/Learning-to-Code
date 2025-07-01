@@ -6,7 +6,7 @@ This repository contains the following sorting algorithms:
 
 *Sorting Algorithms from https://tinyurl.com/4kf5v2fu*
 
-<img src="assets/algos-arr-sort-complexity.PNG" alt="Sorting algorithms complexity" width="100%">
+<img src="assets/algos-arr-sort-complexity.PNG" alt="Sorting algorithms complexity" width="60%">
 
 *Time and Space Complexity from https://tinyurl.com/4kf5v2fu*
 
