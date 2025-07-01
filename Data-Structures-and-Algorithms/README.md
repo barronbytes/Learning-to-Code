@@ -66,6 +66,6 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
 
- ## Credits & Contributing
+## Credits & Contributing
 
 Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.

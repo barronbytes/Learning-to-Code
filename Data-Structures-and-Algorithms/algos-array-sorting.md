@@ -1,6 +1,6 @@
-# [Array Sorting Algorithms](#array-sorting-algorithms)
+# Array Sorting Algorithms [🏠](#array-sorting-algorithms)
 
-This repository contains the following sorting algorithms:
+Arrays can be used for sorting algorithms. Some of the most common ones are covered in this repository.
 
 <img src="assets/algos-arr-sort-summary.PNG" alt="Sorting algorithms" width="60%">
 
@@ -10,7 +10,7 @@ This repository contains the following sorting algorithms:
 
 *Time and Space Complexity table by Claire Lee at [Medium](https://yuminlee2.medium.com/sorting-algorithms-summary-f17ea88a9174)*
 
-## Bubble Sort: O(n²) [Jump to Top 🔝](#array-sorting-algorithms)
+## Bubble Sort: O(n²) [🔝](#array-sorting-algorithms)
 
 This is an **in-place** algorithm that sorts a list in place by repeatedly comparing and swapping adjacent elements. Each full pass through the list pushes the largest remaining unsorted element to its correct position at the end--this is the “bubble up” effect. After each pass, the range of comparisons shrinks by one since the end portion becomes sorted. The process continues until a full pass completes with no swaps, meaning the list is fully sorted.
 
@@ -22,7 +22,7 @@ Here's a breakdown of the time complexity:
 
 <img src="assets/algos-arr-bubble-sort-math.PNG" alt="Bubble Sort Math" width="40%">
 
-## Insertion Sort: O(n²) [Jump to Top 🔝](#array-sorting-algorithms)
+## Insertion Sort: O(n²) [🔝](#array-sorting-algorithms)
 
 This is an **in-place** algorithm that sorts a list by treating it as two parts: a sorted portion and an unsorted portion. At each step, the next value from the unsorted part is inserted into its correct position within the sorted part by swapping it leftward until it's in place. This process builds a fully sorted list from left to right.
 
@@ -31,7 +31,7 @@ Here's a breakdown of the time complexity:
 * Best case: **O(n)** with pre-sorted data (i.e. good for small or nearly sorted lists)
 * Worst case: **O(n²)** when reversing data (i.e. bad for large or descending lists)
 
-## Merge Sort: O(n * log n) [Jump to Top 🔝](#array-sorting-algorithms)
+## Merge Sort: O(n * log n) [🔝](#array-sorting-algorithms)
 
 This is a **divide-and-conquer** algorithm that sorts an unsorted list by breaking a large problem into smaller, more manageable parts. The divide step is performed by the main function, `merge_sort`, which recursively splits the input list into halves until a base case is reached--sublists with one or zero elements. Once the base case is met, the helper function `merge` is used to sort and combine sublists in three key ways:
 
@@ -45,7 +45,7 @@ Here's a breakdown of the time complexity:
 * O(n) comes from the merging of elements at each level, handled by the `merge` function
 * Therefore, the overall time complexity is **O(n log n)**, combining both recursive depth and merge cost
 
-## Quick Sort: O(n * log n) [Jump to Top 🔝](#array-sorting-algorithms)
+## Quick Sort: O(n * log n) [🔝](#array-sorting-algorithms)
 
 This is an **in-place divide-and-conquer** algorithm that sorts an unsorted list by partitioning values based upon a pivot value. The main function `quick_sort` narrows the sorting range by recursively placing the pivot in its final sorted position. The helper function `partition` rearranges values so that elements less than the pivot appear before it, and elements greater appear after.
 
@@ -69,3 +69,7 @@ Here's a breakdown of the time complexity:
 * Worst case: **O(n²)** when partitions are unbalanced (i.e. pivot is always the smallest or largest element)
 
 To avoid the worst case, randomize the input or choose a better pivot (e.g. median-of-three strategy)
+
+## Credits & Contributing
+
+Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.
