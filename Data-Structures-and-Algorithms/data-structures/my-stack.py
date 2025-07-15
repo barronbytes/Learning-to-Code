@@ -32,6 +32,6 @@ demo = Stack(data)
 
 
 print(f"Data: {demo.items}")                                # ['a', 'b', 'c', 'd', 'e']
-print(f"Create: {demo.push('Hello')} ... {demo.items}")     # Hello ... ['a', ..., 'e', 'Hello']
-print(f"Read (last item): {demo.peek()}")                   # Hello
+print(f"Create: {demo.push('Hello')} ... {demo.items}")     # Hello ... ['a', ..., 'e', 'Hello'] added to final position
+print(f"Read (last item): {demo.peek()}")                   # Hello ... set to last index
 print(f"Delete (LIFO): {demo.pop()} ... {demo.items}")      # Hello ... ['a', ..., 'e']
