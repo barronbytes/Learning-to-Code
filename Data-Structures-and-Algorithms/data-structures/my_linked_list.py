@@ -59,3 +59,35 @@ class LinkedList:
 
 
 ll = LinkedList()
+
+# Initial state
+print(f"Initial list: {ll}")            # Empty LinkedList
+
+# Add elements to tail
+ll.add_to_tail("a")
+ll.add_to_tail("b")
+ll.add_to_tail("c")
+print(f"After adding to tail: {ll}")    # 'a -> b -> c'
+
+# Add elements to head
+ll.add_to_head("z")
+ll.add_to_head("y")
+print(f"After adding to head: {ll}")    # 'y -> z -> a -> b -> c'
+
+# Remove head
+removed = ll.remove_from_head()
+print(f"Removed from head: {removed}")  # Node(value=y, next=z)
+print(f"List after removal: {ll}")      # 'z -> a -> b -> c'
+
+# Iterate over values
+print("Iterating over list:")
+for value in ll:
+    print(f"  value: {value}")          # z, a, b, c
+
+# Check current head and tail values
+print(f"Head: {ll.head.value}")         # z
+print(f"Tail: {ll.tail.value}")         # c
+
+# Final state
+print(f"Final list: {ll}")              # 'z -> a -> b -> c'
+print(f"Length: {ll.length}")           # 4
