@@ -1,5 +1,6 @@
-from typing import Any, Optional
+from typing import Any, Optional, Iterator
 from linked_list_node import Node
+
 
 class LinkedList:
     def __init__(self):
@@ -8,7 +9,23 @@ class LinkedList:
         self.length = 0
 
 
-    def add_to_head(self, value) -> None:
+    def __iter__(self) -> Iterator[Any]:
+        current = self.head
+        while current:
+            yield current.value
+            current = current.next
+
+    def __repr__(self) -> str:
+        nodes = []
+        current = self.head
+        while current:
+            # Use the Node's __repr__ or just its value
+            nodes.append(repr(current.value))  # or str(current.value)
+            current = current.next
+        return " -> ".join(nodes) if nodes else "Empty LinkedList"
+
+
+    def add_to_head(self, value: Any) -> None:
         new_node = Node(value)
         if not self.length:
             self.head = new_node
@@ -19,7 +36,7 @@ class LinkedList:
         self.length += 1
 
     
-    def add_to_tail(self, value) -> None:
+    def add_to_tail(self, value: Any) -> None:
         new_node = Node(value)
         if not self.length:
             self.head = new_node
@@ -30,7 +47,7 @@ class LinkedList:
         self.length += 1
 
 
-    def remove_from_head(self) -> Optional[Any]:
+    def remove_from_head(self) -> Optional[Node]:
         if not self.length:
             return None
         remove_node = self.head
