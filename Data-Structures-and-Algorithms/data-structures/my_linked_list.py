@@ -3,6 +3,17 @@ from linked_list_node import Node
 
 
 class LinkedList:
+    """
+    This is a singly linked list. No remove_from_tail() method exists.
+    Would need doubly linked list to create O(1) remove_from_tail() method.
+
+    LinkedList behavior:
+    > head: is the first added item
+    > tail: is the most recently added item
+
+    Stack (LIFO): add_to_tail(), remove_from_tail()
+    Queue (FIFO): add_to_tail(), remove_from_head()
+    """
     def __init__(self):
         self.head = None
         self.tail = None
