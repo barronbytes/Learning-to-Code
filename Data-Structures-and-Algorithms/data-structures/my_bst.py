@@ -119,6 +119,15 @@ class BST:
         return root
 
 
+    def height(self) -> int:
+        # Return the height of the tree
+        if self.value is None:
+            return 0  # Edge case: empty node
+        left_height = self.left.height() if self.left else 0
+        right_height = self.right.height() if self.right else 0
+        return 1 + max(left_height, right_height)
+
+
 # --- Example Usage ---
 values = [20, 10, 25, 5, 15, 30, 12]
 root = BST.set_root(values)
@@ -131,7 +140,9 @@ print("Minimum:", root.get_min())
 print("Maximum:", root.get_max())
 
 
+print("Tree Height (before deletions):", root.height())
 root = root.delete(10)
+print("Tree Height (after deletions):", root.height())
 print("Inorder after deletion:", root.inorder())
 print("Contains '1'?:", root.contains(1))
 print("Contains '5'?:", root.contains(5))
