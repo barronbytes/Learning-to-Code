@@ -17,6 +17,20 @@ class BST:
         self.left = None
         self.right = None
 
+
+    def contains(self, value) -> bool:
+        # Check if a value exists in the BST
+        result = False
+        if value == self.value:
+            result = True
+        elif value < self.value and self.left:
+            result = self.left.contains(value)
+        elif value > self.value and self.right:
+            result = self.right.contains(value)
+        else:
+            result = False
+        return result
+
     
     def insert(self, value) -> None:
         # Insert a new value into the correct position in the BST
@@ -119,3 +133,5 @@ print("Maximum:", root.get_max())
 
 root = root.delete(10)
 print("Inorder after deletion:", root.inorder())
+print("Contains '1'?:", root.contains(1))
+print("Contains '5'?:", root.contains(5))
