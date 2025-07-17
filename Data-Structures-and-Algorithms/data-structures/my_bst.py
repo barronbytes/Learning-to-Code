@@ -11,14 +11,14 @@ class BST:
     """
 
 
-    def __init__(self, value):
+    def __init__(self, value: Any) -> None:
         # Initialize a node with a value and empty left/right children
-        self.value = value
-        self.left = None
-        self.right = None
+        self.value: Any = value
+        self.left: Optional["BST"] = None
+        self.right: Optional["BST"] = None
 
 
-    def contains(self, value) -> bool:
+    def contains(self, value: Any) -> bool:
         # Check if a value exists in the BST
         result = False
         if value == self.value:
@@ -82,7 +82,7 @@ class BST:
 
 
     def inorder(self) -> List[Any]:
-        # Return the values from an inorder traversal (left-root-right)
+        # Return the values using inorder traversal (left → root → right)
         values = []
         if self.left:
             values += self.left.inorder()
@@ -90,6 +90,19 @@ class BST:
         if self.right:
             values += self.right.inorder()
         return values
+
+
+    def preorder(self) -> List[Any]:
+        # Return the values using preorder traversal (root → left → right)
+        if not self.value:
+            return []
+        nodes = [self.value]  # visit root
+        if self.left:
+            nodes.extend(self.left.preorder())   # visit left subtree
+        if self.right:
+            nodes.extend(self.right.preorder())  # visit right subtree
+        return nodes
+
 
 
     def get_min(self) -> Any:
@@ -131,11 +144,10 @@ class BST:
 # --- Example Usage ---
 values = [20, 10, 25, 5, 15, 30, 12]
 root = BST.set_root(values)
-sorted_values = root.inorder()
-
 
 print("Original data:", values)
-print("Inorder Traversal:", sorted_values)
+print("Inorder Traversal:", root.inorder())
+print("Preorder Traversal:", root.preorder())
 print("Minimum:", root.get_min())
 print("Maximum:", root.get_max())
 
