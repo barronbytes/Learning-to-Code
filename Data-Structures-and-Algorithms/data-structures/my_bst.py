@@ -94,15 +94,27 @@ class BST:
 
     def preorder(self) -> List[Any]:
         # Return the values using preorder traversal (root → left → right)
-        if not self.value:
+        if self.value is None:
             return []
-        nodes = [self.value]  # visit root
+        nodes = [self.value]                        # visit root
         if self.left:
-            nodes.extend(self.left.preorder())   # visit left subtree
+            nodes.extend(self.left.preorder())      # visit left subtree
         if self.right:
-            nodes.extend(self.right.preorder())  # visit right subtree
+            nodes.extend(self.right.preorder())     # visit right subtree
         return nodes
 
+
+    def postorder(self) -> List[Any]:
+        # Return the values using postorder traversal (left → right → root)
+        if self.value is None:
+            return []
+        nodes = []
+        if self.left:
+            nodes.extend(self.left.postorder())     # visit left subtree
+        if self.right:
+            nodes.extend(self.right.postorder())    # visit right subtree
+        nodes.append(self.value)                    # visit root
+        return nodes
 
 
     def get_min(self) -> Any:
@@ -148,6 +160,7 @@ root = BST.set_root(values)
 print("Original data:", values)
 print("Inorder Traversal:", root.inorder())
 print("Preorder Traversal:", root.preorder())
+print("Preorder Traversal:", root.postorder())
 print("Minimum:", root.get_min())
 print("Maximum:", root.get_max())
 
