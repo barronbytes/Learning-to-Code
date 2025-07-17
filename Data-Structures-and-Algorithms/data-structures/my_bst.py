@@ -7,7 +7,7 @@ class BST:
     
     Core Methods: insert(), search(), contains(), delete()
     Traversal Methods: inorder(), preorder(), postorder(), level_order()
-    Utility / Helper Methods: min(), max(), height(), is_balanced(), size()
+    Utility / Helper Methods: get_min(), get_max(), height(), is_balanced(), size()
     """
     def __init__(self, value):
         self.value = value
@@ -40,6 +40,20 @@ class BST:
         return values
 
 
+    def get_min(self) -> Any:
+        current = self
+        while current.left:
+            current = current.left
+        return current.value
+
+
+    def get_max(self) -> Any:
+        current = self
+        while current.right:
+            current = current.right
+        return current.value
+
+
     @staticmethod
     def set_root(values: List[Any]) -> "BST":
         if not values:
@@ -53,4 +67,8 @@ class BST:
 values = [20, 10, 25, 5, 15, 30, 12]
 root = BST.set_root(values)
 sorted_values = root.inorder()
+
+print("Original data:", values)
 print("Inorder Traversal:", sorted_values)
+print("Minimum:", root.get_min())
+print("Maximum:", root.get_max())
