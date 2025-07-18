@@ -138,10 +138,10 @@ class RBTree:
 
     def _rotate_left(self, pivot_parent: RBNode) -> None:
         """
-        Perform left rotation around pivot_parent.
+        Perform left rotation around pivot_parent
     
-        pivot_parent: The node around which rotation occurs.
-        pivot: The right child of pivot_parent, which becomes the new parent of pivot_parent.
+        pivot_parent: The node around which rotation occurs
+        pivot: The right child of pivot_parent, which becomes the new parent of pivot_parent
         """
         pivot = pivot_parent.right
         if pivot == self.nil:
@@ -168,10 +168,10 @@ class RBTree:
 
     def _rotate_right(self, pivot_parent: RBNode) -> None:
         """
-        Perform right rotation around pivot_parent.
+        Perform right rotation around pivot_parent
     
-        pivot_parent: The node around which rotation occurs.
-        pivot: The left child of pivot_parent, which becomes the new parent of pivot_parent.
+        pivot_parent: The node around which rotation occurs
+        pivot: The left child of pivot_parent, which becomes the new parent of pivot_parent
         """
         pivot = pivot_parent.left
         if pivot == self.nil:
