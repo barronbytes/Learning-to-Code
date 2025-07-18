@@ -136,52 +136,64 @@ class RBTree:
         self.root.color = Color.BLACK
 
 
-    def _rotate_left(self, x: RBNode) -> None:
+    def _rotate_left(self, pivot_parent: RBNode) -> None:
         """
-        Perform a left rotation around the given node x.
-        
-        This makes x.right the new root of the subtree,
-        and x becomes the left child of its previous right child.
+        Perform left rotation around pivot_parent.
+    
+        pivot_parent: The node around which rotation occurs.
+        pivot: The right child of pivot_parent, which becomes the new parent of pivot_parent.
         """
-        y = x.right  # y will become the new root of the subtree
-        x.right = y.left  # move y's left subtree to x's right
-        if y.left != self.NIL:
-            y.left.parent = x
+        pivot = pivot_parent.right
+        if pivot == self.nil:
+            return
 
-        y.parent = x.parent  # link y's parent to x's parent
-        if x.parent == self.NIL:
-            self.root = y
-        elif x == x.parent.left:
-            x.parent.left = y
+        # Move pivot's left subtree to pivot_parent's right
+        pivot_parent.right = pivot.left
+        if pivot.left != self.nil:
+            pivot.left.parent = pivot_parent
+
+        # Update pivot's parent to point to pivot_parent's parent
+        pivot.parent = pivot_parent.parent
+        if pivot_parent.parent is None:
+            self.root = pivot
+        elif pivot_parent == pivot_parent.parent.left:
+            pivot_parent.parent.left = pivot
         else:
-            x.parent.right = y
+            pivot_parent.parent.right = pivot
 
-        y.left = x  # put x on y's left
-        x.parent = y
+        # Finalize rotation: pivot becomes parent of pivot_parent
+        pivot.left = pivot_parent
+        pivot_parent.parent = pivot
 
 
-    def _rotate_right(self, y: RBNode) -> None:
+    def _rotate_right(self, pivot_parent: RBNode) -> None:
         """
-        Perform a right rotation around the given node y.
-        
-        This makes y.left the new root of the subtree,
-        and y becomes the right child of its previous left child.
+        Perform right rotation around pivot_parent.
+    
+        pivot_parent: The node around which rotation occurs.
+        pivot: The left child of pivot_parent, which becomes the new parent of pivot_parent.
         """
-        x = y.left  # x will become the new root of the subtree
-        y.left = x.right  # move x's right subtree to y's left
-        if x.right != self.NIL:
-            x.right.parent = y
+        pivot = pivot_parent.left
+        if pivot == self.nil:
+            return
 
-        x.parent = y.parent  # link x's parent to y's parent
-        if y.parent == self.NIL:
-            self.root = x
-        elif y == y.parent.right:
-            y.parent.right = x
+        # Move pivot's right subtree to pivot_parent's left
+        pivot_parent.left = pivot.right
+        if pivot.right != self.nil:
+            pivot.right.parent = pivot_parent
+
+        # Update pivot's parent to point to pivot_parent's parent
+        pivot.parent = pivot_parent.parent
+        if pivot_parent.parent is None:
+            self.root = pivot
+        elif pivot_parent == pivot_parent.parent.right:
+            pivot_parent.parent.right = pivot
         else:
-            y.parent.left = x
+            pivot_parent.parent.left = pivot
 
-        x.right = y  # put y on x's right
-        y.parent = x
+        # Finalize rotation: pivot becomes parent of pivot_parent
+        pivot.right = pivot_parent
+        pivot_parent.parent = pivot
 
 
 # --- Example Usage ---
