@@ -66,6 +66,13 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
 
+## Diving Deeper with Projects
+
+The following repos provide additional information:
+
+* [big-o](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/big-o): Sample methods with different Big(O) time complexities
+* [arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
+
 ## Credits & Contributing
 
 Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.
