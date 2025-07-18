@@ -20,6 +20,13 @@ Now that you have a mission statement it is time to learn. There are many excell
 
 ## Level 2: Doing Stage
 
+We can use projects to create our own experiences to showcase on resumes. I think of projects in terms of four levels:
+
+1. **Learning Projects:** These are completed with the guidance of tutorials. Examples include to-do lists and CRUD apps. These are great for learning but bad for resumes.
+2. **Capstone Projects:** These are completed from scratch. It's up to you to make all the decisions. These are great on resumes and for interviewing to talk about your development roadmap.
+3. **Team Projects:** These may be hackathons, freelancing, or open source. Each includes different levels of collaboration with colleagues and stakeholders that mimic real work experience.
+4. **Startup Projects:** These would be projects you launch with actual clients. This level is not necessary but very commendable if reached.
+
 ## Level 3: Networking Stage
 
 ## Level 4: Applying Stage
