@@ -15,7 +15,7 @@ Learning data structures is *super* hard! Building them from scratch turned out 
 
 A stack is a **linear data structure** that stores elements using the **Last In, First Out (LIFO)** principle. This means the last item added is the first one removed. Think of it like a stack of plates—add to the top, remove from the top.
 
-**O(1)** operations for insertions/deletions at **top**:
+**Average O(1)** operations for insertions/deletions at **top**:
 
 * `value`
 * `next` (pointer to next node)
@@ -37,7 +37,7 @@ A stack is a **linear data structure** that stores elements using the **Last In,
 
 A queue is a **linear data structure** that stores elements using the **First In, First Out (FIFO)** principle. This means the first item added is the first one removed—like people lining up in a queue at a store: first in, first out.
 
-**O(1)** operations for insertions at the **tail** and deletions at the **head**:
+**Average O(1)** operations for insertions at the **tail** and deletions at the **head**:
 
 * `value`
 * `next` (pointer to next node)
@@ -59,7 +59,7 @@ A queue is a **linear data structure** that stores elements using the **First In
 
 A linked list is a **linear data structure** where each element, called a **node**, stores both a value and a reference (or pointer) to another node. Two types of references exist. **Singly linked** pointers only track the next node. **Doubly linked** pointers track the previous and next node. You can think of this data structure as a treasure hunt where clues point to the next clue.
 
-**O(1)** operations for insertions/deletions:
+**Average O(1)** operations for insertions/deletions:
 
 * `value`
 * `next` (pointer to next node)
@@ -82,7 +82,7 @@ A linked list is a **linear data structure** where each element, called a **node
 
 A binary tree is a **hierarchical data structure**. The structure branches out like a family tree, with one node connected to its descendants.
 
-**O(log n)** operations for insertions, deletions, and search:
+**Average O(log n)** operations for insertions, deletions, and search:
 
 * `value`
 * `left` (pointer to left child)
@@ -102,7 +102,7 @@ A binary tree is a **hierarchical data structure**. The structure branches out l
 
 A red-black tree is a **self-balancing binary search tree**. It maintains balance through **color-based** rules and rotations.
 
-**O(log n)** operations for insertions, deletions, and search:
+**Average O(log n)** operations for insertions, deletions, and search:
 
 * `value` (**no duplicates**)
 * `left` (pointer to left child)
@@ -120,3 +120,28 @@ A red-black tree is a **self-balancing binary search tree**. It maintains balanc
 
 * Complex implementation due to balancing rules and rotations
 * Extra memory for storing node color and sometimes parent pointers
+
+## 6. HashMaps
+
+A HashMap is an **associative array** data structure that stores key-value pairs and enables fast average-case lookups by using a hash function and collision resolution. Think of it like a library catalog where the key is the book’s title used to find the exact shelf (the index), and the value is the book itself located there.
+
+**Average O(1)** operations for insertions, deletions, and search:
+
+* `data` (array of buckets storing key-value pairs or None)  
+* `size` (current capacity of the array)  
+* `filled_count` (number of occupied buckets)  
+* `hash function` (maps keys to indices)  
+* `collision resolution` (commonly **linear probing** or chaining)  
+- `load factor` (ratio of filled buckets to size to decide resizing)  
+
+### Use Cases
+
+* Implementing dictionaries or associative arrays in programming languages  
+* Caching systems where fast key-value lookup is critical  
+* Databases and indexing structures where quick retrieval matters  
+
+### Drawbacks
+
+* Performance degrades with poor hash functions or high load factors (> 0.70)
+* Resizing can be costly in terms of time and memory
+* Keys must be hashable and ideally evenly distributed for best performance
