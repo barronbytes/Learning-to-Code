@@ -28,7 +28,7 @@ A stack is a **linear data structure** that stores elements using the **Last In,
 ### Drawbacks
 
 * Limited access: can only access last (newest) element
-* No direct access to first (oldest) and middle elements
+* Stack operations are limited: no searching, no sorting, no random access
 * Inefficient for searching or accessing non-top elements
 
 ## 2. Queues (FIFO)
@@ -50,7 +50,7 @@ A queue is a **linear data structure** that stores elements using the **First In
 ### Drawbacks
 
 * Limited access: can only access the front and rear elements
-* No direct access to middle elements
+* Queue operations are limited: no searching, no sorting, no random access
 * Not ideal for scenarios requiring frequent random access or reverse-order processing
 
 ## 3. Linked Lists
@@ -145,3 +145,30 @@ A HashMap is an **associative array** data structure that stores key-value pairs
 * Performance degrades with poor hash functions or high load factors (> 0.70)
 * Resizing can be costly in terms of time and memory
 * Keys must be hashable and ideally evenly distributed for best performance
+
+## 7. Tries
+
+A trie is a **tree-based** data structure used to efficiently store and retrieve strings, especially when many share common prefixes. Think of it like an **autocomplete system**—each character of a word branches out like steps on a trail, and shared beginnings follow the same path.
+
+**Average O(k)** time complexity for insertions, deletions, and search, where **k** is the length of the string:
+
+* `root` (starting node; usually empty or null character)  
+* `nodes` (each stores one character and links to child nodes)  
+* `children` (map from character to child node)  
+* `is_end` (boolean flag to mark end of a valid word)  
+* `insert(word)` (adds each character one by one)  
+* `search(word)` (traces path for the full word)  
+* `starts_with(prefix)` (checks if any word starts with the prefix)
+
+### Use Cases
+
+* Autocomplete systems and search engines  
+* Spell checkers and dictionary implementations  
+* IP routing (prefix matching)  
+* Word games and pattern matching (e.g. Boggle, Scrabble AI)  
+
+### Drawbacks
+
+* Can use more memory than other data structures due to node overhead  
+* Not well-suited for numeric or unordered key data  
+* Slower than HashMaps for single-key lookups if words aren’t similar  
