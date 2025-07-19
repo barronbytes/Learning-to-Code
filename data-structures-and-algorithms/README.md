@@ -2,6 +2,14 @@
 
 Good code means good experiences for customers. We don't want lags or delays. Big O notation provides a standardized way to measure code efficiency. Learning this helps us understand how to scale codebases the right way.
 
+**Diving Deeper with Projects:**
+
+The following subfolders provide work related to the concepts outlined in other sections below:
+
+* [big-o](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/big-o): Sample methods with different Big(O) time complexities
+* [arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
+* [data-structures](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/data-structures): Different data structures you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/data-structures.md)
+
 ## What are we measuring?
 
 Algorithm performance can be measured in three ways:
@@ -65,13 +73,6 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 <img src="assets/complexity_array_algos.PNG" alt="Complexity of Algorithms" width="60%">
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
-
-## Diving Deeper with Projects
-
-The following repos provide additional information:
-
-* [big-o](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/big-o): Sample methods with different Big(O) time complexities
-* [arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
 
 ## Credits & Contributing
 
