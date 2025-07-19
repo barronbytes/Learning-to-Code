@@ -16,12 +16,14 @@ Learning data structures is *super* hard! Building them from scratch turned out 
 A stack is a **linear data structure** that stores elements using the **Last In, First Out (LIFO)** principle. This means the last item added is the first one removed. Think of it like a stack of plates—add to the top, remove from the top.
 
 **Use Cases:** Stacks are useful for the following:
+
 * Undo/redo functionality in text editors
 * Managing browser history (back/forward)
 
 ### 2. Drawbacks
 
-**O(1)** in best case with the folling considerations:
+**O(1)** operations for insertions/deletions at **top**, but:
+
 * Limited access: can only access last (newest) element
 * No direct access to first (oldest) and middle elements
 * Inefficient for searching or accessing non-top elements
@@ -39,12 +41,28 @@ A queue is a **linear data structure** that stores elements using the **First In
 
 ### 2. Drawbacks
 
-**O(1)** in best case with the folling considerations:
+**O(1)** operations for insertions at the **tail** and deletions at the **head**, but:
 * Limited access: can only access the front and rear elements
 * No direct access to middle elements
 * Not ideal for scenarios requiring frequent random access or reverse-order processing
 
 ## Linked Lists
+
+### 1. Purpose
+
+A linked list is a **linear data structure** where each element, called a **node**, stores both a value and a reference (or pointer) to another node. Two types of references exist. **Singly linked** pointers only track the next node. **Doubly linked** pointers track the previous and next node. You can think of this data structure as a treasure hunt where clues point to the next clue.
+
+**Use Cases:** Linked lists are useful for the following:
+
+* Memory-constrained systems where dynamic allocation is preferred
+* Implementing other data structures!!! (e.g. stacks, queues, hash tables, adjacency lists)
+
+### 2. Drawbacks
+
+**O(1)** operations for insertions/deletions, but:
+* O(n) time to access or search for an element
+* No index-based access like arrays (`list[i]` won't work)
+* Extra memory overhead due to storing pointers/references
 
 ## Binary Trees
 
