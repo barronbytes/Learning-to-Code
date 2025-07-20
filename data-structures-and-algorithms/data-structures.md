@@ -174,7 +174,9 @@ A graph is a **network-based data structure** that models relationships between 
 
 **Average O(V + E)** time complexity for traversals like DFS or BFS, where **V** is the number of vertices and **E** is the number of edges:
 
-* `graph` (stores the edges; either a 2D list for matrix or dict of sets for adjacency list)  
+* `adjacency_list` (a dictionary mapping each vertex to a set of neighboring vertices; enables fast lookups and insertions)
+* `vertex` (a unique node or entity in the graph)
+* `edge` (a connection from one vertex to another; for undirected graphs, edges are two-way)
 
 ### Use Cases
 
