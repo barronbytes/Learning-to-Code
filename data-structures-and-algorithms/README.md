@@ -7,7 +7,7 @@ Good code means good experiences for customers. We don't want lags or delays. Bi
 The following subfolders provide work related to the concepts outlined in other sections below:
 
 * [big-o](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/big-o): Sample methods with different Big(O) time complexities
-* [arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
+* [arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/algos-array-sorting): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
 * [data-structures](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/data-structures): Different data structures you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/data-structures.md)
 
 ## What are we measuring?
