@@ -34,7 +34,7 @@ Graphs can vary in how they spread:
 Here's advice on which to choose:
 
 | Graph Shape    | When to Use | Reason                                                           |
-| -------------- | ----------- | ---------------------------------------------------------------- |
+| -------------- | ----------- | :--------------------------------------------------------------- |
 | **Horizontal** | DFS         | Avoids high memory use from many same-depth connections          |
 | **Vertical**   | BFS         | Avoids deep recursion and guarantees shortest path if one exists |
 
