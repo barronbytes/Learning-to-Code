@@ -75,6 +75,33 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
 
+## NP Theory [🔝](#data-structures-and-algorithms)
+
+| Class | Can Solve Efficiently?  | Can Verify Efficiently?   | Example                 |
+| ----- | ----------------------- | ------------------------- | ----------------------- |
+| P     | ✅ Yes                  | ✅ Yes                   | Binary search, Dijkstra |
+| NP    | ❌ Not always           | ✅ Yes                   | Sudoku, 3-SAT           |
+
+*Disclaimer: to solve and verify above refers to **polynomial time***
+
+### What is polynomial time?
+
+* **Yes:** `O(1)`, `O(log n)`, `O(n)`, `O(n log n)`, `O(n^k)` for any constant `k`  
+* **No:** `O(2^n)`, `O(n!)`, `O(n^n)`, and other super-polynomial runtimes
+
+### What is an NP-complete vs NP-hard problem?
+
+| Property                               | NP-Complete      | NP-Hard                         |
+|:---------------------------------------|:-----------------|---------------------------------|
+| Subset of NP?                          | ✅ Yes           | ❌ No                          |
+| Verified in polynomial time?           | ✅ Yes           | ❌ Not necessarily             |
+| At least as hard as any NP problem?    | ✅ Yes           | ✅ Yes                         |
+| Every NP problem can be reduced to it? | ✅ Yes           | ✅ Yes                         |
+
+* All NP-complete problems are also NP problems
+* All NP-complete problems are also NP-hard problems
+* Not all NP-hard problems are NP problems
+
 ## Credits & Contributing [🔝](#data-structures-and-algorithms)
 
 Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.
