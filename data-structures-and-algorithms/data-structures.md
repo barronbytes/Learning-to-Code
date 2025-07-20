@@ -13,7 +13,7 @@ Learning data structures is *super* hard! Building them from scratch turned out 
 
 ### Purpose
 
-A stack is a **linear data structure** that stores elements using the **Last In, First Out (LIFO)** principle. This means the last item added is the first one removed. Think of it like a stack of plates—add to the top, remove from the top.
+A stack is a **linear** data structure that stores elements using the **Last In, First Out (LIFO)** principle. This means the last item added is the first one removed. Think of it like a stack of plates—add to the top, remove from the top.
 
 **Average O(1)** operations for insertions/deletions at **top**:
 
@@ -35,7 +35,7 @@ A stack is a **linear data structure** that stores elements using the **Last In,
 
 ### Purpose
 
-A queue is a **linear data structure** that stores elements using the **First In, First Out (FIFO)** principle. This means the first item added is the first one removed—like people lining up in a queue at a store: first in, first out.
+A queue is a **linear** data structure that stores elements using the **First In, First Out (FIFO)** principle. This means the first item added is the first one removed—like people lining up in a queue at a store: first in, first out.
 
 **Average O(1)** operations for insertions at the **tail** and deletions at the **head**:
 
@@ -57,7 +57,7 @@ A queue is a **linear data structure** that stores elements using the **First In
 
 ### Purpose
 
-A linked list is a **linear data structure** where each element, called a **node**, stores both a value and a reference (or pointer) to another node. Two types of references exist. **Singly linked** pointers only track the next node. **Doubly linked** pointers track the previous and next node. You can think of this data structure as a treasure hunt where clues point to the next clue.
+A linked list is a **linear** data structure where each element, called a **node**, stores both a value and a reference (or pointer) to another node. Two types of references exist. **Singly linked** pointers only track the next node. **Doubly linked** pointers track the previous and next node. You can think of this data structure as a treasure hunt where clues point to the next clue.
 
 **Average O(1)** operations for insertions/deletions:
 
@@ -80,7 +80,7 @@ A linked list is a **linear data structure** where each element, called a **node
 
 ### Purpose
 
-A binary tree is a **hierarchical data structure**. The structure branches out like a family tree, with one node connected to its descendants.
+A binary tree is a **hierarchical** data structure. The structure branches out like a family tree, with one node connected to its descendants.
 
 **Average O(log n)** operations for insertions, deletions, and search:
 
@@ -100,7 +100,7 @@ A binary tree is a **hierarchical data structure**. The structure branches out l
 
 ## 5. Red-Black Trees
 
-A red-black tree is a **self-balancing binary search tree**. It maintains balance through **color-based** rules and rotations.
+A red-black tree is a **self-balancing hierarchical** binary search tree. It maintains balance through **color-based** rules and rotations.
 
 **Average O(log n)** operations for insertions, deletions, and search:
 
@@ -123,7 +123,7 @@ A red-black tree is a **self-balancing binary search tree**. It maintains balanc
 
 ## 6. HashMaps
 
-A HashMap is an **associative array** data structure that stores key-value pairs and enables fast average-case lookups by using a hash function and collision resolution. Think of it like a library catalog where the key is the book’s title used to find the exact shelf (the index), and the value is the book itself located there.
+A HashMap is an **flat map** data structure that stores key-value pairs and enables fast average-case lookups by using a hash function and collision resolution. Think of it like a library catalog where the key is the book’s title used to find the exact shelf (the index), and the value is the book itself located there.
 
 **Average O(1)** operations for insertions, deletions, and search:
 
@@ -148,17 +148,13 @@ A HashMap is an **associative array** data structure that stores key-value pairs
 
 ## 7. Tries
 
-A trie is a **tree-based** data structure used to efficiently store and retrieve strings, especially when many share common prefixes. Think of it like an **autocomplete system**—each character of a word branches out like steps on a trail, and shared beginnings follow the same path.
+A trie is a **nested map** data structure used to efficiently store and retrieve strings, especially when many share common prefixes. Think of it like an **autocomplete system**—each character of a word branches out like steps on a trail, and shared beginnings follow the same path.
 
 **Average O(k)** time complexity for insertions, deletions, and search, where **k** is the length of the string:
 
+
 * `root` (starting node; usually empty or null character)  
-* `nodes` (each stores one character and links to child nodes)  
-* `children` (map from character to child node)  
-* `is_end` (boolean flag to mark end of a valid word)  
-* `insert(word)` (adds each character one by one)  
-* `search(word)` (traces path for the full word)  
-* `starts_with(prefix)` (checks if any word starts with the prefix)
+* `end_symbol` (a special marker, e.g. "*", indicating the end of a valid word)
 
 ### Use Cases
 
