@@ -2,7 +2,7 @@
 
 Traversal algorithms can be used on graphs. You can [read about graphs here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/data-structures.md#graphs) if you need a refresher.
  
-## Breadth-First Search (BFS): O(n + e) [🔝](#graphs)
+## Breadth-First Search (BFS): O(n + e) [🔝](#graph-traversal-algorithms)
 
 This is a **layer-by-layer** traversal that visits a graph’s vertices in the order of their distance from a starting point. It explores all direct neighbors before moving on to neighbors of neighbors, making it ideal for finding the shortest path in unweighted graphs.
 
@@ -12,7 +12,7 @@ Here's a breakdown of the time complexity: [view code here](https://github.com/b
 * The inner logic processes **edges from each vertex** (think **"e"** for total edges)  
 * Combined, the overall complexity is **O(n + e)**  
 
-## Depth-First Search (DFS): O(n + e) [🔝](#graphs)
+## Depth-First Search (DFS): O(n + e) [🔝](#graphs)(#graph-traversal-algorithms)
 
 This is a **deep-dive** traversal that follows a path from the starting point as far as possible before backtracking. It explores a branch fully before moving to the next, making it useful for checking connectivity or detecting cycles in a graph.
 
