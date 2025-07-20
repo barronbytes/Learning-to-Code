@@ -1,6 +1,6 @@
 # [Array Sorting Algorithms](#array-sorting-algorithms)
 
-Arrays can be used for sorting algorithms. Some of the most common ones are covered in this repository.
+Sorting algorithms can be used on arrays. Some of the most common ones are covered in this repository.
 
 <img src="assets/algos-arr-sort-summary.PNG" alt="Sorting algorithms" width="60%">
 

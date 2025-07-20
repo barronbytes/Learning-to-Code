@@ -9,6 +9,7 @@ The following subfolders provide work related to the concepts outlined in other 
 * [big-o](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/big-o): Sample methods with different Big(O) time complexities
 * [data-structures](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/data-structures): Different specialized data structures you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/data-structures.md)
 * [algos-arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/algos-arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
+* [algos-graphs](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/algos-graphs): Different graph traversal algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-graph-traversal.md)
 
 ## What are we measuring?
 

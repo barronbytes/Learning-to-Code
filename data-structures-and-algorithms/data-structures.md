@@ -168,7 +168,7 @@ A trie is a **nested map** data structure used to efficiently store and retrieve
 * Not well-suited for numeric or unordered key data  
 * Slower than HashMaps for single-key lookups if words aren’t similar  
 
-## 8. Graphs**
+## 8. Graphs
 
 A graph is a **network-based data structure** that models relationships between entities using **vertices** (nodes) and **edges** (connections). Graphs can be implemented using either an **adjacency matrix** (2D array) or **adjacency lists** (dictionary of sets), depending on the density and use case. Think of it like a **subway map**—stations are nodes, and tracks between them are edges.
 
