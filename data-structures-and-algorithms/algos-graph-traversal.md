@@ -12,7 +12,7 @@ Here's a breakdown of the time complexity: [view code here](https://github.com/b
 * The inner logic processes **edges from each vertex** (think **"e"** for total edges)  
 * Combined, the overall complexity is **O(n + e)**  
 
-## Depth-First Search (DFS): O(n + e) [🔝](#graphs)(#graph-traversal-algorithms)
+## Depth-First Search (DFS): O(n + e) [🔝](#graph-traversal-algorithms)
 
 This is a **deep-dive** traversal that follows a path from the starting point as far as possible before backtracking. It explores a branch fully before moving to the next, making it useful for checking connectivity or detecting cycles in a graph.
 
