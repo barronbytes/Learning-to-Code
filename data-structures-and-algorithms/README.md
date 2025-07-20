@@ -11,7 +11,7 @@ The following subfolders provide work related to the concepts outlined in other 
 * [algos-arrays](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/algos-arrays): Different array sorting algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-array-sorting.md)
 * [algos-graphs](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms/algos-graphs): Different graph traversal algorithms you can [read about here](https://github.com/barronbytes/learning-to-code/blob/main/data-structures-and-algorithms/algos-graph-traversal.md)
 
-## What are we measuring?
+## What are we measuring? [🔝](#data-structures-and-algorithms)
 
 Algorithm performance can be measured in three ways:
 
@@ -19,7 +19,7 @@ Algorithm performance can be measured in three ways:
 * **Space Complexity:** How much **memory** an algorithm takes to run
 * **Network Complexity:** How much **data** an algorithm sends or receives across a network
 
-## Big O Notation
+## Big O Notation [🔝](#data-structures-and-algorithms)
 
 Time complexity performance can be expressed using **Big O Notation**, which describes how an algorithm scales as input size increases. While it considers best-case, average-case, and worst-case scenarios, we only care about the worst-case run time in business. Below is a visual representation of common worst-case time complexities, ranked from most efficient to least efficient:
 
@@ -38,7 +38,7 @@ Here’s the same information as a ranked list of Big O time complexities, from 
 7. O(2ⁿ) — Exponential time
 8. O(n!) — Factorial time
 
-## How to Analyze Time Complexities?
+## How to Analyze Time Complexities? [🔝](#data-structures-and-algorithms)
 
 Here are some general rules and considerations to help you determine time complexity:
 
@@ -52,7 +52,7 @@ Here are some general rules and considerations to help you determine time comple
 - **Logarithmic time comes from halving**: repeatedly dividing input in half (e.g., binary search) becomes `O(log n)`
 - **Factorial time comes from permutations**: generating all possible orderings (e.g., brute-force TSP or permutations) becomes `O(n!)`
 
-## Tips to Write Better Code
+## Tips to Write Better Code [🔝](#data-structures-and-algorithms)
 
 Here are some tips to improve performance and reduce complexity:
 
@@ -63,7 +63,7 @@ Here are some tips to improve performance and reduce complexity:
 - ✅ Use binary search or sorting tricks instead of brute-force scans — binary search reduces from `O(n)` to `O(log n)`  
 - ❌ Avoid deep recursion unless tail-recursion or memoization is used — can reduce from `O(2ⁿ)` to `O(n)` with dynamic programming
 
-## Common Big O Notation Algorithms
+## Common Big O Notation Algorithms [🔝](#data-structures-and-algorithms)
 
 Big O Notation has been around long enough to solve many uses cases and algorithms shown below:
 
@@ -75,6 +75,6 @@ Big O Notation has been around long enough to solve many uses cases and algorith
 
  *Array Sorting Algorithms from https://www.bigocheatsheet.com/*
 
-## Credits & Contributing
+## Credits & Contributing [🔝](#data-structures-and-algorithms)
 
 Thank you [boot.dev](https://www.boot.dev/) for providing an online back-end learning platform with integrated project ideas. Contributions are welcome! Feel free to submit a pull request to improve this repository or open an issue to report any problems.

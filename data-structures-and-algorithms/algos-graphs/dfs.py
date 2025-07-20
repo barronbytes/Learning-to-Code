@@ -2,30 +2,36 @@
 from typing import List, Any, Dict
 
 
-def breadth_first_search(graph: Dict[Any, List[Any]], start_vertex: Any) -> List[Any]:
+def depth_first_search(graph: Dict[Any, List[Any]], start_vertex: Any) -> List[Any]:
     """
-    Performs a breadth-first search (BFS) traversal on the given graph.
+    Performs a depth-first search (DFS) traversal on the given graph.
 
     Args:
         graph (Dict[Any, List[Any]]): The graph as an adjacency list.
-        start_vertex (Any): The vertex from which to start the BFS.
+        start_vertex (Any): The vertex from which to start the DFS.
 
     Returns:
         List[Any]: A list of vertices in the order they were visited.
     """
     visited: List[Any] = []
-    unvisited: List[Any] = [start_vertex]  # Queue initialized with the starting vertex
-
-
-    while unvisited:
-        current = unvisited.pop(0)
-        if current not in visited:
-            visited.append(current)
-            neighbors = sorted(graph.get(current, []))
-            for neighbor in neighbors:
-                if neighbor not in visited and neighbor not in unvisited:
-                    unvisited.append(neighbor)
+    depth_first_search_r(graph, start_vertex, visited)
     return visited
+
+
+def depth_first_search_r(graph: Dict[Any, List[Any]], current_vertex: Any, visited: List[Any]) -> None:
+    """
+    Recursive helper function for DFS traversal.
+
+    Args:
+        graph (Dict[Any, List[Any]]): The graph as an adjacency list.
+        current_vertex (Any): The current vertex being visited.
+        visited (List[Any]): The list of already visited vertices.
+    """
+    visited.append(current_vertex)
+    neighbors = sorted(graph.get(current_vertex, []))
+    for neighbor in neighbors:
+        if neighbor not in visited:
+            depth_first_search_r(graph, neighbor, visited)
 
 
 """ Example Graph Representation
@@ -54,5 +60,5 @@ graph = {
     "L": ["I"]
 }
 
-result = breadth_first_search(graph, "A")
-print("BFS Visit Order:", result)
+result = depth_first_search(graph, "A")
+print("DFS Visit Order:", result)

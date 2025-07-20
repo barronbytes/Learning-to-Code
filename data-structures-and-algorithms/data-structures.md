@@ -9,7 +9,7 @@ Learning data structures is *super* hard! Building them from scratch turned out 
 * What are the drawbacks to this data structure?
 * What is the best and worst case time complexity for methods?
 
-## 1. Stacks (LIFO)
+## 1. Stacks (LIFO) [🔝](#data-structures)
 
 ### Purpose
 
@@ -31,7 +31,7 @@ A stack is a **linear** data structure that stores elements using the **Last In,
 * Stack operations are limited: no searching, no sorting, no random access
 * Inefficient for searching or accessing non-top elements
 
-## 2. Queues (FIFO)
+## 2. Queues (FIFO) [🔝](#data-structures)
 
 ### Purpose
 
@@ -53,7 +53,7 @@ A queue is a **linear** data structure that stores elements using the **First In
 * Queue operations are limited: no searching, no sorting, no random access
 * Not ideal for scenarios requiring frequent random access or reverse-order processing
 
-## 3. Linked Lists
+## 3. Linked Lists [🔝](#data-structures)
 
 ### Purpose
 
@@ -76,7 +76,7 @@ A linked list is a **linear** data structure where each element, called a **node
 * No index-based access like arrays (`list[i]` won't work)
 * Extra memory for next and previous pointers
 
-## 4. Binary Trees
+## 4. Binary Trees [🔝](#data-structures)
 
 ### Purpose
 
@@ -98,7 +98,7 @@ A binary tree is a **hierarchical** data structure. The structure branches out l
 * O(n) for unbalanced trees
 * Extra memory overhead left and right child pointers
 
-## 5. Red-Black Trees
+## 5. Red-Black Trees [🔝](#data-structures)
 
 A red-black tree is a **self-balancing hierarchical** binary search tree. It maintains balance through **color-based** rules and rotations.
 
@@ -121,7 +121,7 @@ A red-black tree is a **self-balancing hierarchical** binary search tree. It mai
 * Complex implementation due to balancing rules and rotations
 * Extra memory for storing node color and sometimes parent pointers
 
-## 6. HashMaps
+## 6. HashMaps [🔝](#data-structures)
 
 A HashMap is an **flat map** data structure that stores key-value pairs and enables fast average-case lookups by using a hash function and collision resolution. Think of it like a library catalog where the key is the book’s title used to find the exact shelf (the index), and the value is the book itself located there.
 
@@ -146,7 +146,7 @@ A HashMap is an **flat map** data structure that stores key-value pairs and enab
 * Resizing can be costly in terms of time and memory
 * Keys must be hashable and ideally evenly distributed for best performance
 
-## 7. Tries
+## 7. Tries [🔝](#data-structures)
 
 A trie is a **nested map** data structure used to efficiently store and retrieve strings, especially when many share common prefixes. Think of it like an **autocomplete system**—each character of a word branches out like steps on a trail, and shared beginnings follow the same path.
 
@@ -168,7 +168,7 @@ A trie is a **nested map** data structure used to efficiently store and retrieve
 * Not well-suited for numeric or unordered key data  
 * Slower than HashMaps for single-key lookups if words aren’t similar  
 
-## 8. Graphs
+## 8. Graphs [🔝](#data-structures)
 
 A graph is a **network-based data structure** that models relationships between entities using **vertices** (nodes) and **edges** (connections). Graphs can be implemented using either an **adjacency matrix** (2D array) or **adjacency lists** (dictionary of sets), depending on the density and use case. Think of it like a **subway map**—stations are nodes, and tracks between them are edges.
 
