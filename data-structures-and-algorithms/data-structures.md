@@ -152,7 +152,6 @@ A trie is a **nested map** data structure used to efficiently store and retrieve
 
 **Average O(k)** time complexity for insertions, deletions, and search, where **k** is the length of the string:
 
-
 * `root` (starting node; usually empty or null character)  
 * `end_symbol` (a special marker, e.g. "*", indicating the end of a valid word)
 
@@ -168,3 +167,24 @@ A trie is a **nested map** data structure used to efficiently store and retrieve
 * Can use more memory than other data structures due to node overhead  
 * Not well-suited for numeric or unordered key data  
 * Slower than HashMaps for single-key lookups if words aren’t similar  
+
+## 8. Graphs**
+
+A graph is a **network-based data structure** that models relationships between entities using **vertices** (nodes) and **edges** (connections). Graphs can be implemented using either an **adjacency matrix** (2D array) or **adjacency lists** (dictionary of sets), depending on the density and use case. Think of it like a **subway map**—stations are nodes, and tracks between them are edges.
+
+**Average O(V + E)** time complexity for traversals like DFS or BFS, where **V** is the number of vertices and **E** is the number of edges:
+
+* `graph` (stores the edges; either a 2D list for matrix or dict of sets for adjacency list)  
+
+### Use Cases
+
+* Social networks: user (vertex) & connection (edge)
+* GPS navigation: location (vertex) & road (edge)
+* Network topology: computer (vertex) & cable (edge)
+* AI decisions: state (vertx) & action (edge)
+
+### Drawbacks
+
+* Can be memory-intensive for dense graphs (especially with adjacency matrices)  
+* Complex algorithms needed for shortest paths, cycles, or optimization  
+* More difficult to visualize or debug than simpler data structures  
