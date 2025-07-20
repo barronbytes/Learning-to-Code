@@ -10,7 +10,7 @@ Here's a breakdown of the time complexity: [view code here](https://github.com/b
 
 * `while` loop runs once per **vertex** → contributes to `O(v)`
 * `for` loop runs over each **neighbor (i.e. edge)** → contributes to `O(e)`
-* * So, the total runtime is **O(v + e)**  
+* So, the total runtime is `O(v + e)` 
 
 ## Depth-First Search (DFS): O(v + e) [🔝](#graph-traversal-algorithms)
 
@@ -22,7 +22,7 @@ Here's a breakdown of the time complexity: [view code here](https://github.com/b
 
 * `recursive call` on each **vertex** once → contributes to `O(v)`
 * `for` loop runs over each **neighbor (i.e. edge)** → contributes to `O(e)`
-* * So, the total runtime is **O(v + e)**
+* So, the total runtime is `O(v + e)`
 
 ## Choosing Between BFS vs DFS for Graphs [🔝](#graph-traversal-algorithms)
 
