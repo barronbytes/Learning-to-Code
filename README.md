@@ -28,7 +28,7 @@ That said, I personally struggled with uncertainty and decision fatigue—until 
 I choose [Boot.dev](https://www.boot.dev/) for **backend development** and followed this learning progression:
 
 1. Where to start?: Learn Linux, Git, and GitHub first. This is useful to make sure you know how to deploy projects on GitHub.
-2. How learn to code?: Basics > object-oriented Programming, functional programming
+2. How to learn to code?: Basics > object-oriented Programming, functional programming
 3. [How to get started with data structures & algorithms?](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms): Big (O) notation > data structures > array sorting algorithms > graph traversal algorithms > additional theory
 
 ## Level 2: Doing Stage [🔝](#learning-to-code-great-heres-my-advice)
