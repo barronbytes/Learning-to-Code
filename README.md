@@ -12,11 +12,24 @@ Here is an example of a mission statement that outlines: (1) the domain, (2) com
 
 ## Level 1: Learning Stage [🔝](#learning-to-code-great-heres-my-advice)
 
-Now that you have a mission statement it is time to learn. There are many excellent free resources available online—like [freeCodeCamp](https://www.freecodecamp.org/), [YouTube](https://www.youtube.com/), and the official documentation pages for technical tools. Personally, I made my best progress after I started to use a paid resource: [Boot.dev](https://www.boot.dev/). Below are other paywalled platforms organized by domain to help guide your next steps.
+Now that you have a mission statement it is time to start learning. There are many excellent free resources to get you going:
 
-* Data Science: [DataCamp](https://www.datacamp.com/)
-* Cybersecurity: [Hack The Box](https://www.hackthebox.com/), [TryHackMe](https://tryhackme.com/), [TCM Security](https://tcm-sec.com/)
-* Software Engineering: [Boot.dev](https://www.boot.dev/), [Scrimba](https://scrimba.com/)
+- [freeCodeCamp (FCC)](https://www.freecodecamp.org/): updated weekly; they have a YouTube channel too!
+- [Community Taught x 100Devs](https://communitytaught.org/): free frontend development bootcamp
+- [Roadmap.sh](https://roadmap.sh/): great site for curated learning paths
+- Official documentation: each tool has free tutorials to read!
+
+That said, I personally struggled with uncertainty and decision fatigue—until I committed to a structured, paid learning path with [Boot.dev](https://www.boot.dev/). Having a clear roadmap helped me stay focused and track progress with confidence. Here are some other paid platforms, organized by domain, that might help you take your next steps:
+
+- Data Science: [DataCamp](https://www.datacamp.com/)
+- Cybersecurity: [Hack The Box](https://www.hackthebox.com/), [TryHackMe](https://tryhackme.com/), [TCM Security](https://tcm-sec.com/)
+- Software Engineering: [Boot.dev](https://www.boot.dev/), [Scrimba](https://scrimba.com/)
+
+I choose [Boot.dev](https://www.boot.dev/) for **backend development** and followed this learning progression:
+
+1. Where to start?: Learn Linux, Git, and GitHub first. This is useful to make sure you know how to deploy projects on GitHub.
+2. How learn to code?: Basics > object-oriented Programming, functional programming
+3. [How to get started with data structures & algorithms?](https://github.com/barronbytes/learning-to-code/tree/main/data-structures-and-algorithms): Big (O) notation > data structures > array sorting algorithms > graph traversal algorithms > additional theory
 
 ## Level 2: Doing Stage [🔝](#learning-to-code-great-heres-my-advice)
 
