@@ -35,7 +35,7 @@ I choose [Boot.dev](https://www.boot.dev/) for **backend development** and follo
 
 We can use projects to create our own experiences to showcase on resumes. I think of projects in terms of four levels:
 
-1. **Learning Projects:** These are completed with the guidance of tutorials. Examples include to-do lists and CRUD apps. These are great for learning but bad for resumes.
+1. **Learning Projects:** These are completed with the guidance of tutorials. Examples include to-do lists and CRUD apps. These are great for learning but bad for resumes. I’ve posted [mini-projects with full code examples](https://github.com/barronbytes/mini-projects) for your review, each built in a matter of days to weeks.
 2. **Capstone Projects:** These are completed from scratch. It's up to you to make all the decisions. These are great on resumes and for interviewing to talk about your development roadmap.
 3. **Team Projects:** These may be hackathons, freelancing, or open source. Each includes different levels of collaboration with colleagues and stakeholders that mimic real work experience.
 4. **Startup Projects:** These would be projects you launch with actual clients. This level is not necessary but very commendable if reached.
